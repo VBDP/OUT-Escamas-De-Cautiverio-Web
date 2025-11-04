@@ -18,6 +18,9 @@ git checkout -b nombre-de-tu-rama
 
 Esto creará la nueva rama y cambiarás a ella automáticamente.
 
+Las tareas estarán como tarjetas en ClickUp.
+[Aprende como crear las tarjetas.](https://docs.google.com/document/d/1mmsTcFF2lki-g4ydw0p60t9oEeb6oHz9y98f1iCkrXU/edit?usp=sharing)
+
 3. Commit de Cambios
 Buenas Prácticas en los Commits
 
