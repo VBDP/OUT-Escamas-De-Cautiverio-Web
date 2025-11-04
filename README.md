@@ -57,3 +57,30 @@ Revisión de Código
 Antes de fusionar tu rama con dev, realiza un Pull Request para revisión. Esto asegura que el código sea revisado y aprobado por un compañero antes de ser integrado.
 
 ¡Recuerda! Git Flow es una herramienta poderosa para mantener el código organizado y garantizar un flujo de trabajo eficiente y colaborativo.
+
+GitFlow:
+  ├── main (Producción)
+  │     ▲
+  │     │
+  │     ├── release/*  ←── QA / pruebas finales
+  │     │       ▲
+  │     │       │
+  │     │       └── dev (Integración)
+  │     │              ▲
+  │     │              │
+  │     │              ├── feature/*  ←── Desarrollo de tareas
+  │     │              │       ├── feature/login-system
+  │     │              │       ├── feature/add-report-export
+  │     │              │       └── feature/update-user-profile
+  │     │              │
+  │     │              └── hotfix/* (parches urgentes)
+  │     │                      └── se fusionan a main y dev
+  │     │
+  │     └── Tag de versión (v1.0.0)
+  │
+  └── Ciclo:
+        - Los desarrollos parten de dev
+        - Se integran mediante pull requests
+        - Release se usa para preparar versiones
+        - Main recibe solo código estable y probado
+
