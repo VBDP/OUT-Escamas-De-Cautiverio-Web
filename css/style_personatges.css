@@ -1,0 +1,8 @@
+@font-face {
+    font-family: "EnchantedLand";
+    src: url("../fonts/Enchanted Land.otf") format("opentype");
+}
+
+body {
+    font-family: "EnchantedLand", sans-serif;
+}
