@@ -1,6 +1,51 @@
-.img_principal{
-
+@font-face {
+    font-family: "EnchantedLand";
+    src: url("../fonts/Enchanted Land.otf") format("opentype");
 }
-.lore{
+*{
+    font-family: "EnchantedLand", sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    background-color: var(--background-color-principal);
+}
+:root{
+    /*Marrò: #51361A, Purpura:#440150, Vermell:#900603, Cobre rosa:#996666*, cobre: #9F543E, Negre: #1D1C1C */
+    --background-color-principal:#1D1C1C ;
+    --text-color-title: #996666 ;
+    --text-color-principal: #9F543E;
+    --color-button:  #440150 ;
+}
+
+body{
+    margin:10PX;
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: var(--text-color-title);
+}
+
+p{
+    color: var(--text-color-principal);
+    padding-bottom: 5vh;
+}
+
+img{
+    height: auto;
+    width:130vh;
+    border-radius: 30px;
+}
+
+
+
+.title{
+    font-size: 40px;
+}
+
+.flex{
+    margin: 20px;
+    display: flex;
     
+    justify-content: center;
+    align-items:flex-start;
 }
