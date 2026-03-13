@@ -2,7 +2,36 @@
     font-family: "EnchantedLand";
     src: url("../fonts/Enchanted Land.otf") format("opentype");
 }
-
-body {
+*{
     font-family: "EnchantedLand", sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    background-color: var(--background-color-principal);
+}
+:root{
+    /*Marrò: #51361A, Purpura:#440150, Vermell:#900603, Cobre rosa:#996666*, cobre: #9F543E, Negre: #1D1C1C */
+    --background-color-principal:#1D1C1C ;
+    --text-color-title: #996666 ;
+    --text-color-principal: #9F543E;
+    --color-button:  #440150 ;
+}
+header{
+    color: var(--text-color-principal);
+    padding: 1rem;
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-color-title);
+}
+p {
+    color: var(--text-color-principal);
+}
+button{
+    background-color: var(--color-button);
+    color: var(--text-color-title);
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
 }
