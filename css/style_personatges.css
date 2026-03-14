@@ -6,7 +6,7 @@
     font-family: "EnchantedLand", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: var(--background-color-principal);
+    
 }
 :root{
     /*Marrò: #51361A, Purpura:#440150, Vermell:#900603, Cobre rosa:#996666*, cobre: #9F543E, Negre: #1D1C1C */
@@ -36,4 +36,7 @@ p {
 }
 img{
     margin-bottom: 1em;
+}
+body{
+    background-color: var(--background-color-principal);
 }
