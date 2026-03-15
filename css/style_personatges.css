@@ -6,7 +6,7 @@
     font-family: "EnchantedLand", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: var(--background-color-principal);
+    
 }
 header{
     color: var(--text-color-principal);
@@ -54,4 +54,7 @@ p {
 }
 img{
     margin-bottom: 1em;
+}
+body{
+    background-color: var(--background-color-principal);
 }
