@@ -6,7 +6,6 @@
     font-family: "EnchantedLand", sans-serif;
     margin: 0;
     padding: 0;
-    
 }
 header{
     color: var(--text-color-principal);
@@ -16,7 +15,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to bottom, var(--background-color-principal), rgba(29, 28, 28, 0));
+    background: linear-gradient(to bottom, var(--background-color-principal));
 }
 .navbar {
     display: flex;
@@ -25,6 +24,27 @@ header{
     background: transparent;
     height: 3.2rem;
     width: 100%;
+}
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 3.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li a {
+    color: var(--text-color-principal);
+    text-decoration: none;
+    font-size: 2rem;
+    line-height: 3.2rem;
+    padding: 0 0.5rem;
+    transition: color 0.3s, letter-spacing 0.3s;
+}
+
+.nav-list li a:hover {
+    letter-spacing: 0.14em;
+    color: var(--text-color-title);
 }
 :root{
     /*Marrò: #51361A, Purpura:#440150, Vermell:#900603, Cobre rosa:#996666*, cobre: #9F543E, Negre: #1D1C1C */
@@ -43,10 +63,6 @@ h1{
 }
 h2{
     font-weight: 200;
-}
-li{
-    color: var(--text-color-personatges);
-    margin-bottom: 0.5em;
 }
 p {
     color: var(--text-color-principal);
