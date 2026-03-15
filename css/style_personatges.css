@@ -8,6 +8,24 @@
     padding: 0;
     background-color: var(--background-color-principal);
 }
+header{
+    color: var(--text-color-principal);
+    padding: 0.5rem 1rem;
+    text-align: center;
+    font-size: 0; /* no direct text in header */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, var(--background-color-principal), rgba(29, 28, 28, 0));
+}
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    height: 3.2rem;
+    width: 100%;
+}
 :root{
     /*Marrò: #51361A, Purpura:#440150, Vermell:#900603, Cobre rosa:#996666*, cobre: #9F543E, Negre: #1D1C1C */
     --background-color-principal:#1D1C1C ;
