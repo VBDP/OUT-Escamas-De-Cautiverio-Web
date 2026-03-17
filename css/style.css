@@ -1,0 +1,178 @@
+@font-face {
+    font-family: "EnchantedLand";
+    src: url("../fonts/Enchanted Land.otf") format("opentype");
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color-principal);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "EnchantedLand", sans-serif;
+}
+
+:root {
+    /*Marrò: #51361A, Purpura:#440150, Vermell:#900603, Cobre rosa:#996666*, cobre: #9F543E, Negre: #1D1C1C */
+    --background-color-principal:#1D1C1C ;
+    --text-color-title: #996666 ;
+    --text-color-principal: #9F543E;
+    --color-button:  #440150 ;
+}
+header{
+    color: var(--text-color-principal);
+    padding: 0.5rem 1rem;
+    text-align: center;
+    font-size: 0; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, var(--background-color-principal), rgba(29, 28, 28, 0));
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    height: 3.2rem;
+    width: 100%;
+}
+
+#portada {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    position: relative;
+    overflow: hidden;
+}
+
+#portada::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60%;
+    background: linear-gradient(to bottom,
+        var(--background-color-principal) 0%,
+        rgba(29, 28, 28, 0.9) 20%,
+        rgba(29, 28, 28, 0.35) 45%,
+        rgba(29, 28, 28, 0) 80%
+    );
+    pointer-events: none;
+}
+
+#portada::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 45%;
+    background: linear-gradient(to top,
+        var(--background-color-principal) 0%,
+        rgba(29, 28, 28, 0.9) 20%,
+        rgba(29, 28, 28, 0.35) 55%,
+        rgba(29, 28, 28, 0) 85%
+    );
+    pointer-events: none;
+}
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 3.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li a {
+    color: var(--text-color-principal);
+    text-decoration: none;
+    font-size: 2rem;
+    line-height: 3.2rem;
+    padding: 0 0.5rem;
+    transition: color 0.3s, letter-spacing 0.3s;
+}
+
+.nav-list li a:hover {
+    letter-spacing: 0.14em;
+    color: var(--text-color-title);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-color-title);
+}
+p {
+    color: var(--text-color-principal);
+    font-size: 1.25rem;
+    line-height: 1.7;
+}
+
+button{
+    background-color: var(--color-button);
+    color: var(--text-color-title);
+    border: none;
+    padding: 0.75rem 1.25rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+section {
+    padding: 2rem 0;
+    text-align: center;
+    background-color: var(--background-color-principal);
+}
+
+#portada {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
+
+#portada-img {
+    width: 100vw;
+    max-width: 100vw;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+}
+
+#miniHistoria {
+    margin: 2rem 0;
+}
+
+#miniHistoria h2 {
+    margin-bottom: 1rem;
+}
+
+#miniHistoria p {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+#personatges, #objectes {
+    margin: 2rem 0;
+}
+
+#personatges p, #objectes p {
+    font-size: 20px;
+}
+
+a {
+    color: var(--text-color-title);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
