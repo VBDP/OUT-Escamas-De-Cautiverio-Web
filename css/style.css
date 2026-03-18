@@ -176,3 +176,12 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+footer {
+    background-color: var(--background-color-principal);
+    color: var(--text-color-principal);
+    text-align: center;
+    padding: 1rem;
+    font-size: 1rem;
+    border-top: 1px solid var(--text-color-title);
+}
