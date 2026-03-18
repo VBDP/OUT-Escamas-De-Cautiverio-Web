@@ -4,43 +4,29 @@
 }
 *{
     font-family: "EnchantedLand", sans-serif;
-    margin: 0;
-    padding: 0;
-    font-size: 20px;
-    
 }
 :root{
     /*Marrò: #51361A, Purpura:#440150, Vermell:#900603, Cobre rosa:#996666*, cobre: #9F543E, Negre: #1D1C1C */
     --background-color-principal:#1D1C1C ;
     --text-color-title: #996666 ;
     --text-color-principal: #9F543E;
+    --text-color-personatges:#900603;
     --color-button:  #440150 ;
 }
-
-body{
-    margin:10PX;
-    background-color: var(--background-color-principal);
-}
-
-h1, h2, h3, h4, h5, h6{
-    color: var(--text-color-title);
-}
-
-p{
+header {
     color: var(--text-color-principal);
-    padding-bottom: 5vh;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
 }
-
-img{
-    height: auto;
-    width:130vh;
-}
-
 .navbar {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--background-color-principal);
+    background: transparent;
     height: 3.2rem;
     width: 100%;
 }
@@ -51,6 +37,7 @@ img{
     margin: 0;
     padding: 0;
 }
+
 .nav-list li a {
     color: var(--text-color-principal);
     text-decoration: none;
@@ -59,23 +46,65 @@ img{
     padding: 0 0.5rem;
     transition: color 0.3s, letter-spacing 0.3s;
 }
+
 .nav-list li a:hover {
     letter-spacing: 0.14em;
     color: var(--text-color-title);
 }
-button{
-    background-color: var(--color-button);
+h1, h2, h3, h4, h5, h6 {
     color: var(--text-color-title);
-    border: none;
-    padding: 0.75rem 1.25rem;
-    font-size: 1.1rem;
-    cursor: pointer;
-}
-a {
-    color: var(--text-color-title);
-    text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline;
+h1{
+    text-align: center;
+}
+h2{
+    font-weight: 200;
+}
+p {
+    color: var(--text-color-principal);
+    margin-bottom: 1em;
+}
+img{
+    margin-bottom: 1em;
+}
+body{
+    background-color: var(--background-color-principal);
+    overflow-x: hidden;
+}
+.slider{
+    position: relative;
+    left: -257.5px;
+    margin-left: 50%;
+}
+ul{
+    white-space: nowrap;
+    overflow: visible;
+    position: relative;
+    left: 0;
+    transition: left 1s;
+}
+li {
+  display: inline-block;
+  margin: 20px;
+  cursor: pointer;
+  height: 422px;
+  width: 475px;
+}
+li div {
+  border: 10px solid var(--background-color-principal);
+  box-shadow: 0 3px 6px 0 #999;
+  display: block;
+  height: 300px;
+  opacity: 0.6;
+  margin-top: 50px;
+  transition: height 1s, opacity 0.5s, margin-top 1s;
+}
+li:hover div {
+  box-shadow: 0 3px 6px 0 #333;
+}
+li.active div {
+  margin-top: 0;
+  height: 400px;
+  opacity: 1;
 }
