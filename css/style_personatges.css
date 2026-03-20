@@ -46,6 +46,77 @@ header{
     letter-spacing: 0.14em;
     color: var(--text-color-title);
 }
+footer {
+    background: linear-gradient(to top, var(--background-color-principal), rgba(29, 28, 28, 0.8));
+    color: var(--text-color-principal);
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 1rem;
+    border-top: 1px solid var(--text-color-title);
+    margin-top: 2rem;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    gap: 2rem;
+}
+
+.footer-top div {
+    flex: 1;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.footer-top div:first-child {
+    text-align: left;
+}
+
+.footer-top div:last-child {
+    text-align: right;
+}
+
+.fnav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.fnav-list li a {
+    color: var(--text-color-principal);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.fnav-list li a:hover {
+    color: var(--text-color-title);
+}
+
+footer a {
+    color: var(--text-color-title);
+    text-decoration: none;
+    display: inline-block;
+    margin: 0.5rem;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-left: 0.5rem;
+}
 :root{
     /*Marrò: #51361A, Purpura:#440150, Vermell:#900603, Cobre rosa:#996666*, cobre: #9F543E, Negre: #1D1C1C */
     --background-color-principal:#1D1C1C ;
