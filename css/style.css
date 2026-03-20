@@ -24,6 +24,7 @@ html, body {
     --text-color-principal: #9F543E;
     --color-button:  #440150 ;
 }
+
 header{
     color: var(--text-color-principal);
     padding: 0.5rem 1rem;
@@ -90,6 +91,7 @@ header{
     );
     pointer-events: none;
 }
+
 .nav-list {
     list-style: none;
     display: flex;
@@ -136,6 +138,114 @@ section {
     background-color: var(--background-color-principal);
 }
 
+.main-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.main-row {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: stretch;
+    margin-bottom: 2rem;
+}
+
+.main-row > section {
+    flex: 1 1 40%;
+    max-width: 600px;
+    min-width: 320px;
+    position: relative;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.main-sections > section {
+    flex: 1 1 40%;
+    max-width: 600px;
+    min-width: 320px;
+}
+
+.main-row img {
+    border-radius: 12px;
+}
+
+@media (max-width: 900px) {
+    .main-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .main-row > section {
+        max-width: 100%;
+        min-width: 0;
+        display: block;
+    }
+    .main-sections {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .main-sections > section {
+        max-width: 100%;
+        min-width: 0;
+    }
+}
+
+#personatges ul, #objectes ul {
+    list-style: disc;
+    margin: 1rem auto;
+    padding-left: 2rem;
+    text-align: left;
+    max-width: 400px;
+    color: var(--text-color-title);
+}
+#ranking ol {
+    list-style: decimal;
+    margin: 1rem auto;
+    padding-left: 2rem;
+    text-align: left;
+    max-width: 400px;
+    color: var(--text-color-title);
+}
+#formulari form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(68,1,80,0.08);
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(68,1,80,0.08);
+    max-width: 350px;
+    margin: 0 auto;
+}
+#formulari input, #formulari textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid var(--text-color-title);
+    background: #1D1C1C;
+    color: var(--text-color-title);
+    font-size: 1rem;
+}
+#formulari input:focus, #formulari textarea:focus {
+    outline: 2px solid var(--color-button);
+}
+#formulari button {
+    margin-top: 0.5rem;
+    width: 100%;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+#formulari button:hover {
+    background-color: #996666;
+    color: #440150;
+}
+
 #portada-img {
     width: 100vw;
     height: auto;
@@ -149,20 +259,28 @@ section {
 
 #miniHistoria h2 {
     margin-bottom: 1rem;
+    font-size: 2.4rem;
 }
 
 #miniHistoria p {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     line-height: 1.6;
+    font-size: 2rem;
 }
 
-#personatges, #objectes {
-    margin: 2rem 0;
+footer p, footer a {
+    font-size: 1.2rem;
 }
 
-#personatges p, #objectes p {
-    font-size: 20px;
+
+#personatges p, #objectius p, #ranking p, #formulari p {
+    font-size: 2rem;
+    line-height: 1.6;
+}
+#personatges h2, #objectius h2, #ranking h2, #formulari h2 {
+    font-size: 2.4rem;
+    margin-bottom: 0.5rem;
 }
 
 a {
@@ -221,11 +339,12 @@ footer {
     color: var(--text-color-principal);
     text-decoration: none;
     font-size: 1.2rem;
-    transition: color 0.3s;
+    transition: color 0.3s, letter-spacing 0.3s;
 }
 
 .fnav-list li a:hover {
     color: var(--text-color-title);
+    letter-spacing: 0.14em;
 }
 
 footer a {
@@ -246,7 +365,7 @@ footer img {
     margin-left: 0.5rem;
 }
 
-/* Responsive para móvil */
+/* Responsive per mòbil */
 @media (max-width: 768px) {
     header {
         padding: 0.5rem;
@@ -303,31 +422,9 @@ footer img {
         font-size: 1rem;
     }
 
-    .footer-top {
-        flex-direction: column;
-        gap: 1rem;
-        align-items: center;
-    }
-
-    .footer-top div {
-        text-align: center;
-        padding: 0.5rem 0;
-    }
-
-    .fnav-list {
-        gap: 1rem;
-        flex-direction: column;
-    }
-
-    .fnav-list li a {
-        font-size: 1rem;
-    }
-
-    footer a {
-        margin: 0.25rem;
-    }
-
     footer {
         padding: 1rem 0.5rem;
     }
 }
+
+
