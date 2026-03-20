@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escamas de Cautiverio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style_comentaris.css">
+</head>
+<header>
+    <nav class="navbar">
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <ul class="nav-list">
+            <li><a href="index.html">Inici</a></li>
+            <li><a href="historia.html ">Història</a></li>
+            <li><a href="personatges.html">Personatges</a></li>
+            <li><a href="objectius.html">Objectes</a></li>
+            <li><a href="ranking.html">Ranking</a></li>
+            <li><a href="comentaris.html">Comentaris</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+    <section class="comments">
+        <h2 class="comments-title">Comentaris</h2>
+    
+        <div class="comment-box">
+            <label for="name">Nom</label>
+            <input type="text" id="name" placeholder="Escriu el teu nom...">
+
+            <label for="email">Gmail</label>
+            <input type="email" id="email" placeholder="escriu.el.teu@gmail.com">
+
+            <label for="comment">Comentari</label>
+            <textarea id="comment" placeholder="Escriu el teu comentari..."></textarea>
+    
+            <button class="comment-btn" id="sendComment">Enviar comentari</button>
+        </div>
+    
+        <h2 class="comments-subtitle">Comentaris enviats</h2>
+    
+        <div class="comments-list" id="commentsList">
+            <p class="no-comments">Encara no hi ha comentaris.</p>
+        </div>
+    </section>
+
+</body>
+<footer>
+    <div class="footer-top">
+        <div class="socials-joc">
+            <p>Xarxes socials del joc:</p>
+            <a href="https://www.instagram.com/escamasdecautiverio" target="_blank">Instagram <img src="Imatges/instagram.png" alt="Instagram del Joc"></a>
+            <a href="https://www.youtube.com/channel/UC_example" target="_blank">YouTube <img src="Imatges/yt.png" alt="YouTube del Joc"></a>
+        </div>
+        <div>
+            <ul class="fnav-list">
+                <li><a href="index.html">Inici</a></li>
+                <li><a href="historia.html ">Història</a></li>
+                <li><a href="personatges.html">Personatges</a></li>
+                <li><a href="objectius.html">Objectes</a></li>
+                <li><a href="ranking.html">Ranking</a></li>
+                <li><a href="formulari.html">Formulari</a></li>
+            </ul>
+        </div>
+        <div class="socials-creadors">
+            <p>Xarxes socials dels creadors:</p>
+                <a href="https://www.instagram.com/paauuferreer" target="_blank">Pau <img src="Imatges/instagram.png" alt="Instagram de Pau"></a>
+                <a href="https://www.instagram.com/ffranxesc" target="_blank">Fran <img src="Imatges/instagram.png" alt="Instagram de Fran"></a>
+                <a href="https://www.instagram.com/manelmj_06?igsh=ZjRsZWNncDE3cTFo&utm_source=qr">Manel <img src="Imatges/instagram.png" alt="Instagram de Manel"></a>
+                <a href="https://www.instagram.com/sergi" target="_blank">Victor <img src="Imatges/instagram.png" alt="Instagram de Victor"></a>
+        </div>
+    </div>
+    <p>&copy; 2026 Escamas de Cautiverio. Todos los derechos reservados.</p>
+
+</footer>
+
+<script src="js/comentaris.js"></script>
+<script src="js/script.js"></script>
+</html>
