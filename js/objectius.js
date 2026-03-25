@@ -1,4 +1,4 @@
-$("li").on("click", function(){
+$(".slider li").on("click", function(){
   
   var item = $(this),
       pos = "-"+(item.index() * 515)+"px";
@@ -6,6 +6,6 @@ $("li").on("click", function(){
   item.addClass("active");
   item.siblings().removeClass("active");
   
-  $("ul").css("left", pos);
+  $(".slider ul").css("left", pos);
   
 });
