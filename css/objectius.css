@@ -13,14 +13,15 @@
     --text-color-personatges:#900603;
     --color-button:  #440150 ;
 }
-header {
+header{
     color: var(--text-color-principal);
     padding: 0.5rem 1rem;
     text-align: center;
+    font-size: 0; /* no direct text in header */
     display: flex;
     align-items: center;
     justify-content: center;
-    background: transparent;
+    background: linear-gradient(to bottom, var(--background-color-principal));
 }
 .navbar {
     display: flex;
@@ -77,20 +78,13 @@ body{
     left: -257.5px;
     margin-left: 50%;
 }
-ul{
-    white-space: nowrap;
-    overflow: visible;
-    position: relative;
-    left: 0;
-    transition: left 1s;
-}
+
 li {
   display: inline-block;
   margin: 20px;
   cursor: pointer;
-  height: 422px;
-  width: 475px;
 }
+
 li div {
   border: 10px solid var(--background-color-principal);
   box-shadow: 0 3px 6px 0 #999;
@@ -104,6 +98,29 @@ li:hover div {
   box-shadow: 0 3px 6px 0 #333;
 }
 li.active div {
+  margin-top: 0;
+  height: 400px;
+  opacity: 1;
+}
+.slider ul {
+    white-space: nowrap;
+    overflow: visible;
+    position: relative;
+    left: 0;
+    transition: left 2s;
+}
+.slider li {
+  display: inline-block;
+  margin: 20px;
+  cursor: pointer;
+  height: 422px;
+  width: 475px;
+}
+
+.slider li:hover div {
+  box-shadow: 0 3px 6px 0 #333;
+}
+.slider li.active div {
   margin-top: 0;
   height: 400px;
   opacity: 1;
