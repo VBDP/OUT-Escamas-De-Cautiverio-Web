@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
     // Prepar es contenidor per sa resta des rànquing
-    const rankingContainer = document.querySelector('.container.px-5.pb-10.mx-auto');
+    const rankingContainer = document.querySelector('.container.px-5.mx-auto');
     if (!rankingContainer) return;
 
     // carregar s'script de s'API
@@ -28,28 +28,68 @@ document.addEventListener('DOMContentLoaded', async () => {
         updatePodium(podium);
 
         // Renderizar sa resta de jugadors
-        rest.forEach((player, index) => {
-            const position = index + 4; // Començar a sa posició 4
-            const playerCard = document.createElement('div');
-            playerCard.className = 'flex items-center w-full lg:w-4/5 mx-auto bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#996666]/50 rounded-2xl p-4 md:p-6 mb-6 transition-all duration-300 transform hover:scale-[1.02] shadow-lg';
+        let currentPage = 1;
+        const itemsPerPage = 10;
+
+        function renderPage(page) {
+            rankingContainer.innerHTML = '';
             
-            playerCard.innerHTML = `
-                <!-- Es meu Número -->
-                <div class="w-16 h-16 md:w-20 md:h-20 mr-4 md:mr-8 inline-flex items-center justify-center rounded-full flex-shrink-0 bg-gradient-to-br from-[#440150] to-[#1c1414] border border-[#996666]/30 shadow-[0_0_15px_rgba(68,1,80,0.5)]">
-                  <span class="text-3xl md:text-4xl font-black text-[#996666]">${position}</span>
-                </div>
+            const totalPages = Math.ceil(rest.length / itemsPerPage);
+            const startIndex = (page - 1) * itemsPerPage;
+            const endIndex = startIndex + itemsPerPage;
+            const pageData = rest.slice(startIndex, endIndex);
+
+            pageData.forEach((player, i) => {
+                const position = startIndex + i + 4; // Començar a sa posició 4
+                const playerCard = document.createElement('div');
+                playerCard.className = 'flex items-center w-full lg:w-4/5 mx-auto bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#996666]/50 rounded-2xl p-4 md:p-6 mb-4 transition-all duration-300 transform hover:scale-[1.02] shadow-lg';
                 
-                <!-- Es meu Text -->
-                <div class="flex-grow flex justify-between items-center text-left">
-                  <h2 class="text-2xl md:text-3xl font-bold text-white pr-4 truncate w-1/2">${player.name || 'Anònim'}</h2>
-                  <div class="inline-flex items-center space-x-2 bg-[#9F543E]/20 px-4 py-2 rounded-full border border-[#9F543E]/30 whitespace-nowrap">
-                      <span class="text-xl md:text-2xl font-bold text-[#9F543E]">${player.puntuacion || 0}</span>
-                      <span class="text-xs md:text-sm text-[#9F543E]/80 uppercase tracking-widest hidden sm:inline">pts</span>
-                  </div>
-                </div>
-            `;
-            rankingContainer.appendChild(playerCard);
-        });
+                playerCard.innerHTML = `
+                    <!-- Es meu Número -->
+                    <div class="w-16 h-16 md:w-20 md:h-20 mr-4 md:mr-8 inline-flex items-center justify-center rounded-full flex-shrink-0 bg-gradient-to-br from-[#440150] to-[#1c1414] border border-[#996666]/30 shadow-[0_0_15px_rgba(68,1,80,0.5)]">
+                      <span class="text-3xl md:text-4xl font-black text-[#996666]">${position}</span>
+                    </div>
+                    
+                    <!-- Es meu Text -->
+                    <div class="flex-grow flex justify-between items-center text-left">
+                      <h2 class="text-2xl md:text-3xl font-bold text-white pr-4 truncate w-1/2">${player.name || 'Anònim'}</h2>
+                      <div class="inline-flex items-center space-x-2 bg-[#9F543E]/20 px-4 py-2 rounded-full border border-[#9F543E]/30 whitespace-nowrap">
+                          <span class="text-xl md:text-2xl font-bold text-[#9F543E]">${player.puntuacion || 0}</span>
+                          <span class="text-xs md:text-sm text-[#9F543E]/80 uppercase tracking-widest hidden sm:inline">pts</span>
+                      </div>
+                    </div>
+                `;
+                rankingContainer.appendChild(playerCard);
+            });
+
+            if (totalPages > 1) {
+                const pagination = document.createElement('div');
+                pagination.className = 'flex justify-center items-center gap-4 mt-8 mb-4';
+                
+                const prevBtn = document.createElement('button');
+                prevBtn.className = `px-6 py-2 rounded-full font-bold transition-all ${page > 1 ? 'bg-[#440150] text-[#996666] hover:bg-[#996666] hover:text-[#1c1414] border border-[#996666]/50' : 'bg-white/5 text-gray-500 cursor-not-allowed border border-white/10'}`;
+                prevBtn.textContent = '◀ Anterior';
+                prevBtn.disabled = page === 1;
+                prevBtn.onclick = () => { if (page > 1) { currentPage--; renderPage(currentPage); } };
+
+                const pageIndicator = document.createElement('span');
+                pageIndicator.className = 'text-[#9F543E] font-bold text-xl tracking-wider';
+                pageIndicator.textContent = `${page} / ${totalPages}`;
+
+                const nextBtn = document.createElement('button');
+                nextBtn.className = `px-6 py-2 rounded-full font-bold transition-all ${page < totalPages ? 'bg-[#440150] text-[#996666] hover:bg-[#996666] hover:text-[#1c1414] border border-[#996666]/50' : 'bg-white/5 text-gray-500 cursor-not-allowed border border-white/10'}`;
+                nextBtn.textContent = 'Següent ▶';
+                nextBtn.disabled = page === totalPages;
+                nextBtn.onclick = () => { if (page < totalPages) { currentPage++; renderPage(currentPage); } };
+
+                pagination.appendChild(prevBtn);
+                pagination.appendChild(pageIndicator);
+                pagination.appendChild(nextBtn);
+                rankingContainer.appendChild(pagination);
+            }
+        }
+
+        renderPage(currentPage);
 
     } catch (error) {
         console.error('Error carregant el rànquing:', error);
