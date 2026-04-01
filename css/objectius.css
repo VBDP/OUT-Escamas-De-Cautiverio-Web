@@ -21,7 +21,8 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to bottom, var(--background-color-principal), rgba(29, 28, 28, 0));
+    background: linear-gradient(to bottom, var(--background-color-principal) 60%, rgba(29, 28, 28, 0));
+    backdrop-filter: blur(8px);
     position: -webkit-sticky;
     position: sticky;
     top: 0;

@@ -8,101 +8,99 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" type="text/css" href="css/style_personatges.css">
 </head>
-<body>
-<header>
-  <nav class="navbar">
-      <button class="menu-toggle" id="menu-toggle">☰</button>
-      <ul class="nav-list">
-          <li><a href="index.html">Inici</a></li>
-          <li><a href="historia.html ">Història</a></li>
-          <li><a href="personatges.html">Personatges i Objectes</a></li>
-          <li><a href="objectius.html">Objectius</a></li>
-          <li><a href="ranking.html">Ranking</a></li>
-          <li><a href="comentaris.html">Comentaris</a></li>
-      </ul>
-  </nav>
+
+<body class="bg-[#1D1C1C] text-white">
+
+  <img class="fixed top-0 left-0 w-full h-screen object-cover -z-10" src="imatges/portada3.png" alt="Fons">
+
+  <header>
+    <nav class="navbar">
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <ul class="nav-list">
+            <li><a href="index.html">Inici</a></li>
+            <li><a href="historia.html ">Història</a></li>
+            <li><a href="personatges.html">Personatges i Objectes</a></li>
+            <li><a href="objectius.html">Objectius</a></li>
+            <li><a href="ranking.html">Ranking</a></li>
+            <li><a href="comentaris.html">Comentaris</a></li>
+        </ul>
+    </nav>
 </header>
-    <h1 class="text-5xl">Personatges i objectes</h1>
-    <div class="min-h-screen flex items-center justify-center p-10">
-        <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
-      
-          <!-- Protagonista -->
-          <div class="space-y-4">
-            <h2 class="text-5xl font-light">Protagonista</h2>
-            <p class="text-xl">
-              The primary objective of this landing page is to generate pre-orders for the upcoming multiplayer action RPG "Aether Story". The landing page needs to capture player interest, highlight the game's unique features, and drive pre-orders through a special pre-order bonus.
-            </p>
-          </div>
-      
-          <!-- Imagen -->
-          <div class="flex justify-center">
-            <img src="Imatges/imatge_personatge.png" alt="Protagonista" class="rounded-xl shadow-xl w-2/3 max-h-[800px] object-cover" />
-          </div>
-        </div>
-    </div>
-    <div class="min-h-screen flex items-center justify-center p-10">
-        <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
-      
-          <!-- Enemic -->
-          <div class="space-y-4">
-            <h2 class="text-5xl font-light">Enemic</h2>
-            <p class="text-xl">
-                The ideal customer is a gamer who enjoys immersive fantasy worlds, character customization, and challenging combat. They are likely familiar with other popular action MMORPG titles and follow gaming news and trailers.
-            </p>
-          </div>
-      
-          <!-- Imagen -->
-          <div class="flex justify-center">
-            <img src="Imatges/imatge_enemic.png" alt="Enemic" class="rounded-xl shadow-xl w-2/3 max-h-[800px] object-cover" />
-          </div>
-        </div>
-        <div class="md:w-1/2 flex justify-center">
-          <img src="Imatges/imatge_personatge.png" alt="Heroi protagonista"
-            class="rounded-2xl shadow-2xl w-full md:w-4/5">
-        </div>
-      </section>
 
-      <section
-        class="section-card flex flex-col md:flex-row-reverse items-center gap-12 p-10 rounded-[3rem] bg-black/40 backdrop-blur-md border border-white/10">
-        <div class="md:w-1/2 space-y-6">
-          <h2 class="text-6xl font-light border-r-4 border-[#900603] pr-6 text-right">Enemic</h2>
-          <p class="text-xl leading-relaxed opacity-90 text-right">
-            The ideal customer is a gamer who enjoys immersive fantasy worlds, character customization, and challenging
-            combat.
-          </p>
-        </div>
-        <div class="md:w-1/2 flex justify-center">
-          <img src="Imatges/imatge_enemic.png" alt="Enemic principal" class="rounded-2xl shadow-2xl w-full md:w-4/5">
-        </div>
-      </section>
-      <section
-        class="section-card flex flex-col md:flex-row items-center gap-12 p-10 rounded-[3rem] bg-black/40 backdrop-blur-md border border-white/10">
-        <div class="md:w-1/2 space-y-6">
-          <h2 class="text-6xl font-light border-l-4 border-[#900603] pl-6">Enemic del tutorial</h2>
-          <p class="text-xl leading-relaxed opacity-90">
-            Aquest primer repte servirà perquè el jugador aprengui les mecàniques bàsiques de combat i moviment.
-          </p>
-        </div>
-        <div class="md:w-1/2 flex justify-center">
-          <img src="Imatges/imatge_enemic2.png" alt="Guàrdia del tutorial"
-            class="rounded-2xl shadow-2xl w-full md:w-4/5">
-        </div>
-      </section>
+  <main>
+    <div class="flex flex-col w-full pb-20">
+        <!-- Protagonista -->
+        <section class="min-h-screen w-full flex items-center justify-center py-10 px-4 relative">
+            <div class="max-w-7xl w-full group relative bg-[#1c1414]/80 backdrop-blur-lg rounded-[3rem] p-10 lg:p-16 border border-[#996666]/20 hover:border-[#9f543e] transition-all duration-500 shadow-2xl overflow-hidden flex flex-col md:flex-row items-center gap-16 text-left">
+                <div class="absolute inset-0 bg-gradient-to-r from-[#440150]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                
+                <div class="flex-1 w-full z-10 order-1 flex flex-col justify-center">
+                    <h2 class="text-6xl lg:text-7xl text-[#996666] mb-8 tracking-wide font-bold drop-shadow-lg">Protagonista</h2>
+                    <div class="text-[#9F543E] text-xl lg:text-2xl mb-12 leading-relaxed space-y-6">
+                        <p>The primary objective of this landing page is to generate pre-orders for the upcoming multiplayer action RPG "Aether Story". The landing page needs to capture player interest, highlight the game's unique features, and drive pre-orders through a special pre-order bonus.</p>
+                    </div>
+                </div>
 
-      <section
-        class="section-card flex flex-col md:flex-row-reverse items-center gap-12 p-10 rounded-[3rem] bg-black/40 backdrop-blur-md border border-white/10">
-        <div class="md:w-1/2 space-y-6 text-right">
-          <h2 class="text-6xl font-light border-r-4 border-[#900603] pr-6">Trampes</h2>
-          <p class="text-xl leading-relaxed opacity-90">
-            L'entorn és tan perillós com els monstres. Para atenció al terra i a les parets.
-          </p>
-        </div>
-        <div class="md:w-1/2 flex justify-center gap-4">
-          <img src="Imatges/imatge_trampa1.png" alt="Trampa 1" class="rounded-2xl shadow-xl w-1/2">
-          <img src="Imatges/imatge_trampa2.png" alt="Trampa 2" class="rounded-2xl shadow-xl w-1/2">
-        </div>
-      </section>
+                <div class="w-full md:w-1/2 z-10 order-2">
+                    <img src="Imatges/imatge_personatge.png" alt="Protagonista" class="w-full h-auto min-h-[500px] object-cover rounded-[2rem] shadow-[0_0_30px_rgba(0,0,0,0.8)] border border-black/50 group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/800x1000/1D1C1C/996666?text=Protagonista'">
+                </div>
+            </div>
+        </section>
 
+        <!-- Enemic -->
+        <section class="min-h-screen w-full flex items-center justify-center py-10 px-4 relative">
+            <div class="max-w-7xl w-full group relative bg-[#1c1414]/80 backdrop-blur-lg rounded-[3rem] p-10 lg:p-16 border border-[#996666]/20 hover:border-[#9f543e] transition-all duration-500 shadow-2xl overflow-hidden flex flex-col md:flex-row items-center gap-16 text-left">
+                <div class="absolute inset-0 bg-gradient-to-l from-[#440150]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+
+                <div class="w-full md:w-1/2 z-10 order-2 md:order-1">
+                    <img src="Imatges/imatge_enemic.png" alt="Enemic" class="w-full h-auto min-h-[500px] object-cover rounded-[2rem] shadow-[0_0_30px_rgba(0,0,0,0.8)] border border-black/50 group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/800x1000/1D1C1C/996666?text=Enemic'">
+                </div>
+                
+                <div class="flex-1 w-full z-10 order-1 md:order-2 flex flex-col justify-center">
+                    <h2 class="text-6xl lg:text-7xl text-[#996666] mb-8 tracking-wide font-bold drop-shadow-lg">Enemic</h2>
+                    <div class="text-[#9F543E] text-xl lg:text-2xl mb-12 leading-relaxed space-y-6">
+                        <p>The ideal customer is a gamer who enjoys immersive fantasy worlds, character customization, and challenging combat. They are likely familiar with other popular action MMORPG titles and follow gaming news and trailers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enemic del tutorial -->
+        <section class="min-h-screen w-full flex items-center justify-center py-10 px-4 relative">
+            <div class="max-w-7xl w-full group relative bg-[#1c1414]/80 backdrop-blur-lg rounded-[3rem] p-10 lg:p-16 border border-[#996666]/20 hover:border-[#9f543e] transition-all duration-500 shadow-2xl overflow-hidden flex flex-col md:flex-row items-center gap-16 text-left">
+                <div class="absolute inset-0 bg-gradient-to-r from-[#440150]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                
+                <div class="flex-1 w-full z-10 order-1 flex flex-col justify-center">
+                    <h2 class="text-6xl lg:text-7xl text-[#996666] mb-8 tracking-wide font-bold drop-shadow-lg">Enemic del tutorial</h2>
+                    <div class="text-[#9F543E] text-xl lg:text-2xl mb-12 leading-relaxed space-y-6">
+                        <p>Aquest primer repte servirà perquè el jugador aprengui les mecàniques bàsiques de combat i moviment.</p>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-1/2 z-10 order-2">
+                    <img src="Imatges/imatge_enemic2.png" alt="Guàrdia del tutorial" class="w-full h-auto min-h-[500px] object-cover rounded-[2rem] shadow-[0_0_30px_rgba(0,0,0,0.8)] border border-black/50 group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/800x1000/1D1C1C/996666?text=Tutorial'">
+                </div>
+            </div>
+        </section>
+
+        <!-- Trampes -->
+        <section class="min-h-screen w-full flex items-center justify-center py-10 px-4 relative">
+            <div class="max-w-7xl w-full group relative bg-[#1c1414]/80 backdrop-blur-lg rounded-[3rem] p-10 lg:p-16 border border-[#996666]/20 hover:border-[#9f543e] transition-all duration-500 shadow-2xl overflow-hidden flex flex-col md:flex-row items-center gap-16 text-left">
+                <div class="absolute inset-0 bg-gradient-to-l from-[#440150]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+
+                <div class="w-full md:w-1/2 z-10 order-2 md:order-1 flex justify-center items-center gap-4">
+                    <img src="Imatges/imatge_trampa1.png" alt="Trampa 1" class="w-1/2 aspect-square object-cover rounded-[1.5rem] shadow-[0_0_20px_rgba(0,0,0,0.8)] border border-black/50 group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/400x400/1D1C1C/996666?text=Trampa+1'">
+                    <img src="Imatges/imatge_trampa2.png" alt="Trampa 2" class="w-1/2 aspect-square object-cover rounded-[1.5rem] shadow-[0_0_20px_rgba(0,0,0,0.8)] border border-black/50 group-hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/400x400/1D1C1C/996666?text=Trampa+2'">
+                </div>
+                
+                <div class="flex-1 w-full z-10 order-1 md:order-2 flex flex-col justify-center">
+                    <h2 class="text-6xl lg:text-7xl text-[#996666] mb-8 tracking-wide font-bold drop-shadow-lg">Trampes</h2>
+                    <div class="text-[#9F543E] text-xl lg:text-2xl mb-12 leading-relaxed space-y-6">
+                        <p>L'entorn és tan perillós com els monstres. Para atenció al terra i a les parets.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
   </main>
 </body>
@@ -140,5 +138,5 @@
   <p>&copy; 2026 Escamas de Cautiverio. Todos los derechos reservados.</p>
 
 </footer>
-
+<script src="js/script.js"></script>
 </html>
