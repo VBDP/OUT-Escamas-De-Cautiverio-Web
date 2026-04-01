@@ -1,175 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ca">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personatges i objectes</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <LINK REL="stylesheet" TYPE="text/css" HREF="css/style_personatges.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personatges i objectes | Escamas de Cautiverio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" type="text/css" href="css/style_personatges.css">
 </head>
-<header>
-  <nav class="navbar">
-      <button class="menu-toggle" id="menu-toggle">☰</button>
-      <ul class="nav-list">
-          <li><a href="index.html">Inici</a></li>
-          <li><a href="historia.html ">Història</a></li>
-          <li><a href="personatges.html">Personatges i Objectes</a></li>
-          <li><a href="objectius.html">Objectius</a></li>
-          <li><a href="ranking.html">Ranking</a></li>
-          <li><a href="comentaris.html">Comentaris</a></li>
-      </ul>
-  </nav>
+
+<body class="bg-[#1D1C1C] text-white">
+
+  <img class="fixed top-0 left-0 w-full h-screen object-cover -z-10" src="imatges/portada3.png" alt="Fons">
+
+  <header>
+    <nav class="navbar">
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <ul class="nav-list">
+            <li><a href="index.html">Inici</a></li>
+            <li><a href="historia.html ">Història</a></li>
+            <li><a href="personatges.html">Personatges i Objectes</a></li>
+            <li><a href="objectius.html">Objectius</a></li>
+            <li><a href="ranking.html">Ranking</a></li>
+            <li><a href="comentaris.html">Comentaris</a></li>
+        </ul>
+    </nav>
 </header>
-<body>
-    <h1 class="text-5xl">Personatges i objectes</h1>
-    <div class="min-h-screen flex items-center justify-center p-10">
-        <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
-      
-          <!-- Protagonista -->
-          <div class="space-y-4">
-            <h2 class="text-5xl font-light">Protagonista</h2>
-            <p class="text-xl">
-              The primary objective of this landing page is to generate pre-orders for the upcoming multiplayer action RPG "Aether Story". The landing page needs to capture player interest, highlight the game's unique features, and drive pre-orders through a special pre-order bonus.
-            </p>
-          </div>
-      
-          <!-- Imagen -->
-          <div class="flex justify-center">
-            <img src="Imatges/imatge_personatge.png" alt="Protagonista" class="rounded-xl shadow-xl w-2/3 max-h-[800px] object-cover" />
-          </div>
+
+  <main>
+    <h1 class="text-5xl text-center py-12">Personatges i objectes</h1>
+
+    <div class="max-w-7xl mx-auto px-6 space-y-12 pb-20">
+
+      <section
+        class="section-card flex flex-col md:flex-row items-center gap-12 p-10 rounded-[3rem] bg-black/40 backdrop-blur-md border border-white/10">
+        <div class="md:w-1/2 space-y-6">
+          <h2 class="text-6xl font-light border-l-4 border-[#900603] pl-6">Protagonista</h2>
+          <p class="text-xl leading-relaxed opacity-90">
+            The primary objective of this landing page is to generate pre-orders for the upcoming multiplayer action RPG
+            "Aether Story".
+          </p>
         </div>
-    </div>
-    <div class="min-h-screen flex items-center justify-center p-10">
-        <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
-      
-          <!-- Enemic -->
-          <div class="space-y-4">
-            <h2 class="text-5xl font-light">Enemic</h2>
-            <p class="text-xl">
-                The ideal customer is a gamer who enjoys immersive fantasy worlds, character customization, and challenging combat. They are likely familiar with other popular action MMORPG titles and follow gaming news and trailers.
-            </p>
-          </div>
-      
-          <!-- Imagen -->
-          <div class="flex justify-center">
-            <img src="Imatges/imatge_enemic.png" alt="Enemic" class="rounded-xl shadow-xl w-2/3 max-h-[800px] object-cover" />
-          </div>
+        <div class="md:w-1/2 flex justify-center">
+          <img src="Imatges/imatge_personatge.png" alt="Heroi protagonista"
+            class="rounded-2xl shadow-2xl w-full md:w-4/5">
         </div>
-    </div>
-    <div class="min-h-screen flex items-center justify-center p-10">
-        <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
-      
-          <!-- Enemic del tutorial -->
-          <div class="space-y-4">
-            <h2 class="text-5xl font-light">Enemic del tutorial</h2>
-            <p class="text-xl">
-                The ideal customer is a gamer who enjoys immersive fantasy worlds, character customization, and challenging combat. They are likely familiar with other popular action MMORPG titles and follow gaming news and trailers.
-            </p>
-          </div>
-      
-          <!-- Imagen -->
-          <div class="flex justify-center">
-            <img src="Imatges/imatge_enemic2.png" alt="Enemic del tutorial" class="rounded-xl shadow-xl w-2/3 max-h-[800px] object-cover" />
-          </div>
+      </section>
+
+      <section
+        class="section-card flex flex-col md:flex-row-reverse items-center gap-12 p-10 rounded-[3rem] bg-black/40 backdrop-blur-md border border-white/10">
+        <div class="md:w-1/2 space-y-6">
+          <h2 class="text-6xl font-light border-r-4 border-[#900603] pr-6 text-right">Enemic</h2>
+          <p class="text-xl leading-relaxed opacity-90 text-right">
+            The ideal customer is a gamer who enjoys immersive fantasy worlds, character customization, and challenging
+            combat.
+          </p>
         </div>
-    </div>
-    <div class="min-h-screen flex items-center justify-center p-10">
-        <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
-      
-          <!-- Trampes -->
-          <div class="space-y-4">
-            <h2 class="text-5xl font-light">Trampes</h2>
-            <p class="text-xl">
-                The ideal customer is a gamer who enjoys immersive fantasy worlds, character customization, and challenging combat. They are likely familiar with other popular action MMORPG titles and follow gaming news and trailers.
-            </p>
-          </div>
-      
-          <!-- Imagenes -->
-          <div class="flex justify-center space-x-4">
-            <img src="Imatges/imatge_trampa1.png" alt="Trampes" class="rounded-xl shadow-xl w-2/4 max-h-[800px] object-cover" />
-            <img src="Imatges/imatge_trampa2.png" alt="Trampes" class="rounded-xl shadow-xl w-2/4 max-h-[800px] object-cover" />
-          </div>
+        <div class="md:w-1/2 flex justify-center">
+          <img src="Imatges/imatge_enemic.png" alt="Enemic principal" class="rounded-2xl shadow-2xl w-full md:w-4/5">
         </div>
-    </div>
-    <div class="min-h-screen flex items-center justify-center p-10">
-        <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
-      
-          <!-- Poció -->
-          <div class="space-y-4">
-            <h2 class="text-5xl font-light">Poció</h2>
-            <p class="text-xl">
-                The ideal customer is a gamer who enjoys immersive fantasy worlds, character customization, and challenging combat. They are likely familiar with other popular action MMORPG titles and follow gaming news and trailers.
-            </p>
-          </div>
-      
-          <!-- Imagen -->
-          <div class="flex justify-center">
-            <img src="Imatges/imatge_pocio.png" alt="Poció" class="rounded-xl shadow-xl w-2/3 max-h-[800px] object-cover" />
-          </div>
+      </section>
+      <section
+        class="section-card flex flex-col md:flex-row items-center gap-12 p-10 rounded-[3rem] bg-black/40 backdrop-blur-md border border-white/10">
+        <div class="md:w-1/2 space-y-6">
+          <h2 class="text-6xl font-light border-l-4 border-[#900603] pl-6">Enemic del tutorial</h2>
+          <p class="text-xl leading-relaxed opacity-90">
+            Aquest primer repte servirà perquè el jugador aprengui les mecàniques bàsiques de combat i moviment.
+          </p>
         </div>
-    </div>
-    <div class="min-h-screen flex items-center justify-center p-10">
-        <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
-      
-          <!-- Portes -->
-          <div class="space-y-4">
-            <h2 class="text-5xl font-light">Portes</h2>
-            <p class="text-xl">
-                The ideal customer is a gamer who enjoys immersive fantasy worlds, character customization, and challenging combat. They are likely familiar with other popular action MMORPG titles and follow gaming news and trailers.
-            </p>
-          </div>
-      
-          <!-- Imagenes -->
-          <div class="flex justify-center space-x-4">
-            <img src="Imatges/imatge_porta1.png" alt="Portes" class="rounded-xl shadow-xl w-2/4 max-h-[800px] object-cover" />
-            <img src="Imatges/imatge_porta2.png" alt="Portes" class="rounded-xl shadow-xl w-2/4 max-h-[800px] object-cover" />
-          </div>
+        <div class="md:w-1/2 flex justify-center">
+          <img src="Imatges/imatge_enemic2.png" alt="Guàrdia del tutorial"
+            class="rounded-2xl shadow-2xl w-full md:w-4/5">
         </div>
-    </div>
-    <div class="min-h-screen flex items-center justify-center p-10">
-        <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
-      
-          <!-- Mapa del tutorial -->
-          <div class="space-y-4">
-            <h2 class="text-5xl font-light">Mapa del tutorial</h2>
-            <p class="text-xl">
-                The ideal customer is a gamer who enjoys immersive fantasy worlds, character customization, and challenging combat. They are likely familiar with other popular action MMORPG titles and follow gaming news and trailers.
-            </p>
-          </div>
-      
-          <!-- Imagen -->
-          <div class="flex justify-center">
-            <img src="Imatges/imatge_mapa.png" alt="Mapa del tutorial" class="rounded-xl shadow-xl w-2/3 max-h-[800px] object-cover" />
-          </div>
+      </section>
+
+      <section
+        class="section-card flex flex-col md:flex-row-reverse items-center gap-12 p-10 rounded-[3rem] bg-black/40 backdrop-blur-md border border-white/10">
+        <div class="md:w-1/2 space-y-6 text-right">
+          <h2 class="text-6xl font-light border-r-4 border-[#900603] pr-6">Trampes</h2>
+          <p class="text-xl leading-relaxed opacity-90">
+            L'entorn és tan perillós com els monstres. Para atenció al terra i a les parets.
+          </p>
         </div>
+        <div class="md:w-1/2 flex justify-center gap-4">
+          <img src="Imatges/imatge_trampa1.png" alt="Trampa 1" class="rounded-2xl shadow-xl w-1/2">
+          <img src="Imatges/imatge_trampa2.png" alt="Trampa 2" class="rounded-2xl shadow-xl w-1/2">
+        </div>
+      </section>
+
     </div>
+  </main>
 </body>
 <footer>
-    <div class="footer-top">
-        <div class="socials-joc">
-            <p>Xarxes socials del joc:</p>
-            <a href="https://www.instagram.com/escamasdecautiverio" target="_blank">Instagram <img src="Imatges/instagram.png" alt="Instagram del Joc"></a>
-            <a href="https://www.youtube.com/channel/UC_example" target="_blank">YouTube <img src="Imatges/yt.png" alt="YouTube del Joc"></a>
-        </div>
-        <div>
-          <ul class="fnav-list">
-              <li><a href="index.html">Inici</a></li>
-              <li><a href="historia.html ">Història</a></li>
-              <li><a href="personatges.html">Personatges i Objectes</a></li>
-              <li><a href="objectius.html">Objectius</a></li>
-              <li><a href="ranking.html">Ranking</a></li>
-              <li><a href="comentaris.html">Comentaris</a></li>
-          </ul>
-      </div>
-        <div class="socials-creadors">
-            <p>Xarxes socials dels creadors:</p>
-                <a href="https://www.instagram.com/paauuferreer" target="_blank">Pau <img src="Imatges/instagram.png" alt="Instagram de Pau"></a>
-                <a href="https://www.instagram.com/ffranxesc" target="_blank">Fran <img src="Imatges/instagram.png" alt="Instagram de Fran"></a>
-                <a href="https://www.instagram.com/manelmj_06?igsh=ZjRsZWNncDE3cTFo&utm_source=qr">Manel <img src="Imatges/instagram.png" alt="Instagram de Manel"></a>
-                <a href="https://www.instagram.com/sergi" target="_blank">Victor <img src="Imatges/instagram.png" alt="Instagram de Victor"></a>
-        </div>
+  <div class="footer-top">
+    <div class="socials-joc">
+      <p>Xarxes socials del joc:</p>
+      <a href="https://www.instagram.com/escamasdecautiverio" target="_blank">Instagram <img src="Imatges/instagram.png"
+          alt="Instagram del Joc"></a>
+      <a href="https://www.youtube.com/channel/UC_example" target="_blank">YouTube <img src="Imatges/yt.png"
+          alt="YouTube del Joc"></a>
     </div>
-    <p>&copy; 2026 Escamas de Cautiverio. Todos los derechos reservados.</p>
+    <div>
+      <ul class="fnav-list">
+        <li><a href="index.html">Inici</a></li>
+        <li><a href="historia.html ">Història</a></li>
+        <li><a href="personatges.html">Personatges i Objectes</a></li>
+        <li><a href="objectius.html">Objectius</a></li>
+        <li><a href="ranking.html">Ranking</a></li>
+        <li><a href="formulari.html">Formulari</a></li>
+      </ul>
+    </div>
+    <div class="socials-creadors">
+      <p>Xarxes socials dels creadors:</p>
+      <a href="https://www.instagram.com/paauuferreer" target="_blank">Pau <img src="Imatges/instagram.png"
+          alt="Instagram de Pau"></a>
+      <a href="https://www.instagram.com/ffranxesc" target="_blank">Fran <img src="Imatges/instagram.png"
+          alt="Instagram de Fran"></a>
+      <a href="https://www.instagram.com/manelmj_06?igsh=ZjRsZWNncDE3cTFo&utm_source=qr">Manel <img
+          src="Imatges/instagram.png" alt="Instagram de Manel"></a>
+      <a href="https://www.instagram.com/sergi" target="_blank">Viçens <img src="Imatges/instagram.png"
+          alt="Instagram de Viçens"></a>
+    </div>
+  </div>
+  <p>&copy; 2026 Escamas de Cautiverio. Todos los derechos reservados.</p>
+
 </footer>
 
 </html>
