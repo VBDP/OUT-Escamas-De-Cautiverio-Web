@@ -2,21 +2,32 @@
     font-family: "EnchantedLand";
     src: url("../fonts/Enchanted Land.otf") format("opentype");
 }
-*{
+
+* {
     font-family: "EnchantedLand", sans-serif;
     margin: 0;
     padding: 0;
 }
-header{
+
+:root {
+    /*Marrò: #51361A, Purpura:#440150, Vermell:#900603, Cobre rosa:#996666*, cobre: #9F543E, Negre: #1D1C1C */
+    --background-color-principal: #1D1C1C;
+    --text-color-title: #996666;
+    --text-color-principal: #9F543E;
+    --color-button: #440150;
+}
+
+header {
     color: var(--text-color-principal);
     padding: 0.5rem 1rem;
     text-align: center;
-    font-size: 0; /* no direct text in header */
+    font-size: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     background: linear-gradient(to bottom, var(--background-color-principal));
 }
+
 .navbar {
     display: flex;
     justify-content: center;
@@ -25,6 +36,7 @@ header{
     height: 3.2rem;
     width: 100%;
 }
+
 .nav-list {
     list-style: none;
     display: flex;
@@ -46,6 +58,7 @@ header{
     letter-spacing: 0.14em;
     color: var(--text-color-title);
 }
+
 footer {
     background: linear-gradient(to top, var(--background-color-principal), rgba(29, 28, 28, 0.8));
     color: var(--text-color-principal);
@@ -117,31 +130,65 @@ footer img {
     vertical-align: middle;
     margin-left: 0.5rem;
 }
-:root{
-    /*Marrò: #51361A, Purpura:#440150, Vermell:#900603, Cobre rosa:#996666*, cobre: #9F543E, Negre: #1D1C1C */
-    --background-color-principal:#1D1C1C ;
-    --text-color-title: #996666 ;
-    --text-color-principal: #9F543E;
-    --text-color-personatges:#900603;
-    --color-button:  #440150 ;
-}
-h1, h2, h3, h4, h5, h6 {
-    color: var(--text-color-title);
+
+img {
+    border-radius: 0.75rem;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    width: 80%;
+    object-fit: cover;
+
 }
 
-h1{
+h1 {
+    color: var(--text-color-title);
     text-align: center;
+    letter-spacing: 0.1em;
 }
-h2{
-    font-weight: 200;
+
+h2 {
+    color: var(--text-color-title);
+    font-weight: 100;
 }
+
 p {
     color: var(--text-color-principal);
-    margin-bottom: 1em;
 }
-img{
-    margin-bottom: 1em;
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-color-title);
+    font-size: 2.5rem;
+    cursor: pointer;
 }
-body{
-    background-color: var(--background-color-principal);
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 3.5rem;
+        left: 0;
+        width: 100%;
+        background-color: var(--background-color-principal);
+        border-bottom: 1px solid var(--text-color-title);
+        padding: 1rem 0;
+        gap: 1rem;
+        z-index: 100;
+    }
+
+    .nav-list.show {
+        display: flex;
+    }
+
+    .nav-list li a {
+        font-size: 1.5rem;
+        display: block;
+        text-align: center;
+    }
 }
