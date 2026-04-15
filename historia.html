@@ -1,54 +1,124 @@
-<HTML>
-<HEAD>
-    <TITLE>historia</TITLE>
-    <LINK REL="stylesheet" TYPE="text/css" HREF="css/historia.css">
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Història - Escamas de Cautiverio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-</HEAD>
-<header>
-    <nav class="navbar top-0 left-0">
-        <ul class="nav-list">
-            <li><a href="index.html">Inici</a></li>
-            <li><a href="historia.html ">Història</a></li>
-            <li><a href="personatges.html">Personatges i Objectes</a></li>
-            <li><a href="objectius.html">Objectius</a></li>
-            <li><a href="ranking.html">Ranking</a></li>
-            <li><a href="formulari.html">Formulari</a></li>
-        </ul>
-    </nav>
-</header>
-<BODY>
-    
-    <section class="">
-        <img class= "fixed top-0 left-0 w-full h-screen object-cover -z-10" src ="imatges/portada3.png">
-        
+    <LINK REL="stylesheet" TYPE="text/css" HREF="css/inici.css">
+</head>
+<body class="bg-[#1D1C1C] text-[#9F543E]">
+    <header>
+        <nav class="navbar">
+            <button class="menu-toggle" id="menu-toggle">☰</button>
+            <ul class="nav-list">
+                <li><a href="inici.html">Inici</a></li>
+                <li><a href="historia.html">Història</a></li>
+                <li><a href="personatges.html">Personatges i Objectes</a></li>
+                <li><a href="objectius.html">Objectius</a></li>
+                <li><a href="ranking.html">Ranking</a></li>
+                <li><a href="comentaris.html">Comentaris</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <article class =" flex flex-col sm:gap-10 mt-6 items-center">
-            <div class="bg-black/60 rounded-xl text-center max-w-sm p-4">
-                <H1 class ="text-5xl text-center"> Historia del joc</H1>
-
+    <main class="min-h-screen">
+        <!-- Hero Section -->
+        <section id="portada" class="relative">
+            <div class="absolute inset-0 z-0">
+                <img src="Imatges/portada3.png" alt="Fons de la Història" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/40"></div>
             </div>
-            <div class="bg-black/60 rounded-xl text-center max-w-3xl p-3">
-                <p class="">
-                    Out: Escamas de Cautiverio es un juego de escape ambientado en una misteriosa mazmorra donde cada decisión cuenta.
-                    Tu misión: encontrar la salida, esquivar trampas y descubrir los secretos que ocultan las sombras.
-                    ¿Podrás romper tus cadenas y liberar tus escamas?
-                </p>
-
-            </div>
-            <div class="bg-black/60 rounded-xl text-center max-w-3xl p-3">
             
-            
-
-                <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
+            <div class="relative z-10 py-32 px-4">
+                <div class="max-w-4xl mx-auto bg-black/60 backdrop-blur-md rounded-3xl p-10 border border-[#996666]/30 shadow-2xl">
+                    <h1 class="text-6xl md:text-8xl font-bold text-[#996666] mb-6 tracking-tighter text-center">LA LLEGENDA</h1>
+                    <p class="text-2xl md:text-3xl text-center italic opacity-80">"En la foscor més profunda, les escates brillen amb el passat que no pot ser oblidat."</p>
+                </div>
             </div>
-        </article>
-    </section>
+        </section>
 
-    
-</BODY>
-</HTML> 
+        <!-- Chapter 1: L'Origen -->
+        <section class="py-24 px-4 overflow-hidden relative">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-[#440150]/20 blur-[120px] rounded-full"></div>
+            
+            <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
+                <div class="flex-1 space-y-8">
+                    <h2 class="text-5xl md:text-6xl font-bold text-[#996666] tracking-wide">L'Origen del Captiveri</h2>
+                    <div class="space-y-6 text-xl md:text-2xl leading-relaxed text-justify">
+                        <p>Fa segles, quan les aigües encara parlaven amb els déus, un pacte prohibit va ser segellat en les profunditats. La criatura, un ésser de pura essència aquàtica, va ser vinculada a la terra per cadenes que només el penediment podria trencar.</p>
+                        <p>No era una presó de pedra, sinó d'oblid. La masmorra on es troba ara no és més que un reflex físic de l'estat emocional del món que l'envolta. Es conta que qui trobi el cor del captiveri, trobarà també la clau de la seva propia existència.</p>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/3">
+                    <div class="aspect-[3/4] rounded-[2rem] overflow-hidden border border-[#996666]/30 shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500">
+                        <img src="Imatges/portada1.png" alt="Origen" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 2: El Protagonista -->
+        <section class="py-24 px-4 bg-black/20">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="bg-[#1c1414]/80 backdrop-blur-xl p-12 rounded-[3rem] border border-[#996666]/20 hover:border-[#9f543e] transition-colors duration-500">
+                        <h3 class="text-4xl text-[#996666] mb-6 font-bold">L'Arribada del Solitari</h3>
+                        <p class="text-xl md:text-2xl leading-relaxed">Vostè arriba a aquest lloc sense memòria, només amb una sensació de deute impagat. Les parets fredes de la masmorra semblen reconèixer els seus passos. Per què ha estat cridat? És vostè el botxí o el salvador?</p>
+                    </div>
+                    <div class="bg-[#1c1414]/80 backdrop-blur-xl p-12 rounded-[3rem] border border-[#996666]/20 hover:border-[#440150] transition-colors duration-500">
+                        <h3 class="text-4xl text-[#996666] mb-6 font-bold">Les Veus de l'Abisme</h3>
+                        <p class="text-xl md:text-2xl leading-relaxed">No està sol. Les ombres parlen en xiuxiueigs que només es poden sentir quan es perd tota esperança. Cada decisió que prengui ressonarà en els passadissos, alterant el destí de l'ésser que espera en el fons del pou.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter 3: El Dilema -->
+        <section class="py-24 px-4 relative overflow-hidden">
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-[#996666]/10 blur-[120px] rounded-full"></div>
+            
+            <div class="max-w-4xl mx-auto text-center space-y-12 relative z-10">
+                <h2 class="text-5xl md:text-7xl font-bold text-[#996666] uppercase tracking-widest">Un Camí sense Retorn</h2>
+                <div class="text-2xl md:text-3xl space-y-8 leading-relaxed italic opacity-90">
+                    <p>En "Escamas de Cautiverio", la història no s'escriu amb tinta, sinó amb voluntat. Alliberar la criatura pot significar la vostra pròpia perdició, mentre que mantenir-la captiva podria ser l'única forma de sobreviure a la foscor que s'acosta.</p>
+                    <p>Cada interacció és un fil en un teixit complex. Qui és realment el monstre? Aquell que està darrere de les reixes, o aquell que té la clau a la mà?</p>
+                </div>
+                <div class="pt-8">
+                    <a href="inici.html#miniHistoria" class="inline-block bg-gradient-to-r from-[#440150] to-[#2c0033] hover:from-[#996666] hover:to-[#9f543e] text-white px-12 py-6 rounded-full text-2xl tracking-widest uppercase transition-all duration-300 shadow-[0_0_30px_rgba(68,1,80,0.4)] hover:scale-105 border border-[#996666]/30">Descobreix més</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-top">
+            <div class="socials-joc">
+                <p>Xarxes socials del joc:</p>
+                <a href="https://www.instagram.com/escamasdecautiverio" target="_blank">Instagram <img src="Imatges/instagram.png" alt="Instagram del Joc"></a>
+                <a href="https://www.youtube.com/channel/UC_example" target="_blank">YouTube <img src="Imatges/yt.png" alt="YouTube del Joc"></a>
+            </div>
+            <div>
+                <ul class="fnav-list">
+                    <li><a href="inici.html">Inici</a></li>
+                    <li><a href="historia.html">Història</a></li>
+                    <li><a href="personatges.html">Personatges i Objectes</a></li>
+                    <li><a href="objectius.html">Objectius</a></li>
+                    <li><a href="ranking.html">Ranking</a></li>
+                    <li><a href="comentaris.html">Comentaris</a></li>
+                </ul>
+            </div>
+            <div class="socials-creadors">
+                <p>Xarxes socials dels creadors:</p>
+                <a href="https://www.instagram.com/paauuferreer" target="_blank">Pau <img src="Imatges/instagram.png" alt="Instagram de Pau"></a>
+                <a href="https://www.instagram.com/ffranxesc" target="_blank">Fran <img src="Imatges/instagram.png" alt="Instagram de Fran"></a>
+                <a href="https://www.instagram.com/manelmj_06" target="_blank">Manel <img src="Imatges/instagram.png" alt="Instagram de Manel"></a>
+                <a href="https://www.instagram.com/sergi" target="_blank">Viçens <img src="Imatges/instagram.png" alt="Instagram de Viçens"></a>
+            </div>
+        </div>
+        <p>&copy; 2026 Escamas de Cautiverio. Tots els drets reservats.</p>
+    </footer>
+
+    <script src="js/inici.js"></script>
+</body> 
+</html>
