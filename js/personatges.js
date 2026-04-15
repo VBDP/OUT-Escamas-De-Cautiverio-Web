@@ -1,7 +1,7 @@
-// Characters page logic
-// The mobile menu is handled by inici.js
+// Lògica de sa pàgina de personatges
+// Es menú mòbil se gestiona des de inici.js
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Other characters page specific logic can go here
-    console.log('Personatges page loaded');
+    // Altra lògica específica de sa pàgina de personatges pot anar aquí
+    console.log('Pàgina de personatges carregada');
 });
