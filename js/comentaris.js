@@ -1,140 +1,165 @@
-const STORAGE_KEY = "escamas_comments_v1";
+var CLAVE_STORAGE = "escamas_comments_v1";
 
-function escapeHtml(value) {
-    const div = document.createElement("div");
-    div.textContent = value;
-    return div.innerHTML;
-}
-
-function getSavedComments() {
-    try {
-        const raw = localStorage.getItem(STORAGE_KEY);
-        if (!raw) return [];
-        const parsed = JSON.parse(raw);
-        return Array.isArray(parsed) ? parsed : [];
-    } catch (error) {
-        console.warn("Error leyendo comentarios guardados", error);
+// Funció per obtenir es comentaris guardats en es navegador
+function cargarComentariosLocal() {
+    var guardados = localStorage.getItem(CLAVE_STORAGE);
+    if (guardados == null) {
         return [];
     }
+    return JSON.parse(guardados);
 }
 
-function saveComments(comments) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(comments));
+// Funció per guardar sa llista de comentaris en es navegador
+function guardarComentariosLocal(lista) {
+    localStorage.setItem(CLAVE_STORAGE, JSON.stringify(lista));
 }
 
-function renderComments() {
-    const commentList = document.getElementById("commentsList");
-    const comments = getSavedComments();
-    commentList.innerHTML = "";
+// Funció per esborrar un comentari
+function borrarComentario(indice) {
+    var lista = cargarComentariosLocal();
+    // Treim es comentari de sa llista
+    lista.splice(indice, 1);
+    // Guardam i tornam a dibuixar
+    guardarComentariosLocal(lista);
+    dibujarComentarios();
+}
 
-    if (comments.length === 0) {
-        commentList.innerHTML = '<p class="no-comments">Encara no hi ha comentaris.</p>';
+// Funció per mostrar es comentaris a sa pàgina amb un disseny premium
+function dibujarComentarios() {
+    var listaHtml = document.getElementById("commentsList");
+    var comentarios = cargarComentariosLocal();
+    
+    // Netejam sa llista
+    listaHtml.innerHTML = "";
+
+    if (comentarios.length === 0) {
+        listaHtml.innerHTML = '<p class="no-comments text-center italic opacity-60">Encara no hi ha comentaris.</p>';
         return;
     }
 
-    const fragment = document.createDocumentFragment();
-    comments.forEach((item) => {
-        const div = document.createElement("div");
-        div.className = "comment";
-        div.innerHTML = `
-            <div class="comment-header">
-                <strong>${escapeHtml(item.name)}</strong>
-                <span>${escapeHtml(item.date)}</span>
-            </div>
-            <p>${escapeHtml(item.message)}</p>
-        `;
-        fragment.appendChild(div);
-    });
-
-    commentList.appendChild(fragment);
+    // Recorrem es comentaris i es afegim a s'HTML amb disseny premium
+    for (var i = 0; i < comentarios.length; i++) {
+        var c = comentarios[i];
+        
+        var div = document.createElement("div");
+        // Classes de Tailwind per a que sembli una targeta premium
+        div.className = "group relative bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#996666]/50 rounded-2xl p-6 transition-all duration-300 shadow-lg";
+        
+        div.innerHTML = 
+            '<div class="flex justify-between items-start mb-4">' +
+                '<div>' +
+                    '<strong class="text-2xl text-[#996666] block mb-1">' + c.name + '</strong>' +
+                    '<span class="text-xs text-[#9F543E]/60 bg-black/40 px-3 py-1 rounded-full border border-white/5">' + c.date + '</span>' +
+                '</div>' +
+                '<button onclick="borrarComentario(' + i + ')" class="text-[#996666]/40 hover:text-red-400 transition-colors text-xl p-2">✕</button>' +
+            '</div>' +
+            '<p class="text-lg text-[#9F543E] leading-relaxed">' + c.message + '</p>';
+        
+        listaHtml.appendChild(div);
+    }
 }
 
-function addComment(name, message) {
-    const comments = getSavedComments();
-    const newComment = {
-        name: name.trim(),
-        message: message.trim(),
-        date: new Date().toLocaleString("es-ES", {
-            day: "2-digit",
-            month: "2-digit",
-            year: "numeric",
-            hour: "2-digit",
-            minute: "2-digit",
-        }),
+// Funció per afegir un comentari nou
+function nuevoComentario(nombre, mensaje) {
+    var lista = cargarComentariosLocal();
+    
+    // Cream s'objecte des comentari
+    var fechaActual = new Date();
+    var fechaTexto = fechaActual.toLocaleDateString() + " " + fechaActual.toLocaleTimeString();
+
+    var comentarioObj = {
+        name: nombre,
+        message: mensaje,
+        date: fechaTexto
     };
-    comments.unshift(newComment);
-    saveComments(comments);
-    renderComments();
+
+    // Es posam a n'es principi de sa llista
+    lista.unshift(comentarioObj);
+    
+    // Guardam i tornam a dibuixar
+    guardarComentariosLocal(lista);
+    dibujarComentarios();
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    const sendBtn = document.getElementById("sendComment");
-    const nameInput = document.getElementById("name");
-    const emailInput = document.getElementById("email");
-    const messageInput = document.getElementById("comment");
-    const statusMessage = document.createElement("p");
-    statusMessage.className = "comment-status";
-    statusMessage.setAttribute("aria-live", "polite");
-    const box = document.querySelector(".comment-box");
-    if (box) box.appendChild(statusMessage);
+// Deixam borrarComentario disponible a n'es objecte window per a que s'onclick de s'HTML funcioni
+window.borrarComentario = borrarComentario;
 
-    let gmailVerified = false;
-
-    function validateGmail() {
-        const emailValue = emailInput.value.trim().toLowerCase();
-        const gmailRegex = /^[a-z0-9._%+-]+@gmail\.com$/;
-
-        if (!emailValue) {
-            gmailVerified = false;
-            statusMessage.textContent = "Introdueix el teu Gmail.";
-            statusMessage.style.color = "#f8d7da";
-            return false;
-        }
-
-        if (!gmailRegex.test(emailValue)) {
-            gmailVerified = false;
-            statusMessage.textContent = "El correu ha de ser un Gmail vàlid (xxx@gmail.com).";
-            statusMessage.style.color = "#f8d7da";
-            return false;
-        }
-
-        gmailVerified = true;
-        statusMessage.textContent = "Gmail verificat correctament!";
-        statusMessage.style.color = "#b5f8c3";
-        return true;
+// Quan sa pàgina estigui llista
+document.addEventListener("DOMContentLoaded", function() {
+    var botonEnviar = document.getElementById("sendComment");
+    var inputNombre = document.getElementById("name");
+    var inputEmail = document.getElementById("email");
+    var inputMensaje = document.getElementById("comment");
+    
+    // Missatge d'estat
+    var estado = document.createElement("p");
+    estado.className = "text-center font-bold mt-4";
+    var caja = document.querySelector(".comment-box");
+    if (caja) {
+        caja.appendChild(estado);
     }
 
-    renderComments();
+    var emailValido = false;
 
-    emailInput.addEventListener("input", () => {
-        gmailVerified = false;
-        validateGmail();
-    });
-    emailInput.addEventListener("blur", validateGmail);
-
-    sendBtn.addEventListener("click", () => {
-        const nameValue = nameInput.value;
-        const emailValue = emailInput.value;
-        const messageValue = messageInput.value;
-
-        if (!nameValue.trim() || !emailValue.trim() || !messageValue.trim()) {
-            statusMessage.textContent = "Omple tots els camps abans d'enviar.";
-            statusMessage.style.color = "#f8d7da";
+    // Funció per validar si es correu és de Gmail
+    function validarGmail() {
+        var correo = inputEmail.value.toLowerCase();
+        
+        if (correo == "") {
+            emailValido = false;
+            estado.textContent = "Introdueix es teu Gmail.";
+            estado.style.color = "#f8d7da";
             return;
         }
 
-        if (!gmailVerified && !validateGmail()) {
-            statusMessage.textContent = "Verifica el teu Gmail abans d'enviar.";
-            statusMessage.style.color = "#f8d7da";
+        // Miram si acaba en @gmail.com
+        if (correo.indexOf("@gmail.com") == -1) {
+            emailValido = false;
+            estado.textContent = "Es correu ha de ser un Gmail vàlid (xxx@gmail.com).";
+            estado.style.color = "#f8d7da";
+        } else {
+            emailValido = true;
+            estado.textContent = "Gmail verificat correctament!";
+            estado.style.color = "#b5f8c3";
+        }
+    }
+
+    // Dibuixam es comentaris en començar
+    dibujarComentarios();
+
+    // Validar mentre escriu
+    inputEmail.addEventListener("input", validarGmail);
+
+    // En fer clic a enviar
+    botonEnviar.addEventListener("click", function() {
+        var nombre = inputNombre.value;
+        var email = inputEmail.value;
+        var mensaje = inputMensaje.value;
+
+        // Comprovam camps buits
+        if (nombre == "" || email == "" || mensaje == "") {
+            estado.textContent = "Omple tots es camps abans d'enviar.";
+            estado.style.color = "#f8d7da";
             return;
         }
 
-        addComment(`${nameValue} (${emailValue})`, messageValue);
-        nameInput.value = "";
-        emailInput.value = "";
-        messageInput.value = "";
-        statusMessage.textContent = "Comentari enviat!";
-        statusMessage.style.color = "#b5f8c3";
-        gmailVerified = false;
+        // Comprovam s'email
+        if (emailValido == false) {
+            estado.textContent = "Verifica es teu Gmail abans d'enviar.";
+            estado.style.color = "#f8d7da";
+            return;
+        }
+
+        // Si tot està bé, l'afegim
+        nuevoComentario(nombre + " (" + email + ")", mensaje);
+        
+        // Netejam es inputs
+        inputNombre.value = "";
+        inputEmail.value = "";
+        inputMensaje.value = "";
+        
+        estado.textContent = "Comentari enviat!";
+        estado.style.color = "#b5f8c3";
+        emailValido = false;
     });
 });

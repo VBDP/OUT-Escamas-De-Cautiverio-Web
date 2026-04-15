@@ -1,64 +1,93 @@
-let revealed = false;
+// Variable per saber si ja hem entrat
+var yaEntrado = false;
 
-// Funció de parpelleig aleatori
-function randomBlink() {
-    if (revealed) return; // Si ja s'ha tancat, no parpellegis més
+// Miram si ja s'ha vist l'animació abans
+if (localStorage.getItem("animacionVista") == "si") {
+    // Si ja s'ha vist, anam directes a la pàgina d'inici
+    window.location.href = "inici.html";
+}
+
+// Funció per a que els ulls parpellegin de tant en tant
+function hacerParpadeo() {
+    if (yaEntrado == true) {
+        return; // Si ja hem entrat, no feim res
+    }
     
-    const eyes = document.querySelectorAll('.eye-wrap');
-    eyes.forEach(e => e.classList.add('blinking'));
+    var ojos = document.querySelectorAll(".eye-wrap");
     
-    setTimeout(() => {
-        // Només traiem la classe si no estem en el ritual final
-        if (!revealed) {
-            eyes.forEach(e => e.classList.remove('blinking'));
+    // Afegim la classe de parpelleig a tots els ulls
+    for (var i = 0; i < ojos.length; i++) {
+        ojos[i].classList.add("blinking");
+    }
+    
+    // Treim la classe després d'un moment
+    setTimeout(function() {
+        if (yaEntrado == false) {
+            for (var i = 0; i < ojos.length; i++) {
+                ojos[i].classList.remove("blinking");
+            }
         }
-        setTimeout(randomBlink, Math.random() * 4000 + 2000);
+        // Esperam un temps aleatori per al següent parpelleig
+        var tiempo = Math.random() * 4000 + 2000;
+        setTimeout(hacerParpadeo, tiempo);
     }, 250);
 }
 
-// Iniciar el parpelleig al cap de 1 segons
-setTimeout(randomBlink, 1000);
+// Començam a parpellejar després d'un segon
+setTimeout(hacerParpadeo, 1000);
 
-function sealRitual() {
-    if (revealed) return;
-    revealed = true; // Bloqueja altres accions
+// Funció que s'executa en entrar (es "ritual")
+function entrarAlJuego() {
+    if (yaEntrado == true) {
+        return;
+    }
+    yaEntrado = true;
 
-    const loader = document.getElementById('loader');
-    const hint = document.getElementById('text-hint');
-    const eyes = document.querySelectorAll('.eye-wrap');
+    // Guardam que ja hem vist l'animació
+    localStorage.setItem("animacionVista", "si");
 
-    loader.classList.add('shake');
-    loader.classList.add('revealed');
+    var pantallaCarga = document.getElementById("loader");
+    var texto = document.getElementById("text-hint");
+    var ojos = document.querySelectorAll(".eye-wrap");
 
-    // Tanquem definitivament
-    eyes.forEach(eye => {
-        eye.classList.remove('blinking'); 
-        eye.classList.add('closed');      
-        eye.style.filter = "brightness(0.2)";
-        eye.style.boxShadow = "none";
-    });
+    // Efecte de sacsejada
+    pantallaCarga.classList.add("shake");
+    pantallaCarga.classList.add("revealed");
 
-    hint.textContent = "BENVINGUT";
-    hint.style.color = "#ff0000";
+    // Tancam els ulls
+    for (var i = 0; i < ojos.length; i++) {
+        ojos[i].classList.remove("blinking");
+        ojos[i].classList.add("closed");
+        ojos[i].style.filter = "brightness(0.2)";
+        ojos[i].style.boxShadow = "none";
+    }
 
-    // Redirecció
-    setTimeout(() => {
-        window.location.assign('inici.html');
+    // Canviam es text
+    texto.textContent = "BENVINGUT";
+    texto.style.color = "#ff0000";
+
+    // Anam a la pàgina principal després d'una estona
+    setTimeout(function() {
+        window.location.href = "inici.html";
     }, 2200);
 }
 
-// Interaccions
-window.addEventListener('wheel', (e) => { 
-    if (Math.abs(e.deltaY) > 5) sealRitual(); 
-}, { passive: true });
+// Detectar clics o scroll per entrar
+window.addEventListener("mousedown", entrarAlJuego);
+window.addEventListener("wheel", function(evento) {
+    if (Math.abs(evento.deltaY) > 5) {
+        entrarAlJuego();
+    }
+});
 
-window.addEventListener('mousedown', sealRitual, { once: true });
-
-let touchStartY = 0;
-window.addEventListener('touchstart', (e) => { 
-    touchStartY = e.touches[0].clientY; 
-}, { passive: true });
-
-window.addEventListener('touchmove', (e) => {
-    if (Math.abs(touchStartY - e.touches[0].clientY) > 20) sealRitual();
-}, { passive: true });
+// Per a mòbils també
+var inicioToque = 0;
+window.addEventListener("touchstart", function(evento) {
+    inicioToque = evento.touches[0].clientY;
+});
+window.addEventListener("touchmove", function(evento) {
+    var finToque = evento.touches[0].clientY;
+    if (Math.abs(inicioToque - finToque) > 20) {
+        entrarAlJuego();
+    }
+});

@@ -196,91 +196,124 @@
 
 <script src="js/api.js"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', async () => {
-        try {
-            const container = document.getElementById('top3-ranking-container');
-            if (typeof ApiService !== 'undefined') {
-                const rankingData = await ApiService.getRanking();
-                if (rankingData && rankingData.length > 0) {
-                    const top3 = rankingData.slice(0, 3);
-                    let html = '<ul class="flex flex-col gap-3">';
-                    top3.forEach((player, index) => {
-                        let stylingClass = 'border-[#996666]/20 bg-black/60';
-                        if (index === 0) stylingClass = 'border-yellow-500/50 bg-yellow-500/10 shadow-[0_0_10px_rgba(234,179,8,0.2)] text-yellow-100 scale-105 my-1';
-                        else if (index === 1) stylingClass = 'border-gray-400/50 bg-gray-400/10 text-gray-200';
-                        else if (index === 2) stylingClass = 'border-amber-700/50 bg-amber-700/10 text-amber-100';
-                        
-                        let medal = index === 0 ? '🥇' : index === 1 ? '🥈' : '🥉';
-                        
-                        html += `
-                            <li class="flex justify-between items-center text-white p-3 rounded-xl border ${stylingClass} transition-all duration-300">
-                                <span class="flex items-center gap-3 font-bold text-lg"><span class="text-2xl drop-shadow-md">${medal}</span> ${player.name}</span>
-                                <span class="font-bold tracking-wider">${player.puntuacion} pts</span>
-                            </li>
-                        `;
-                    });
+    // En carregar sa pàgina, anam a cercar es Top 3 per as rànquing
+    document.addEventListener('DOMContentLoaded', function() {
+        var contenedor = document.getElementById('top3-ranking-container');
+        
+        // Comprovam si sa funció existeix
+        if (typeof obtenerRanking === 'function') {
+            obtenerRanking(3).then(function(datos) {
+                if (datos && datos.length > 0) {
+                    var html = '<ul class="flex flex-col gap-3">';
+                    
+                    for (var i = 0; i < datos.length; i++) {
+                        var jugador = datos[i];
+                        var clase = 'border-[#996666]/20 bg-black/60';
+                        var medalla = "🥉";
+ 
+                        // Posam estils segons sa posició (Top 1, 2 o 3)
+                        if (i === 0) {
+                            clase = 'border-yellow-500/50 bg-yellow-500/10 shadow-[0_0_10px_rgba(234,179,8,0.2)] text-yellow-100 scale-105 my-1';
+                            medalla = "🥇";
+                        } else if (i === 1) {
+                            clase = 'border-gray-400/50 bg-gray-400/10 text-gray-200';
+                            medalla = "🥈";
+                        } else if (i === 2) {
+                            clase = 'border-amber-700/50 bg-amber-700/10 text-amber-100';
+                        }
+ 
+                        // Afegim es jugador a sa llista amb totes ses classes d'estil originals
+                        html += '<li class="flex justify-between items-center text-white p-3 rounded-xl border ' + clase + ' transition-all duration-300">' +
+                                    '<span class="flex items-center gap-3 font-bold text-lg"><span class="text-2xl drop-shadow-md">' + medalla + '</span> ' + jugador.name + '</span>' +
+                                    '<span class="font-bold tracking-wider">' + jugador.puntuacion + ' pts</span>' +
+                                '</li>';
+                    }
                     html += '</ul>';
-                    container.innerHTML = html;
+                    contenedor.innerHTML = html;
                 } else {
-                    container.innerHTML = '<p class="text-white text-center italic text-sm opacity-75">Encara no hi ha dades al rànquing.</p>';
+                    contenedor.innerHTML = '<p class="text-white text-center italic text-sm opacity-75">Encara no hi ha dades al rànquing.</p>';
                 }
-            }
-        } catch (error) {
-            console.error('Error fetching TOP 3:', error);
-            document.getElementById('top3-ranking-container').innerHTML = `<p class="text-red-400 text-center italic text-sm">Error temporal al carregar les dades de l'API.</p>`;
+            }).catch(function(error) {
+                console.log("Error en carregar es top 3");
+            });
         }
     });
 </script>
     <script src="js/inici.js"></script>
     <script>
-        // Intro Animation Logic for inici.html
-        let revealed = false;
-
-        function randomBlink() {
-            if (revealed) return;
-            const eyes = document.querySelectorAll('.eye-wrap');
-            eyes.forEach(e => e.classList.add('blinking'));
-            setTimeout(() => {
-                if (!revealed) {
-                    eyes.forEach(e => e.classList.remove('blinking'));
+        // Lògica de s'animació d'entrada per a inici.html
+        var revelado = false;
+ 
+        // Si ja hem vist s'animació, amagam es loader de cop
+        if (localStorage.getItem("animacionVista") == "si") {
+            var elLoader = document.getElementById("loader-intro");
+            if (elLoader) {
+                elLoader.style.display = "none"; // L'amagam
+                document.body.classList.remove("overflow-hidden"); // Deixam fer scroll
+                revelado = true;
+            }
+        }
+ 
+        function parpadeoAleatorio() {
+            if (revelado) return;
+            var ojos = document.querySelectorAll(".eye-wrap");
+            for (var i = 0; i < ojos.length; i++) {
+                ojos[i].classList.add("blinking");
+            }
+            
+            setTimeout(function() {
+                if (!revelado) {
+                    for (var i = 0; i < ojos.length; i++) {
+                        ojos[i].classList.remove("blinking");
+                    }
                 }
-                setTimeout(randomBlink, Math.random() * 4000 + 2000);
+                setTimeout(parpadeoAleatorio, Math.random() * 4000 + 2000);
             }, 250);
         }
-
-        setTimeout(randomBlink, 300);
-
-        function revealContent() {
-            if (revealed) return;
-            revealed = true;
-            const loader = document.getElementById('loader-intro');
-            const hint = document.getElementById('text-hint');
-            const eyes = document.querySelectorAll('.eye-wrap');
-
-            loader.classList.add('shake');
-            eyes.forEach(eye => {
-                eye.classList.remove('blinking'); 
-                eye.classList.add('closed');      
-                eye.style.filter = "brightness(0.2)";
-                eye.style.boxShadow = "none";
-            });
-
-            hint.textContent = "BENVINGUT";
-            hint.style.color = "#ff0000";
-
-            setTimeout(() => {
-                loader.style.opacity = '0';
-                loader.style.visibility = 'hidden';
-                document.body.classList.remove('overflow-hidden');
-                setTimeout(() => {
+ 
+        // Si no s'ha revelat ja, començam es parpelleig
+        if (!revelado) {
+            setTimeout(parpadeoAleatorio, 300);
+        }
+ 
+        function mostrarContenido() {
+            if (revelado) return;
+            revelado = true;
+            
+            // Guardam que ja l'hem vist per si de cas ha entrat directe aquí
+            localStorage.setItem("animacionVista", "si");
+ 
+            var loader = document.getElementById("loader-intro");
+            var pista = document.getElementById("text-hint");
+            var ojos = document.querySelectorAll(".eye-wrap");
+ 
+            loader.classList.add("shake");
+            for (var i = 0; i < ojos.length; i++) {
+                ojos[i].classList.remove("blinking");
+                ojos[i].classList.add("closed");
+                ojos[i].style.filter = "brightness(0.2)";
+                ojos[i].style.boxShadow = "none";
+            }
+ 
+            pista.textContent = "BENVINGUT";
+            pista.style.color = "#ff0000";
+ 
+            setTimeout(function() {
+                loader.style.opacity = "0";
+                loader.style.visibility = "hidden";
+                document.body.classList.remove("overflow-hidden");
+                setTimeout(function() {
                     loader.remove();
                 }, 1000);
             }, 1200);
         }
-
-        window.addEventListener('wheel', (e) => { if (Math.abs(e.deltaY) > 5) revealContent(); }, { passive: true });
-        window.addEventListener('mousedown', revealContent, { once: true });
-        window.addEventListener('touchstart', revealContent, { once: true });
+ 
+        // Events per treure sa cortina
+        window.addEventListener("wheel", function(e) {
+            if (Math.abs(e.deltaY) > 5) mostrarContenido();
+        });
+        window.addEventListener("mousedown", mostrarContenido);
+        window.addEventListener("touchstart", mostrarContenido);
     </script>
 </body>
 </html>
