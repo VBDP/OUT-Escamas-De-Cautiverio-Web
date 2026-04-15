@@ -8,7 +8,24 @@
     <LINK REL="stylesheet" TYPE="text/css" HREF="css/inici.css">
     
 </head>
-<body>
+<body class="overflow-hidden">
+    <!-- Intro Animation / Loader -->
+    <div id="loader-intro">
+        <div class="dragon-eyes-container">
+            <div class="eye-wrap left">
+                <div class="lid-top"></div>
+                <div class="iris"><div class="pupil"></div></div>
+                <div class="lid-bottom"></div>
+            </div>
+            <div class="eye-wrap right">
+                <div class="lid-top"></div>
+                <div class="iris"><div class="pupil"></div></div>
+                <div class="lid-bottom"></div>
+            </div>
+        </div>
+        <div class="hint" id="text-hint">BENVINGUT A OUT</div>
+    </div>
+
 <header>
     <nav class="navbar">
         <button class="menu-toggle" id="menu-toggle">☰</button>
@@ -214,5 +231,56 @@
         }
     });
 </script>
-<script src="js/inici.js"></script>
-</html>
+    <script src="js/inici.js"></script>
+    <script>
+        // Intro Animation Logic for inici.html
+        let revealed = false;
+
+        function randomBlink() {
+            if (revealed) return;
+            const eyes = document.querySelectorAll('.eye-wrap');
+            eyes.forEach(e => e.classList.add('blinking'));
+            setTimeout(() => {
+                if (!revealed) {
+                    eyes.forEach(e => e.classList.remove('blinking'));
+                }
+                setTimeout(randomBlink, Math.random() * 4000 + 2000);
+            }, 250);
+        }
+
+        setTimeout(randomBlink, 300);
+
+        function revealContent() {
+            if (revealed) return;
+            revealed = true;
+            const loader = document.getElementById('loader-intro');
+            const hint = document.getElementById('text-hint');
+            const eyes = document.querySelectorAll('.eye-wrap');
+
+            loader.classList.add('shake');
+            eyes.forEach(eye => {
+                eye.classList.remove('blinking'); 
+                eye.classList.add('closed');      
+                eye.style.filter = "brightness(0.2)";
+                eye.style.boxShadow = "none";
+            });
+
+            hint.textContent = "BENVINGUT";
+            hint.style.color = "#ff0000";
+
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                loader.style.visibility = 'hidden';
+                document.body.classList.remove('overflow-hidden');
+                setTimeout(() => {
+                    loader.remove();
+                }, 1000);
+            }, 1200);
+        }
+
+        window.addEventListener('wheel', (e) => { if (Math.abs(e.deltaY) > 5) revealContent(); }, { passive: true });
+        window.addEventListener('mousedown', revealContent, { once: true });
+        window.addEventListener('touchstart', revealContent, { once: true });
+    </script>
+</body>
+</html>

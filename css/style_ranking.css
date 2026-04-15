@@ -118,9 +118,98 @@ footer a:hover {
     text-decoration: underline;
 }
 
-footer img {
-    width: 24px;
-    height: 24px;
-    vertical-align: middle;
-    margin-left: 0.5rem;
-}
+@media (max-width: 768px) {
+    header {
+        padding: 0.5rem;
+    }
+
+    .navbar {
+        justify-content: flex-start;
+    }
+
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--text-color-principal);
+        font-size: 2rem;
+        cursor: pointer;
+        margin-right: 1rem;
+    }
+
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--background-color-principal);
+        gap: 0;
+        padding: 1rem 0;
+        border-top: 1px solid var(--text-color-title);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        pointer-events: none;
+    }
+
+    .nav-list.open, .nav-list.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+
+    .nav-list li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-list li a {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        display: block;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .footer-top div {
+        text-align: center !important;
+        width: 100%;
+    }
+
+    .fnav-list {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    /* Ranking specific mobile fixes */
+    .bg-gradient-to-b {
+        padding: 1.5rem !important;
+    }
+
+    .flex.items-end {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .flex.items-end > div {
+        width: 100%;
+    }
+
+    .bg-yellow-400, .bg-gray-400, .bg-orange-600 {
+        height: 100px !important;
+        width: 100% !important;
+    }
+
+    h2 { font-size: 2.5rem !important; }
+}

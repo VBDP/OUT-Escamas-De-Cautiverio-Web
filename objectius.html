@@ -1,103 +1,133 @@
-<HTML>
-<HEAD>
-    <TITLE>historia</TITLE>
-    <LINK REL="stylesheet" TYPE="text/css" HREF="css/objectius.css">
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objectius - Escamas de Cautiverio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-</HEAD>
-<BODY>
-<header>
-    <nav class="navbar">
-        <button class="menu-toggle" id="menu-toggle"></button>
-        <ul class="nav-list">
-            <li><a href="inici.html">Inici</a></li>
-            <li><a href="historia.html ">Història</a></li>
-            <li><a href="personatges.html">Personatges iObjectes</a></li>
-            <li><a href="objectius.html">Objectius</a></li>
-            <li><a href="ranking.html">Ranking</a></li>
-            <li><a href="comentaris.html">Comentaris</a></li>
-        </ul>
-    </nav>
-</header>
-                    <div class="slider z-10 mt-20">
-                        <ul>
-                            <li class="active">
-                                <div class="grid grid-cols-2 gap-4 bg-black/60 rounded-xl text-center p-3">
-                                    <article>
-                                        <h2 class ="text-[24px] text-center pt-2">Escapa de les trampes!</h2>
-                                        <p class = " pt-4"> Hi ha diversos puzzles i trampes repartides arreu del joc, sigues cautelos i intenta no caure-hi!</p>
-                                    </article>
-                                        <img class ="w-full object-cover mx-auto" src="imatges/imatge_enemic.png">
-                                </div>
-                            </li>
-                            <li>
-                                <div class="grid grid-cols-2 gap-4 bg-black/60 rounded-xl text-center p-3">
-                                    <article>
-                                        <h2 class ="text-[24px] text-center pt-2">Que no te enganin!</h2>
-                                        <p class = " pt-4 "> Trobaras enemics que intentaran aturar-te!, En trobaras d'altres que seran molt utils durant la experiencia.</p>
-                                        
-                                    </article>
-                                        <img class ="w-full object-cover mx-auto" src="imatges/imatge_enemic.png">
-                                        
-                                </div>
-                            </li>
-                            <li>
-                                <div class="grid grid-cols-2 gap-4 bg-black/60 rounded-xl text-center p-3">
-                                    <article>
-                                        <h2 class ="text-[24px] text-center pt-2">Escapa amb vida!</h2>
-                                        <p class="pt-4"> Si aconsegueixes evitar les trampes i els enemics, podràs escapar de la preso amb vida!</p>
-                                    </article>
-                                        <img class ="w-full object-cover mx-auto" src="imatges/imatge_enemic.png">
-                                </div>
-                            </li>
-                            <li>
-                                <div class="grid grid-cols-2 gap-4 bg-black/60 rounded-xl text-center p-3">
-                                    <article>
-                                        <h2 class ="text-[24px] text-center pt-2">Troba informació</h2>
-                                        <p class="pt-4"> Si t'han secuestrat, sera per qualque motiu no?, Troba informació sobre els plans secrets quels enemics tenen en ment.</p>
-                                    </article>
-                                        <img class ="w-full object-cover mx-auto" src="imatges/imatge_enemic.png">
-                                </div>
-                            </li>
+    <LINK REL="stylesheet" TYPE="text/css" HREF="css/inici.css">
+    <LINK REL="stylesheet" TYPE="text/css" HREF="css/objectius.css">
+</head>
+<body class="bg-[#1D1C1C] text-[#9F543E]">
+    <img class="fixed top-0 left-0 w-full h-screen object-cover -z-10" src="imatges/portada3.png" alt="Fons">
 
-                        </ul>
-                    </div>
-<img class= "fixed top-0 left-0 w-full h-screen object-cover -z-10" src ="imatges/portada3.png">
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
-
-</BODY>
-<footer>
-
-    <div class="footer-top">
-        <div class="socials-joc">
-            <p>Xarxes socials del joc:</p>
-            <a href="https://www.instagram.com/escamasdecautiverio" target="_blank">Instagram <img src="Imatges/instagram.png" alt="Instagram del Joc"></a>
-            <a href="https://www.youtube.com/channel/UC_example" target="_blank">YouTube <img src="Imatges/yt.png" alt="YouTube del Joc"></a>
-        </div>
-        <div>
-            <ul class="fnav-list">
+    <header>
+        <nav class="navbar">
+            <button class="menu-toggle" id="menu-toggle">☰</button>
+            <ul class="nav-list">
                 <li><a href="inici.html">Inici</a></li>
-                <li><a href="historia.html ">Història</a></li>
+                <li><a href="historia.html">Història</a></li>
                 <li><a href="personatges.html">Personatges i Objectes</a></li>
                 <li><a href="objectius.html">Objectius</a></li>
                 <li><a href="ranking.html">Ranking</a></li>
-                <li><a href="formulari.html">Formulari</a></li>
+                <li><a href="comentaris.html">Comentaris</a></li>
             </ul>
+        </nav>
+    </header>
+
+    <main class="py-16 px-4">
+        <div class="max-w-6xl mx-auto text-center mb-20">
+            <h1 class="text-6xl md:text-8xl font-bold text-[#996666] mb-8 tracking-tighter">MISSIONS PRINCIPALS</h1>
+            <p class="text-2xl md:text-3xl italic opacity-80 max-w-3xl mx-auto">"La teva supervivència depèn de la teva capacitat per adaptar-te i superar els reptes de l'abisme."</p>
         </div>
-        <div class="socials-creadors">
-            <p>Xarxes socials dels creadors:</p>
+
+        <div class="slider-container relative max-w-7xl mx-auto">
+            <div class="slider">
+                <ul>
+                    <li class="active">
+                        <div class="objective-card group">
+                            <div class="objective-image">
+                                <img src="imatges/imatge_enemic.png" alt="Trampes">
+                                <div class="image-overlay"></div>
+                            </div>
+                            <article class="objective-info">
+                                <span class="objective-number">01</span>
+                                <h2>Escapa de les trampes!</h2>
+                                <p>L'entorn és el teu primer enemic. Hi ha diversos puzzles i trampes repartides arreu de la masmorra. Sigues cautelós, observa els patrons i utilitza la teva agudesa mental per no caure-hi.</p>
+                            </article>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="objective-card group">
+                            <div class="objective-image">
+                                <img src="Imatges/portada1.png" alt="Enemics">
+                                <div class="image-overlay"></div>
+                            </div>
+                            <article class="objective-info">
+                                <span class="objective-number">02</span>
+                                <h2>Que no t'enganyin!</h2>
+                                <p>Trobaràs enemics que intentaran aturar-te a qualsevol preu. Però compte: no tot el que es mou a la foscor és hostil. Alguns éssers poden ser vitals per a la teva experiència si saps com interactuar-hi.</p>
+                            </article>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="objective-card group">
+                            <div class="objective-image">
+                                <img src="Imatges/portada3.png" alt="Vida">
+                                <div class="image-overlay"></div>
+                            </div>
+                            <article class="objective-info">
+                                <span class="objective-number">03</span>
+                                <h2>Escapa amb vida</h2>
+                                <p>L'objectiu final és la llibertat. Però a quin preu? La teva integritat física i mental es veurà posada a prova en cada nivell. Només aquells que sàpiguen gestionar els seus recursos arribaran a la sortida.</p>
+                            </article>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="objective-card group">
+                            <div class="objective-image">
+                                <img src="Imatges/PortadaBona.png" alt="Informació">
+                                <div class="image-overlay"></div>
+                            </div>
+                            <article class="objective-info">
+                                <span class="objective-number">04</span>
+                                <h2>Troba informació</h2>
+                                <p>Descobreix el perquè del teu segrest. El món de OUT amaga secrets antics sobre el conflicte entre orcs i draconians. Troba documents i relats que revelin els plans ocults dels teus captors.</p>
+                            </article>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Navigation buttons for the slider -->
+            <div class="slider-nav flex justify-center gap-4 mt-8">
+                <button class="slider-btn prev-btn">←</button>
+                <div class="slider-dots flex items-center gap-2"></div>
+                <button class="slider-btn next-btn">→</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-top">
+            <div class="socials-joc">
+                <p>Xarxes socials del joc:</p>
+                <a href="https://www.instagram.com/escamasdecautiverio" target="_blank">Instagram <img src="Imatges/instagram.png" alt="Instagram del Joc"></a>
+                <a href="https://www.youtube.com/channel/UC_example" target="_blank">YouTube <img src="Imatges/yt.png" alt="YouTube del Joc"></a>
+            </div>
+            <div>
+                <ul class="fnav-list">
+                    <li><a href="inici.html">Inici</a></li>
+                    <li><a href="historia.html">Història</a></li>
+                    <li><a href="personatges.html">Personatges i Objectes</a></li>
+                    <li><a href="objectius.html">Objectius</a></li>
+                    <li><a href="ranking.html">Ranking</a></li>
+                    <li><a href="comentaris.html">Comentaris</a></li>
+                </ul>
+            </div>
+            <div class="socials-creadors">
+                <p>Xarxes socials dels creadors:</p>
                 <a href="https://www.instagram.com/paauuferreer" target="_blank">Pau <img src="Imatges/instagram.png" alt="Instagram de Pau"></a>
                 <a href="https://www.instagram.com/ffranxesc" target="_blank">Fran <img src="Imatges/instagram.png" alt="Instagram de Fran"></a>
-                <a href="https://www.instagram.com/manelmj_06?igsh=ZjRsZWNncDE3cTFo&utm_source=qr">Manel <img src="Imatges/instagram.png" alt="Instagram de Manel"></a>
+                <a href="https://www.instagram.com/manelmj_06" target="_blank">Manel <img src="Imatges/instagram.png" alt="Instagram de Manel"></a>
                 <a href="https://www.instagram.com/sergi" target="_blank">Viçens <img src="Imatges/instagram.png" alt="Instagram de Viçens"></a>
+            </div>
         </div>
-    </div>
-    <p>&copy; 2026 Escamas de Cautiverio. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Escamas de Cautiverio. Todos los derechos reservados.</p>
+    </footer>
 
-</footer>  
-
-
-<script src = "js/objectius.js"></script>
-</HTML>
-
-                                    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/objectius.js"></script>
+    <script src="js/inici.js"></script>
+</body>
+</html>
