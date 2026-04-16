@@ -2,80 +2,233 @@
     font-family: "EnchantedLand";
     src: url("../fonts/Enchanted Land.otf") format("opentype");
 }
-*{
-    font-family: "EnchantedLand", sans-serif;
-    margin: 0;
-    padding: 0;
-    font-size: 20px;
-    
-}
-:root{
-    /*Marrò: #51361A, Purpura:#440150, Vermell:#900603, Cobre rosa:#996666*, cobre: #9F543E, Negre: #1D1C1C */
-    --background-color-principal:#1D1C1C ;
-    --text-color-title: #996666 ;
+
+:root {
+    --background-color-principal: #1D1C1C;
+    --text-color-title: #996666;
     --text-color-principal: #9F543E;
-    --color-button:  #440150 ;
+    --color-button: #440150;
 }
 
-body{
-    margin:10PX;
-    background-color: var(--background-color-principal);
-}
-
-h1, h2, h3, h4, h5, h6{
-    color: var(--text-color-title);
-}
-
-p{
-    color: var(--text-color-principal);
-    padding-bottom: 5vh;
-}
-
-img{
-    height: auto;
-    width:130vh;
-}
-
-.navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--background-color-principal);
-    height: 3.2rem;
-    width: 100%;
-}
-.nav-list {
-    list-style: none;
-    display: flex;
-    gap: 3.5rem;
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-.nav-list li a {
-    color: var(--text-color-principal);
-    text-decoration: none;
-    font-size: 2rem;
-    line-height: 3.2rem;
-    padding: 0 0.5rem;
-    transition: color 0.3s, letter-spacing 0.3s;
-}
-.nav-list li a:hover {
-    letter-spacing: 0.14em;
-    color: var(--text-color-title);
-}
-button{
-    background-color: var(--color-button);
-    color: var(--text-color-title);
-    border: none;
-    padding: 0.75rem 1.25rem;
-    font-size: 1.1rem;
-    cursor: pointer;
-}
-a {
-    color: var(--text-color-title);
-    text-decoration: none;
+
+body {
+    font-family: "EnchantedLand", sans-serif;
+    overflow-x: hidden;
 }
 
-a:hover {
-    text-decoration: underline;
+/* Objectius CSS - Modernized and Responsive */
+
+
+.objective-card {
+    background: rgba(26, 17, 17, 0.85);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(153, 102, 102, 0.2);
+    border-radius: 2.5rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    height: 450px;
+    width: 850px;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+}
+
+.slider li.active .objective-card {
+    border-color: rgba(153, 102, 102, 0.5);
+    transform: scale(1.02);
+    box-shadow: 0 0 40px rgba(153, 102, 102, 0.2);
+}
+
+.objective-image {
+    width: 45%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.objective-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.slider li.active .objective-image img {
+    transform: scale(1.1);
+}
+
+.image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, transparent, rgba(29, 28, 28, 0.8));
+}
+
+.objective-info {
+    flex: 1;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    text-align: left;
+}
+
+.objective-number {
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    font-size: 5rem;
+    font-weight: 900;
+    color: rgba(153, 102, 102, 0.05);
+    line-height: 1;
+}
+
+.objective-info h2 {
+    font-size: 3.5rem;
+    color: var(--text-color-title);
+    margin-bottom: 1.5rem;
+    line-height: 1;
+}
+
+.objective-info p {
+    font-size: 1.6rem;
+    color: var(--text-color-principal);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Slider Overrides */
+.slider {
+    margin: 0 auto;
+    padding: 2rem 0;
+    overflow: visible;
+}
+
+.slider ul {
+    display: flex;
+    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.slider li {
+    flex: 0 0 auto;
+    margin: 0 50px;
+    opacity: 0.3;
+    transition: opacity 0.5s ease;
+    transform: scale(0.9);
+}
+
+.slider li.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Dots and buttons */
+.slider-btn {
+    background: rgba(153, 102, 102, 0.1);
+    border: 1px solid rgba(153, 102, 102, 0.3);
+    color: var(--text-color-title);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slider-btn:hover {
+    background: var(--color-button);
+    color: white;
+    transform: scale(1.1);
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(153, 102, 102, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    width: 40px;
+    background: var(--text-color-title);
+    border-radius: 6px;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .objective-card {
+        width: 700px;
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .slider-container {
+        padding: 0 1rem;
+    }
+
+    .slider {
+        left: 0 !important;
+        margin: 0 !important;
+        height: auto !important;
+    }
+
+    .slider ul {
+        flex-direction: column;
+        gap: 3rem;
+        transform: none !important;
+        white-space: normal;
+    }
+
+    .slider li {
+        width: 100%;
+        margin: 0;
+        opacity: 1;
+        transform: none;
+    }
+
+    .objective-card {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        border-radius: 2rem;
+    }
+
+    .objective-image {
+        width: 100%;
+        height: 250px;
+    }
+
+    .image-overlay {
+        background: linear-gradient(to top, rgba(29, 28, 28, 0.9), transparent);
+    }
+
+    .objective-info {
+        padding: 2.5rem;
+    }
+
+    .objective-info h2 {
+        font-size: 2.8rem;
+    }
+
+    .objective-info p {
+        font-size: 1.3rem;
+    }
+
+    .objective-number {
+        font-size: 3rem;
+        top: 1rem;
+        right: 2rem;
+    }
+
+    .slider-nav {
+        display: none; /* Hide slider nav on mobile as it's a list */
+    }
 }

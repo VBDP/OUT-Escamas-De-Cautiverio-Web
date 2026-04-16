@@ -1,178 +1,111 @@
-@font-face {
-    font-family: "EnchantedLand";
-    src: url("../fonts/Enchanted Land.otf") format("opentype");
-}
+* { box-sizing: border-box; }
 
-html, body {
-    width: 100%;
-    height: 100%;
+body {
     margin: 0;
-    padding: 0;
-    background-color: var(--background-color-principal);
-}
-
-* {
-    box-sizing: border-box;
-    font-family: "EnchantedLand", sans-serif;
-}
-
-:root {
-    /*Marrò: #51361A, Purpura:#440150, Vermell:#900603, Cobre rosa:#996666*, cobre: #9F543E, Negre: #1D1C1C */
-    --background-color-principal:#1D1C1C ;
-    --text-color-title: #996666 ;
-    --text-color-principal: #9F543E;
-    --color-button:  #440150 ;
-}
-header{
-    color: var(--text-color-principal);
-    padding: 0.5rem 1rem;
-    text-align: center;
-    font-size: 0; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(to bottom, var(--background-color-principal), rgba(29, 28, 28, 0));
-}
-
-.navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: transparent;
-    height: 3.2rem;
-    width: 100%;
-}
-
-#portada {
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 50vh;
-    position: relative;
+    min-height: 100vh;
+    background-color: #000;
     overflow: hidden;
-}
-
-#portada::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60%;
-    background: linear-gradient(to bottom,
-        var(--background-color-principal) 0%,
-        rgba(29, 28, 28, 0.9) 20%,
-        rgba(29, 28, 28, 0.35) 45%,
-        rgba(29, 28, 28, 0) 80%
-    );
-    pointer-events: none;
-}
-
-#portada::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 45%;
-    background: linear-gradient(to top,
-        var(--background-color-principal) 0%,
-        rgba(29, 28, 28, 0.9) 20%,
-        rgba(29, 28, 28, 0.35) 55%,
-        rgba(29, 28, 28, 0) 85%
-    );
-    pointer-events: none;
-}
-.nav-list {
-    list-style: none;
-    display: flex;
-    gap: 3.5rem;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-list li a {
-    color: var(--text-color-principal);
-    text-decoration: none;
-    font-size: 2rem;
-    line-height: 3.2rem;
-    padding: 0 0.5rem;
-    transition: color 0.3s, letter-spacing 0.3s;
-}
-
-.nav-list li a:hover {
-    letter-spacing: 0.14em;
-    color: var(--text-color-title);
-}
-
-h1, h2, h3, h4, h5, h6 {
-    color: var(--text-color-title);
-}
-p {
-    color: var(--text-color-principal);
-    font-size: 1.25rem;
-    line-height: 1.7;
-}
-
-button{
-    background-color: var(--color-button);
-    color: var(--text-color-title);
-    border: none;
-    padding: 0.75rem 1.25rem;
-    font-size: 1.1rem;
-    cursor: pointer;
-}
-
-section {
-    padding: 2rem 0;
-    text-align: center;
-    background-color: var(--background-color-principal);
-}
-
-#portada {
-    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 50vh;
+    font-family: 'serif';
 }
 
-#portada-img {
-    width: 100vw;
-    max-width: 100vw;
-    height: auto;
-    border-radius: 10px;
-    display: block;
+#loader {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    background-size: cover;
+    background-position: center;
 }
 
-#miniHistoria {
-    margin: 2rem 0;
+.dragon-eyes-container {
+    position: relative;
+    display: flex;
+    gap: 100px;
+    perspective: 1000px;
 }
 
-#miniHistoria h2 {
-    margin-bottom: 1rem;
+.eye-wrap {
+    position: relative;
+    width: 200px;
+    height: 90px;
+    background: #000;
+    border-radius: 100% 0%;
+    border: 4px solid #3d1a00;
+    overflow: hidden;
+    filter: drop-shadow(0 0 40px rgba(255, 60, 0, 0.4));
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-#miniHistoria p {
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.6;
+.eye-wrap.left { transform: rotate(45deg); }
+.eye-wrap.right { transform: scaleX(-1) rotate(45deg); }
+
+/* --- PÀRPECS --- */
+.lid-top, .lid-bottom {
+    position: absolute;
+    left: -50%;
+    width: 200%; 
+    height: 50%;
+    background: #0a0500;
+    z-index: 10;
+    transition: transform 0.3s ease-in-out;
+    pointer-events: none;
+}
+.lid-top { top: 0; transform: translateY(-100%); border-bottom: 1px solid #441100; }
+.lid-bottom { bottom: 0; transform: translateY(100%); border-top: 1px solid #441100; }
+
+.eye-wrap.closed .lid-top, .eye-wrap.blinking .lid-top { transform: translateY(0) !important; }
+.eye-wrap.closed .lid-bottom, .eye-wrap.blinking .lid-bottom { transform: translateY(0) !important; }
+
+.iris {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 130px; height: 130px;
+    background: radial-gradient(circle, #fff 0%, #ffcc00 20%, #ff6600 40%, #802200 70%, #200a00 100%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    box-shadow: 0 0 30px #ff3c00;
+    animation: magmaPulse 4s ease-in-out infinite;
 }
 
-#personatges, #objectes {
-    margin: 2rem 0;
+@keyframes magmaPulse {
+    0%, 100% { filter: saturate(1.1) brightness(1); transform: translate(-50%, -50%) rotate(-45deg) scale(1); }
+    50% { filter: saturate(1.6) brightness(1.3); transform: translate(-50%, -50%) rotate(-40deg) scale(1.1); }
 }
 
-#personatges p, #objectes p {
-    font-size: 20px;
+.pupil {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 10px; height: 90px;
+    background: #000;
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
-a {
-    color: var(--text-color-title);
-    text-decoration: none;
+.shake { animation: earthquake 0.4s linear infinite; }
+@keyframes earthquake {
+    0% { transform: translate(3px, 3px); }
+    50% { transform: translate(-5px, -2px); }
+    100% { transform: translate(0, 0); }
 }
 
-a:hover {
-    text-decoration: underline;
+.hint {
+    margin-top: 80px;
+    color: #5a2a00;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 12px;
+    animation: pulseText 3s infinite;
+    z-index: 20;
+}
+
+@keyframes pulseText {
+    0%, 100% { opacity: 0.3; transform: scale(0.95); }
+    50% { opacity: 1; color: #ff9900; text-shadow: 0 0 20px #ff6600; }
 }

@@ -2,37 +2,28 @@
     font-family: "EnchantedLand";
     src: url("../fonts/Enchanted Land.otf") format("opentype");
 }
-
-* {
+*{
     font-family: "EnchantedLand", sans-serif;
     margin: 0;
     padding: 0;
 }
-
 :root {
     /*Marrò: #51361A, Purpura:#440150, Vermell:#900603, Cobre rosa:#996666*, cobre: #9F543E, Negre: #1D1C1C */
-    --background-color-principal: #1D1C1C;
-    --text-color-title: #996666;
+    --background-color-principal:#1D1C1C ;
+    --text-color-title: #996666 ;
     --text-color-principal: #9F543E;
-    --color-button: #440150;
+    --color-button:  #440150 ;
 }
-
-header {
+header{
     color: var(--text-color-principal);
     padding: 0.5rem 1rem;
     text-align: center;
-    font-size: 0;
+    font-size: 0; /* no direct text in header */
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to bottom, var(--background-color-principal) 60%, rgba(29, 28, 28, 0));
-    backdrop-filter: blur(8px);
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    background: linear-gradient(to bottom, var(--background-color-principal));
 }
-
 .navbar {
     display: flex;
     justify-content: center;
@@ -41,7 +32,6 @@ header {
     height: 3.2rem;
     width: 100%;
 }
-
 .nav-list {
     list-style: none;
     display: flex;
@@ -63,7 +53,6 @@ header {
     letter-spacing: 0.14em;
     color: var(--text-color-title);
 }
-
 footer {
     background: linear-gradient(to top, var(--background-color-principal), rgba(29, 28, 28, 0.8));
     color: var(--text-color-principal);
@@ -127,45 +116,6 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
-}
-
-footer img {
-    width: 24px;
-    height: 24px;
-    vertical-align: middle;
-    margin-left: 0.5rem;
-}
-
-img {
-    border-radius: 0.75rem;
-    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-    width: 80%;
-    object-fit: cover;
-
-}
-
-h1 {
-    color: var(--text-color-title);
-    text-align: center;
-    letter-spacing: 0.1em;
-}
-
-h2 {
-    color: var(--text-color-title);
-    font-weight: 100;
-}
-
-p {
-    color: var(--text-color-principal);
-}
-
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: var(--text-color-title);
-    font-size: 2.5rem;
-    cursor: pointer;
 }
 
 @media (max-width: 768px) {
@@ -241,10 +191,25 @@ p {
         gap: 1rem;
     }
 
-    img {
-        width: 95%;
+    /* Ranking specific mobile fixes */
+    .bg-gradient-to-b {
+        padding: 1.5rem !important;
     }
 
-    h1 { font-size: 2.5rem; }
-    h2 { font-size: 1.8rem; }
+    .flex.items-end {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .flex.items-end > div {
+        width: 100%;
+    }
+
+    .bg-yellow-400, .bg-gray-400, .bg-orange-600 {
+        height: 100px !important;
+        width: 100% !important;
+    }
+
+    h2 { font-size: 2.5rem !important; }
 }

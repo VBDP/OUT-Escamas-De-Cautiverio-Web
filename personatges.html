@@ -1,146 +1,196 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ca">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personatges i objectes</title>
+    <title>Personatges i objectes | Escamas de Cautiverio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <LINK REL="stylesheet" TYPE="text/css" HREF="css/style_personatges.css">
+    <link rel="stylesheet" type="text/css" href="css/style_personatges.css">
 </head>
-<header>
-    <nav class="navbar">
-        <ul class="nav-list">
-            <li><a href="index.html">Inici</a></li>
-            <li><a href="historia.html ">Història</a></li>
-            <li><a href="personatges.html">Personatges</a></li>
-            <li><a href="objectius.html">Objectes</a></li>
-            <li><a href="ranking.html">Ranking</a></li>
-            <li><a href="formulari.html">Formulari</a></li>
-        </ul>
-    </nav>
-</header>
-<body>
-    <h1 class="text-5xl">Personatges i objectes</h1>
-    <div class="min-h-screen flex items-center justify-center p-10">
-        <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
-      
-          <!-- Protagonista -->
-          <div class="space-y-4">
-            <h2 class="text-5xl font-light">Protagonista</h2>
-            <p class="text-xl">
-              The primary objective of this landing page is to generate pre-orders for the upcoming multiplayer action RPG "Aether Story". The landing page needs to capture player interest, highlight the game's unique features, and drive pre-orders through a special pre-order bonus.
-            </p>
-          </div>
-      
-          <!-- Imagen -->
-          <div class="flex justify-center">
-            <img src="Imatges/imatge_personatge.png" alt="Protagonista" class="rounded-xl shadow-xl w-2/3 max-h-[800px] object-cover" />
-          </div>
+
+<body class="bg-[#1D1C1C] text-white">
+
+    <img class="fixed top-0 left-0 w-full h-screen object-cover -z-10" src="imatges/portada3.png" alt="Fons">
+
+    <header>
+        <nav class="navbar">
+            <button class="menu-toggle" id="menu-toggle">☰</button>
+            <ul class="nav-list">
+                <li><a href="inici.html">Inici</a></li>
+                <li><a href="historia.html ">Història</a></li>
+                <li><a href="personatges.html">Personatges i Objectes</a></li>
+                <li><a href="objectius.html">Objectius</a></li>
+                <li><a href="ranking.html">Ranking</a></li>
+                <li><a href="comentaris.html">Comentaris</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="flex flex-col w-full pb-20">
+            <!-- Protagonista -->
+            <section class="min-h-screen w-full flex items-center justify-center py-10 px-4 relative">
+                <div
+                    class="max-w-7xl w-full group relative bg-[#1c1414]/80 backdrop-blur-lg rounded-[3rem] p-10 lg:p-16 border border-[#996666]/20 hover:border-[#9f543e] transition-all duration-500 shadow-2xl overflow-hidden flex flex-col md:flex-row items-center gap-16 text-left">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-[#440150]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                    </div>
+
+                    <div class="flex-1 w-full z-10 order-1 flex flex-col justify-center">
+                        <h2 class="text-6xl lg:text-7xl text-[#996666] mb-8 tracking-wide font-bold drop-shadow-lg">
+                            Protagonista</h2>
+                        <div class="text-[#9F543E] text-xl lg:text-2xl mb-12 leading-relaxed space-y-6">
+                            <p>Ets un draconiani capturat pels orcs mentre exploraves els seus erms i muntanyes. No ets
+                                un soldat ni un espia: només un explorador dedicat a estudiar la fauna i la flora del
+                                món per ajudar en la creació de pocions i remeis que curin els malalts del teu regne.
+                                Però els orcs, marcats per una antiga rivalitat amb la teva raça, et confonen amb un
+                                infiltrat. La desconfiança i l’odi acumulat entre ambdues espècies ja va provocar una
+                                guerra, i qualsevol trobada és vista com una amenaça.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="w-full md:w-1/2 z-10 order-2">
+                        <img src="Imatges/imatge_personatge.png" alt="Protagonista"
+                            class="w-full h-auto min-h-[500px] object-cover rounded-[2rem] shadow-[0_0_30px_rgba(0,0,0,0.8)] border border-black/50 group-hover:scale-105 transition-transform duration-700"
+                            onerror="this.src='https://placehold.co/800x1000/1D1C1C/996666?text=Protagonista'">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Enemic -->
+            <section class="min-h-screen w-full flex items-center justify-center py-10 px-4 relative">
+                <div
+                    class="max-w-7xl w-full group relative bg-[#1c1414]/80 backdrop-blur-lg rounded-[3rem] p-10 lg:p-16 border border-[#996666]/20 hover:border-[#9f543e] transition-all duration-500 shadow-2xl overflow-hidden flex flex-col md:flex-row items-center gap-16 text-left">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-l from-[#440150]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                    </div>
+
+                    <div class="w-full md:w-1/2 z-10 order-2 md:order-1">
+                        <img src="Imatges/imatge_enemic.png" alt="Enemic"
+                            class="w-full h-auto min-h-[500px] object-cover rounded-[2rem] shadow-[0_0_30px_rgba(0,0,0,0.8)] border border-black/50 group-hover:scale-105 transition-transform duration-700"
+                            onerror="this.src='https://placehold.co/800x1000/1D1C1C/996666?text=Enemic'">
+                    </div>
+
+                    <div class="flex-1 w-full z-10 order-1 md:order-2 flex flex-col justify-center">
+                        <h2 class="text-6xl lg:text-7xl text-[#996666] mb-8 tracking-wide font-bold drop-shadow-lg">
+                            Enemic</h2>
+                        <div class="text-[#9F543E] text-xl lg:text-2xl mb-12 leading-relaxed space-y-6">
+                            <p>Aquest guerrer és un Vigilant de Frontera, encarregat de patrullar els límits del
+                                territori orc i capturar qualsevol intrús que s’hi atreveixi a entrar.
+                                Armat amb una destral massissa i cobert amb una armadura forjada a mà, és conegut per la
+                                seva força bruta i la seva lleialtat absoluta al clan. Per als orcs, qualsevol
+                                draconiani que trepitgi les seves terres és un espia, i aquest Vigilant no dubta a
+                                actuar abans de preguntar.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Enemic del tutorial -->
+            <section class="min-h-screen w-full flex items-center justify-center py-10 px-4 relative">
+                <div
+                    class="max-w-7xl w-full group relative bg-[#1c1414]/80 backdrop-blur-lg rounded-[3rem] p-10 lg:p-16 border border-[#996666]/20 hover:border-[#9f543e] transition-all duration-500 shadow-2xl overflow-hidden flex flex-col md:flex-row items-center gap-16 text-left">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-[#440150]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                    </div>
+
+                    <div class="flex-1 w-full z-10 order-1 flex flex-col justify-center">
+                        <h2 class="text-6xl lg:text-7xl text-[#996666] mb-8 tracking-wide font-bold drop-shadow-lg">
+                            Enemic del tutorial</h2>
+                        <div class="text-[#9F543E] text-xl lg:text-2xl mb-12 leading-relaxed space-y-6">
+                            <p>Un antic guerrer orc que va ser sotmès a rituals prohibits per convertir-lo en una arma
+                                viventa. La corrupció li ha consumit la ment, però li ha multiplicat la força. Ara només
+                                respon a instints primaris: atacar, destruir i protegir la fortalesa subterrània.
+                                Els seus ulls vermells brillen amb una fúria incontrolable, i les seves armes, decorades
+                                amb cranis, són un recordatori del seu passat com a botxí del clan. Tot i la seva
+                                aparença aterridora, és el primer enemic ideal per aprendre les mecàniques bàsiques
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="w-full md:w-1/2 z-10 order-2">
+                        <img src="Imatges/imatge_enemic2.jpg" alt="Guàrdia del tutorial"
+                            class="w-full h-auto min-h-[500px] object-cover rounded-[2rem] shadow-[0_0_30px_rgba(0,0,0,0.8)] border border-black/50 group-hover:scale-105 transition-transform duration-700"
+                            onerror="this.src='https://placehold.co/800x1000/1D1C1C/996666?text=Tutorial'">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Trampes -->
+            <section class="min-h-screen w-full flex items-center justify-center py-10 px-4 relative">
+                <div
+                    class="max-w-7xl w-full group relative bg-[#1c1414]/80 backdrop-blur-lg rounded-[3rem] p-10 lg:p-16 border border-[#996666]/20 hover:border-[#9f543e] transition-all duration-500 shadow-2xl overflow-hidden flex flex-col md:flex-row items-center gap-16 text-left">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-l from-[#440150]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                    </div>
+
+                    <div class="w-full md:w-1/2 z-10 order-2 md:order-1 flex justify-center items-center gap-4">
+                        <img src="Imatges/imatge_trampa1.png" alt="Trampa 1"
+                            class="w-1/2 aspect-square object-cover rounded-[1.5rem] shadow-[0_0_20px_rgba(0,0,0,0.8)] border border-black/50 group-hover:scale-105 transition-transform duration-700"
+                            onerror="this.src='https://placehold.co/400x400/1D1C1C/996666?text=Trampa+1'">
+                        <img src="Imatges/imatge_trampa2.png" alt="Trampa 2"
+                            class="w-1/2 aspect-square object-cover rounded-[1.5rem] shadow-[0_0_20px_rgba(0,0,0,0.8)] border border-black/50 group-hover:scale-105 transition-transform duration-700"
+                            onerror="this.src='https://placehold.co/400x400/1D1C1C/996666?text=Trampa+2'">
+                    </div>
+
+                    <div class="flex-1 w-full z-10 order-1 md:order-2 flex flex-col justify-center">
+                        <h2 class="text-6xl lg:text-7xl text-[#996666] mb-8 tracking-wide font-bold drop-shadow-lg">
+                            Trampes</h2>
+                        <div class="text-[#9F543E] text-xl lg:text-2xl mb-12 leading-relaxed space-y-6">
+                            <p>Les ruïnes orques estan protegides per antics mecanismes dissenyats per eliminar
+                                intrusos. Algunes plataformes activen espines metàl·liques quan detecten pes, mentre que
+                                altres reaccionen a la proximitat, elevant punxes des d’un nucli vermell carregat
+                                d’energia arcana.
+                                Són trampes ràpides, letals i imprevisibles, creades per mantenir fora qualsevol que
+                                s’atreveixi a desafiar el domini del clan.
+                                Si vols, puc fer una versió encara més breu per a una targeta, o una més èpica per donar
+                                més ambient.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+    <div class="footer-top">
+        <div class="socials-joc">
+            <p>Xarxes socials del joc:</p>
+            <a href="https://www.instagram.com/escamasdecautiverio" target="_blank">Instagram <img
+                    src="Imatges/instagram.png" alt="Instagram del Joc"></a>
+            <a href="https://www.youtube.com/channel/UC_example" target="_blank">YouTube <img src="Imatges/yt.png"
+                    alt="YouTube del Joc"></a>
+        </div>
+        <div>
+            <ul class="fnav-list">
+                <li><a href="inici.html">Inici</a></li>
+                <li><a href="historia.html ">Història</a></li>
+                <li><a href="personatges.html">Personatges i Objectes</a></li>
+                <li><a href="objectius.html">Objectius</a></li>
+                <li><a href="ranking.html">Ranking</a></li>
+                <li><a href="comentaris.html">Comentaris</a></li>
+            </ul>
+        </div>
+        <div class="socials-creadors">
+            <p>Xarxes socials dels creadors:</p>
+            <a href="https://www.instagram.com/paauuferreer" target="_blank">Pau <img src="Imatges/instagram.png"
+                    alt="Instagram de Pau"></a>
+            <a href="https://www.instagram.com/ffranxesc" target="_blank">Fran <img src="Imatges/instagram.png"
+                    alt="Instagram de Fran"></a>
+            <a href="https://www.instagram.com/manelmj_06?igsh=ZjRsZWNncDE3cTFo&utm_source=qr">Manel <img
+                    src="Imatges/instagram.png" alt="Instagram de Manel"></a>
+            <a href="https://www.instagram.com/sergi" target="_blank">Viçens <img src="Imatges/instagram.png"
+                    alt="Instagram de Viçens"></a>
         </div>
     </div>
-    <div class="min-h-screen flex items-center justify-center p-10">
-        <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
-      
-          <!-- Enemic -->
-          <div class="space-y-4">
-            <h2 class="text-5xl font-light">Enemic</h2>
-            <p class="text-xl">
-                The ideal customer is a gamer who enjoys immersive fantasy worlds, character customization, and challenging combat. They are likely familiar with other popular action MMORPG titles and follow gaming news and trailers.
-            </p>
-          </div>
-      
-          <!-- Imagen -->
-          <div class="flex justify-center">
-            <img src="Imatges/imatge_enemic.png" alt="Enemic" class="rounded-xl shadow-xl w-2/3 max-h-[800px] object-cover" />
-          </div>
-        </div>
-    </div>
-    <div class="min-h-screen flex items-center justify-center p-10">
-        <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
-      
-          <!-- Enemic del tutorial -->
-          <div class="space-y-4">
-            <h2 class="text-5xl font-light">Enemic del tutorial</h2>
-            <p class="text-xl">
-                The ideal customer is a gamer who enjoys immersive fantasy worlds, character customization, and challenging combat. They are likely familiar with other popular action MMORPG titles and follow gaming news and trailers.
-            </p>
-          </div>
-      
-          <!-- Imagen -->
-          <div class="flex justify-center">
-            <img src="Imatges/imatge_enemic2.png" alt="Enemic del tutorial" class="rounded-xl shadow-xl w-2/3 max-h-[800px] object-cover" />
-          </div>
-        </div>
-    </div>
-    <div class="min-h-screen flex items-center justify-center p-10">
-        <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
-      
-          <!-- Trampes -->
-          <div class="space-y-4">
-            <h2 class="text-5xl font-light">Trampes</h2>
-            <p class="text-xl">
-                The ideal customer is a gamer who enjoys immersive fantasy worlds, character customization, and challenging combat. They are likely familiar with other popular action MMORPG titles and follow gaming news and trailers.
-            </p>
-          </div>
-      
-          <!-- Imagenes -->
-          <div class="flex justify-center space-x-4">
-            <img src="Imatges/imatge_trampa1.png" alt="Trampes" class="rounded-xl shadow-xl w-2/4 max-h-[800px] object-cover" />
-            <img src="Imatges/imatge_trampa2.png" alt="Trampes" class="rounded-xl shadow-xl w-2/4 max-h-[800px] object-cover" />
-          </div>
-        </div>
-    </div>
-    <div class="min-h-screen flex items-center justify-center p-10">
-        <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
-      
-          <!-- Poció -->
-          <div class="space-y-4">
-            <h2 class="text-5xl font-light">Poció</h2>
-            <p class="text-xl">
-                The ideal customer is a gamer who enjoys immersive fantasy worlds, character customization, and challenging combat. They are likely familiar with other popular action MMORPG titles and follow gaming news and trailers.
-            </p>
-          </div>
-      
-          <!-- Imagen -->
-          <div class="flex justify-center">
-            <img src="Imatges/imatge_pocio.png" alt="Poció" class="rounded-xl shadow-xl w-2/3 max-h-[800px] object-cover" />
-          </div>
-        </div>
-    </div>
-    <div class="min-h-screen flex items-center justify-center p-10">
-        <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
-      
-          <!-- Portes -->
-          <div class="space-y-4">
-            <h2 class="text-5xl font-light">Portes</h2>
-            <p class="text-xl">
-                The ideal customer is a gamer who enjoys immersive fantasy worlds, character customization, and challenging combat. They are likely familiar with other popular action MMORPG titles and follow gaming news and trailers.
-            </p>
-          </div>
-      
-          <!-- Imagenes -->
-          <div class="flex justify-center space-x-4">
-            <img src="Imatges/imatge_porta1.png" alt="Portes" class="rounded-xl shadow-xl w-2/4 max-h-[800px] object-cover" />
-            <img src="Imatges/imatge_porta2.png" alt="Portes" class="rounded-xl shadow-xl w-2/4 max-h-[800px] object-cover" />
-          </div>
-        </div>
-    </div>
-    <div class="min-h-screen flex items-center justify-center p-10">
-        <div class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
-      
-          <!-- Mapa del tutorial -->
-          <div class="space-y-4">
-            <h2 class="text-5xl font-light">Mapa del tutorial</h2>
-            <p class="text-xl">
-                The ideal customer is a gamer who enjoys immersive fantasy worlds, character customization, and challenging combat. They are likely familiar with other popular action MMORPG titles and follow gaming news and trailers.
-            </p>
-          </div>
-      
-          <!-- Imagen -->
-          <div class="flex justify-center">
-            <img src="Imatges/imatge_mapa.png" alt="Mapa del tutorial" class="rounded-xl shadow-xl w-2/3 max-h-[800px] object-cover" />
-          </div>
-        </div>
-    </div>
+    <p>&copy; 2026 Escamas de Cautiverio. Todos los derechos reservados.</p>
+
+</footer>
 </body>
+
+<script src="js/inici.js"></script>
+
 </html>

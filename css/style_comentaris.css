@@ -1,0 +1,389 @@
+@font-face {
+    font-family: "EnchantedLand";
+    src: url("../fonts/Enchanted Land.otf") format("opentype");
+}
+*{
+    font-family: "EnchantedLand", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    /*Marrò: #51361A, Purpura:#440150, Vermell:#900603, Cobre rosa:#996666*, cobre: #9F543E, Negre: #1D1C1C */
+    --background-color-principal:#1D1C1C ;
+    --text-color-title: #996666 ;
+    --text-color-principal: #9F543E;
+    --color-button:  #440150 ;
+}
+header{
+    color: var(--text-color-principal);
+    padding: 0.5rem 1rem;
+    text-align: center;
+    font-size: 0; /* no direct text in header */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, var(--background-color-principal));
+}
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    height: 3.2rem;
+    width: 100%;
+}
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 3.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li a {
+    color: var(--text-color-principal);
+    text-decoration: none;
+    font-size: 2rem;
+    line-height: 3.2rem;
+    padding: 0 0.5rem;
+    transition: color 0.3s, letter-spacing 0.3s;
+}
+
+.nav-list li a:hover {
+    letter-spacing: 0.14em;
+    color: var(--text-color-title);
+}
+footer {
+    background: linear-gradient(to top, var(--background-color-principal), rgba(29, 28, 28, 0.8));
+    color: var(--text-color-principal);
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 1rem;
+    border-top: 1px solid var(--text-color-title);
+    margin-top: 2rem;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    gap: 2rem;
+}
+
+.footer-top div {
+    flex: 1;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.footer-top div:first-child {
+    text-align: left;
+}
+
+.footer-top div:last-child {
+    text-align: right;
+}
+
+.fnav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.fnav-list li a {
+    color: var(--text-color-principal);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.fnav-list li a:hover {
+    color: var(--text-color-title);
+}
+
+footer a {
+    color: var(--text-color-title);
+    text-decoration: none;
+    display: inline-block;
+    margin: 0.5rem;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-left: 0.5rem;
+}
+.comments {
+    max-width: 840px;
+    margin: 4rem auto;
+    padding: 2.5rem;
+    border-radius: 18px;
+    background: linear-gradient(180deg, rgba(29, 28, 28, 0.98), rgba(29, 28, 28, 0.85));
+    border: 1px solid rgba(153, 102, 102, 0.5);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+    color: var(--text-color-principal);
+}
+
+.comments-title,
+.comments-subtitle {
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--text-color-title);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.03em;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+.comment-box {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    background: rgba(0, 0, 0, 0.35);
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(153, 102, 102, 0.25);
+}
+
+.comment-box label {
+    font-size: 1.4rem;
+    color: var(--text-color-principal);
+    font-weight: 600;
+    margin-left: 0.1rem;
+}
+
+.comment-box input,
+.comment-box textarea {
+    width: 100%;
+    background: var(--background-color-principal);
+    border: 1px solid rgba(153, 102, 102, 0.8);
+    border-radius: 10px;
+    color: var(--text-color-principal);
+    padding: 0.9rem 0.95rem;
+    font-size: 1.1rem;
+    font-family: "EnchantedLand", sans-serif;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.comment-box input:focus,
+.comment-box textarea:focus {
+    outline: none;
+    border-color: var(--text-color-title);
+    box-shadow: 0 0 0 3px rgba(153, 102, 102, 0.2);
+}
+
+.comment-box textarea {
+    min-height: 140px;
+    resize: vertical;
+    line-height: 1.4;
+}
+
+.comment-btn {
+    width: fit-content;
+    background: var(--text-color-title);
+    color: var(--background-color-principal);
+    padding: 0.9rem 1.25rem;
+    border: 1px solid rgba(217, 172, 159, 0.6);
+    border-radius: 10px;
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    align-self: start;
+    transition: all 0.2s ease;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.comment-btn:hover {
+    background: var(--color-button);
+    color: var(--text-color-title);
+    transform: translateY(-1px);
+}
+
+.comment-status {
+    margin: 0.2rem 0 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-color-principal);
+}
+
+.comments-list {
+    margin-top: 1.5rem;
+    display: grid;
+    gap: 0.9rem;
+}
+
+.comment {
+    padding: 1rem 1rem;
+    background: rgba(29, 29, 29, 0.7);
+    border: 1px solid rgba(153, 102, 102, 0.3);
+    border-radius: 12px;
+    backdrop-filter: blur(2px);
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.3rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+.comment strong {
+    color: var(--text-color-title);
+    font-size: 1.25rem;
+    letter-spacing: 0.01em;
+}
+
+.comment-delete {
+    position: absolute;
+    right: 0.2rem;
+    top: 0.1rem;
+    border: none;
+    background: transparent;
+    color: #f7c8c8;
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0.05rem 0.3rem;
+    border-radius: 50%;
+}
+
+.comment-delete:hover {
+    background: rgba(255, 255, 255, 0.14);
+    color: #ffeded;
+}
+
+.comment-header span {
+    color: var(--text-color-principal);
+    font-size: 0.75rem;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding: 0.2rem 0.4rem;
+}
+
+.comment p {
+    font-size: 1.1rem;
+    color: var(--text-color-principal);
+    margin: 0;
+    line-height: 1.45;
+    white-space: pre-wrap;
+}
+
+.no-comments {
+    text-align: center;
+    font-size: 1.5rem;
+    opacity: 0.8;
+    margin-top: 0.3rem;
+    color: var(--text-color-principal);
+}
+
+@media (max-width: 880px) {
+    header {
+        padding: 0.5rem;
+    }
+
+    .navbar {
+        justify-content: flex-start;
+    }
+
+    .menu-toggle {
+        display: block !important;
+        background: none;
+        border: none;
+        color: var(--text-color-principal);
+        font-size: 2rem;
+        cursor: pointer;
+        margin-right: 1rem;
+    }
+
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--background-color-principal);
+        gap: 0;
+        padding: 1rem 0;
+        border-top: 1px solid var(--text-color-title);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        pointer-events: none;
+    }
+
+    .nav-list.open, .nav-list.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+
+    .nav-list li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-list li a {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        display: block;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .footer-top div {
+        text-align: center !important;
+        width: 100%;
+    }
+
+    .fnav-list {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .comments {
+        margin: 2rem 1rem;
+        padding: 1.5rem;
+        border-radius: 1.5rem;
+    }
+    .comments-title,
+    .comments-subtitle {
+        font-size: clamp(1.7rem, 9vw, 2.4rem);
+    }
+    .comment-btn {
+        font-size: 1.15rem;
+        width: 100%;
+    }
+    
+    .comment-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .comment-delete {
+        top: 0.5rem;
+    }
+}
