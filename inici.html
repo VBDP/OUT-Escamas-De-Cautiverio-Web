@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escamas de Cautiverio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/tailwind.css">
     <LINK REL="stylesheet" TYPE="text/css" HREF="css/inici.css">
     
     
@@ -166,12 +166,12 @@ Les Bèsties de Caça: Criatures de la fauna local que els orcs han domesticat p
                         <h2 class="text-6xl lg:text-7xl text-[#996666] tracking-wide font-bold drop-shadow-lg leading-tight">Uneix-te a <br>la foscor</h2>
                     </div>
                     <div class="text-[#9F543E] text-xl lg:text-2xl mb-12 leading-relaxed space-y-6">
-                        <p>Tens alguna pregunta, suggerència o simplement vols donar la teva opinió? Etiam euismod finibus libero vitae maximus. Suspendisse potenti.</p>
-                        <p>Phasellus imperdiet lacus nec magna posuere tempor. Aliquam nec arcu ac turpis sollicitudin feugiat. Aenean vel interdum mi. Nullam sed sapien in mi facilisis pharetra.</p>
+                        <p>Tens alguna pregunta, suggerència o simplement vols donar la teva opinió?</p>
+                        <p>El nostre grup d'Erudits sempre està obert a noves veus per intercanviar coneixements, reportar errors a les masmorres o suggerir camins inexplorats.</p>
                         <p>Només si entres en contacte amb el nostre clan podràs entendre els misteris que envolten la teva arribada.</p>
                     </div>
                     <div>
-                        <a href="formulari.html" class="inline-block bg-gradient-to-r from-[#440150] to-[#2c0033] hover:from-[#996666] hover:to-[#9f543e] text-white px-10 py-5 rounded-full text-2xl tracking-widest uppercase transition-all duration-300 shadow-[0_0_20px_rgba(68,1,80,0.6)] group-hover:shadow-[0_0_40px_rgba(153,102,102,0.6)] border border-[#996666]/40">Contacta'ns</a>
+                        <a href="comentaris.html" class="inline-block bg-gradient-to-r from-[#440150] to-[#2c0033] hover:from-[#996666] hover:to-[#9f543e] text-white px-10 py-5 rounded-full text-2xl tracking-widest uppercase transition-all duration-300 shadow-[0_0_20px_rgba(68,1,80,0.6)] group-hover:shadow-[0_0_40px_rgba(153,102,102,0.6)] border border-[#996666]/40">Contacta'ns</a>
                     </div>
                 </div>
                 
@@ -265,8 +265,19 @@ Les Bèsties de Caça: Criatures de la fauna local que els orcs han domesticat p
         var revelado = false;
  
         document.addEventListener("DOMContentLoaded", function() {
-            // Si ja hem vist s'animació, amagar immediatament es loader
-            if (localStorage.getItem("animacionVista") == "si") {
+            // Determinamos si es un refresh de F5
+            var esRecarga = false;
+            if (window.performance) {
+                var entradas = window.performance.getEntriesByType("navigation");
+                if (entradas.length > 0 && entradas[0].type === "reload") {
+                    esRecarga = true;
+                } else if (window.performance.navigation && window.performance.navigation.type === 1) {
+                    esRecarga = true;
+                }
+            }
+
+            // Si no estem recarregant i ja hem vist s'animació abans en la sessió, l'amagamu
+            if (!esRecarga && sessionStorage.getItem("animacionVista") == "si") {
                 var elLoader = document.getElementById("loader-intro");
                 if (elLoader) {
                     elLoader.style.display = "none";
@@ -310,8 +321,8 @@ Les Bèsties de Caça: Criatures de la fauna local que els orcs han domesticat p
             if (revelado) return;
             revelado = true;
             
-            // Guardam que ja l'hem vist
-            localStorage.setItem("animacionVista", "si");
+            // Guardam que ja l'hem vist a la sessió
+            sessionStorage.setItem("animacionVista", "si");
  
             var loader = document.getElementById("loader-intro");
             var pista = document.getElementById("text-hint");
