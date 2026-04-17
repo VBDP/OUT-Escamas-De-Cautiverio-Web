@@ -1,10 +1,6 @@
 // Variable per saber si ja hem entrat
 var yaEntrado = false;
 
-// Miram si ja s'ha vist l'animació abans
-// NOTA: Si ja s'ha vist, no fem res aquí (deixam que inici.html s'encaregui)
-// La lògica de redirecció es fa a inici.html per evitar conflictes
-
 // Funció per a que els ulls parpellegin de tant en tant
 function hacerParpadeo() {
     if (yaEntrado == true) {
@@ -60,6 +56,8 @@ function entrarAlJuego() {
     // Canviam es text
     texto.textContent = "BENVINGUT";
     texto.style.color = "#ff0000";
+
+    sessionStorage.setItem("animacionVista", "si");
 
     // Anam a la pàgina principal després d'una estona
     setTimeout(function() {
