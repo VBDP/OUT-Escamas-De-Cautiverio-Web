@@ -2,10 +2,8 @@
 var yaEntrado = false;
 
 // Miram si ja s'ha vist l'animació abans
-if (localStorage.getItem("animacionVista") == "si") {
-    // Si ja s'ha vist, anam directes a la pàgina d'inici
-    window.location.href = "inici.html";
-}
+// NOTA: Si ja s'ha vist, no fem res aquí (deixam que inici.html s'encaregui)
+// La lògica de redirecció es fa a inici.html per evitar conflictes
 
 // Funció per a que els ulls parpellegin de tant en tant
 function hacerParpadeo() {

@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escamas de Cautiverio</title>
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Check immediat: si ja s'ha vist l'animació, anar a inici.html -->
+    <script>
+        if (localStorage.getItem("animacionVista") == "si") {
+            window.location.href = "inici.html";
+        }
+    </script>
 </head>
 <body>
 
