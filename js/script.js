@@ -41,9 +41,6 @@ function entrarAlJuego() {
     }
     yaEntrado = true;
 
-    // Guardam que ja hem vist l'animació
-    localStorage.setItem("animacionVista", "si");
-
     var pantallaCarga = document.getElementById("loader");
     var texto = document.getElementById("text-hint");
     var ojos = document.querySelectorAll(".eye-wrap");
