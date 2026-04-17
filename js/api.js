@@ -74,7 +74,9 @@ function enviarComentario(nombre, contenido) {
         api_token: MI_TOKEN,
         name: nombre,
         content: contenido
+       
     };
+    
 
     return fetch(url, {
         method: 'POST',
