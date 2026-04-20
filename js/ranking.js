@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
             dibujarLista(1);
 
         }).catch(function(error) {
-            console.log("Error en carregar el ranking");
+            console.log("Error en carregar es ranking");
             contenedorRanking.innerHTML = '<p class="text-center text-xl text-red-500">Error al carregar les dades.</p>';
         });
     }

@@ -1,4 +1,4 @@
-// Lògica per el menú mòbil
+// Lògica per as menú mòbil (s'hamburguesa)
 document.addEventListener('DOMContentLoaded', function() {
     
     // Cercam es botó i sa llista d'enllaços

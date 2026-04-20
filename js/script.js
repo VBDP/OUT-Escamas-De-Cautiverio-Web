@@ -1,6 +1,12 @@
 // Variable per saber si ja hem entrat
 var yaEntrado = false;
 
+// Miram si ja s'ha vist l'animació abans
+if (localStorage.getItem("animacionVista") == "si") {
+    // Si ja s'ha vist, anam directes a la pàgina d'inici
+    window.location.href = "inici.html";
+}
+
 // Funció per a que els ulls parpellegin de tant en tant
 function hacerParpadeo() {
     if (yaEntrado == true) {
@@ -37,6 +43,9 @@ function entrarAlJuego() {
     }
     yaEntrado = true;
 
+    // Guardam que ja hem vist l'animació
+    localStorage.setItem("animacionVista", "si");
+
     var pantallaCarga = document.getElementById("loader");
     var texto = document.getElementById("text-hint");
     var ojos = document.querySelectorAll(".eye-wrap");
@@ -56,8 +65,6 @@ function entrarAlJuego() {
     // Canviam es text
     texto.textContent = "BENVINGUT";
     texto.style.color = "#ff0000";
-
-    sessionStorage.setItem("animacionVista", "si");
 
     // Anam a la pàgina principal després d'una estona
     setTimeout(function() {
