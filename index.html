@@ -11,20 +11,42 @@
 <body>
 
 <div id="loader">
-    <div class="dragon-eyes-container" id="eyeContainer">
-        <div class="eye-wrap left">
-            <div class="lid-top"></div>
-            <div class="iris"><div class="pupil"></div></div>
-            <div class="lid-bottom"></div>
-        </div>
-        <div class="eye-wrap right">
-            <div class="lid-top"></div>
-            <div class="iris"><div class="pupil"></div></div>
-            <div class="lid-bottom"></div>
+    <!-- Pantalla de Selección de Idioma -->
+    <div class="lang-selection" id="lang-selection">
+        <h2 class="lang-title" id="lang-title">Choose your language</h2>
+        <div class="flags-container">
+            <button class="flag-btn" onclick="selectLang('es')">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Bandera_de_Espa%C3%B1a.svg" alt="Español">
+                <span>Español</span>
+            </button>
+            <button class="flag-btn" onclick="selectLang('ca')">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Flag_of_Catalonia.svg" alt="Català">
+                <span>Català</span>
+            </button>
+            <button class="flag-btn" onclick="selectLang('en')">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg" alt="English">
+                <span>English</span>
+            </button>
         </div>
     </div>
-    
-    <div class="hint" id="text-hint">ACCEDEIX A OUT</div>
+
+    <!-- Animación de Ojos (Fondo) -->
+    <div id="eye-animation-wrapper" style="position: absolute; display: flex; flex-direction: column; align-items: center; z-index: 10;">
+        <div class="dragon-eyes-container" id="eyeContainer">
+            <div class="eye-wrap left">
+                <div class="lid-top"></div>
+                <div class="iris"><div class="pupil"></div></div>
+                <div class="lid-bottom"></div>
+            </div>
+            <div class="eye-wrap right">
+                <div class="lid-top"></div>
+                <div class="iris"><div class="pupil"></div></div>
+                <div class="lid-bottom"></div>
+            </div>
+        </div>
+        
+        <div class="hint" id="text-hint" style="opacity: 0; transition: opacity 0.5s;"></div>
+    </div>
 </div>
 
 <script src="js/script.js"></script>
