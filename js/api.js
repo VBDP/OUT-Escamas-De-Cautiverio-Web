@@ -21,9 +21,9 @@ function obtenerRanking(cuantos) {
             }
         })
         .then(function(datos) {
-            // Comprobación por si los datos vienen vacíos o nulos
+            // Comprobació per si es ranking ve buit o nul
             if (datos == null) {
-                console.log("Los datos vienen vacíos bros");
+                console.log("Es ranking ve buit");
                 return [];
             }
 
