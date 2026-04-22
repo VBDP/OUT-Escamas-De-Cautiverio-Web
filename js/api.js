@@ -16,7 +16,6 @@ function obtenerRanking(cuantos) {
             if (respuesta.ok) {
                 return respuesta.json();
             } else {
-                // Control de errores como haría un alumno de DAM
                 alert("Error de conexión con la API del ranking. Código: " + respuesta.status);
                 throw new Error("La API ha devuelto un error");
             }
