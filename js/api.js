@@ -36,7 +36,6 @@ function obtenerRanking(cuantos) {
         })
         .catch(function(error) {
             console.error('El fetch ha petado:', error);
-            // Devolvemos un array vacío para no romper la web cuando intente hacer el for
             return [];
         });
 }
