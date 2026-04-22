@@ -16,13 +16,11 @@ function obtenerRanking(cuantos) {
             if (respuesta.ok) {
                 return respuesta.json();
             } else {
-                // Control de errores como haría un alumno de DAM
                 alert("Error de conexión con la API del ranking. Código: " + respuesta.status);
                 throw new Error("La API ha devuelto un error");
             }
         })
         .then(function(datos) {
-            // Comprobación por si los datos vienen vacíos o nulos
             if (datos == null) {
                 console.log("Los datos vienen vacíos bros");
                 return [];
@@ -37,7 +35,6 @@ function obtenerRanking(cuantos) {
         })
         .catch(function(error) {
             console.error('El fetch ha petado:', error);
-            // Devolvemos un array vacío para no romper la web cuando intente hacer el for
             return [];
         });
 }
