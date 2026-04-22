@@ -16,19 +16,26 @@ function obtenerRanking(cuantos) {
             if (respuesta.ok) {
                 return respuesta.json();
             } else {
-                console.log("Error en carregar es ranking");
+                alert("Error de conexión con la API del ranking. Código: " + respuesta.status);
+                throw new Error("La API ha devuelto un error");
             }
         })
         .then(function(datos) {
+            if (datos == null) {
+                console.log("Los datos vienen vacíos bros");
+                return [];
+            }
+
             // Tornam ses dades (o sa llista dins data si existeix)
-            if (datos.data) {
+            if (datos.data != null) {
                 return datos.data;
             } else {
                 return datos;
             }
         })
         .catch(function(error) {
-            console.error('Error:', error);
+            console.error('El fetch ha petado:', error);
+            return [];
         });
 }
 
@@ -74,7 +81,9 @@ function enviarComentario(nombre, contenido) {
         api_token: MI_TOKEN,
         name: nombre,
         content: contenido
+       
     };
+    
 
     return fetch(url, {
         method: 'POST',
