@@ -8,6 +8,7 @@
     <LINK REL="stylesheet" TYPE="text/css" HREF="css/inici.css">
 </head>
 <body class="bg-[#1D1C1C] text-[#9F543E]">
+    <img class="fixed top-0 left-0 w-full h-screen object-cover -z-10" src="imatges/portada3.png" alt="Fons">
     <header>
         <nav class="navbar">
             <button class="menu-toggle" id="menu-toggle">☰</button>
@@ -24,7 +25,7 @@
 
     <main class="min-h-screen">
         <!-- Secció de Portada -->
-        <section id="portada" class="relative">
+        <section id="portada" class="reveal relative">
             <div class="absolute inset-0 z-0">
                 <img src="Imatges/portada3.png" alt="Fons de la Història" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-black/40"></div>
@@ -42,7 +43,7 @@
         <section class="py-24 px-4 overflow-hidden relative">
             <div class="absolute top-0 right-0 w-96 h-96 bg-[#440150]/20 blur-[120px] rounded-full"></div>
             
-            <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
+            <div class="reveal reveal-left max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
                 <div class="flex-1 space-y-8">
                     <h2 class="text-5xl md:text-6xl font-bold text-[#996666] tracking-wide">L'Origen del Captiveri</h2>
                     <div class="space-y-6 text-xl md:text-2xl leading-relaxed text-justify">
@@ -60,8 +61,10 @@ Tu encarnes un Mestre Explorador de l'Ordre Alquímica. La teva missió era nobl
         </section>
 
         <!-- Part 2: El Protagonista -->
-        <section class="py-24 px-4 bg-black/20">
-            <div class="max-w-6xl mx-auto">
+        <section class="py-24 px-4 bg-black/20 relative overflow-hidden">
+            <div class="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#1D1C1C] to-transparent z-10"></div>
+            <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#1D1C1C] to-transparent z-10"></div>
+            <div class="reveal reveal-right max-w-6xl mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                     <div class="bg-[#1c1414]/80 backdrop-blur-xl p-12 rounded-[3rem] border border-[#996666]/20 hover:border-[#9f543e] transition-colors duration-500">
                         <h3 class="text-4xl text-[#996666] mb-6 font-bold">L'Arribada del Solitari</h3>
@@ -79,7 +82,7 @@ Tu encarnes un Mestre Explorador de l'Ordre Alquímica. La teva missió era nobl
         <section class="py-24 px-4 relative overflow-hidden">
             <div class="absolute bottom-0 left-0 w-96 h-96 bg-[#996666]/10 blur-[120px] rounded-full"></div>
             
-            <div class="max-w-4xl mx-auto text-center space-y-12 relative z-10">
+            <div class="reveal reveal-scale max-w-4xl mx-auto text-center space-y-12 relative z-10">
                 <h2 class="text-5xl md:text-7xl font-bold text-[#996666] uppercase tracking-widest">Un Camí sense Retorn</h2>
                 <div class="text-2xl md:text-3xl space-y-8 leading-relaxed italic opacity-90">
                     <p>En "Escamas de Cautiverio", la història no s'escriu amb tinta, sinó amb voluntat.</p>
@@ -97,7 +100,8 @@ Tu encarnes un Mestre Explorador de l'Ordre Alquímica. La teva missió era nobl
             <div class="socials-joc">
                 <p>Xarxes socials del joc:</p>
                 <a href="https://www.instagram.com/llamadmev/" target="_blank">Instagram <img src="Imatges/instagram.png" alt="Instagram del Joc"></a>
-            <a href="https://www.youtube.com/@VDrago" target="_blank">YouTube <img src="Imatges/yt.png" alt="YouTube del Joc"></a>
+                <a href="https://www.youtube.com/@VDrago" target="_blank">YouTube <img src="Imatges/yt.png" alt="YouTube del Joc"></a>
+            </div>
             <div>
                 <ul class="fnav-list">
                     <li><a href="inici.html">Inici</a></li>
@@ -113,7 +117,7 @@ Tu encarnes un Mestre Explorador de l'Ordre Alquímica. La teva missió era nobl
                 <a href="https://www.instagram.com/paauuferreer" target="_blank">Pau <img src="Imatges/instagram.png" alt="Instagram de Pau"></a>
                 <a href="https://www.instagram.com/ffranxesc" target="_blank">Fran <img src="Imatges/instagram.png" alt="Instagram de Fran"></a>
                 <a href="https://www.instagram.com/manelmj_06" target="_blank">Manel <img src="Imatges/instagram.png" alt="Instagram de Manel"></a>
-                <a href="https://www.instagram.com/sergi" target="_blank">Viçens <img src="Imatges/instagram.png" alt="Instagram de Viçens"></a>
+                <a href="https://www.instagram.com/llamadmev" target="_blank">Drago <img src="Imatges/instagram.png" alt="Instagram de Drago"></a>
             </div>
         </div>
         <p>&copy; 2026 Escamas de Cautiverio. Tots els drets reservats.</p>

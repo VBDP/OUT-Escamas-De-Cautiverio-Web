@@ -136,12 +136,11 @@ footer img {
     margin-left: 0.5rem;
 }
 
-img {
+main img {
     border-radius: 0.75rem;
     box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
     width: 80%;
     object-fit: cover;
-
 }
 
 h1 {

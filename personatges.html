@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personatges i objectes | Escamas de Cautiverio</title>
     <link rel="stylesheet" href="css/tailwind.css">
+    <LINK REL="stylesheet" TYPE="text/css" HREF="css/inici.css">
     <link rel="stylesheet" type="text/css" href="css/style_personatges.css">
 </head>
 
-<body class="bg-[#1D1C1C] text-white">
+<body class="bg-[#1D1C1C] text-[#9F543E]">
 
     <img class="fixed top-0 left-0 w-full h-screen object-cover -z-10" src="imatges/portada3.png" alt="Fons">
 
@@ -27,12 +28,25 @@
         </nav>
     </header>
 
+    <section id="portada" class="relative flex items-center justify-center py-20 px-4">
+        <div class="absolute inset-0 z-0">
+            <img src="Imatges/portada2.png" alt="Personatges de Escamas de Cautiverio" id="portada-img" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/50"></div>
+        </div>
+        <div id="miniHistoria" class="relative z-10 max-w-4xl mx-auto bg-gradient-to-b from-[#2a1a1a]/80 to-[#1a1111]/90 backdrop-blur-xl border border-[#996666]/30 rounded-3xl p-10 text-center shadow-[0_0_40px_rgba(0,0,0,0.5)] overflow-hidden">
+            <div class="absolute -top-24 -right-24 w-48 h-48 bg-[#996666]/20 rounded-full blur-3xl"></div>
+            <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-[#440150]/30 rounded-full blur-3xl"></div>
+            <h2 class="text-5xl font-bold text-[#996666] mb-8 relative z-10 tracking-widest uppercase">Personatges i Objectes</h2>
+            <p class="text-[#9F543E] text-2xl leading-relaxed mb-6 relative z-10">Descobreix els herois, els enemics i els secrets que s'amaguen a les profunditats de la masmorra.</p>
+        </div>
+    </section>
+
     <main>
         <div class="flex flex-col w-full pb-20">
             <!-- Protagonista -->
             <section class="min-h-screen w-full flex items-center justify-center py-10 px-4 relative">
                 <div
-                    class="max-w-7xl w-full group relative bg-[#1c1414]/80 backdrop-blur-lg rounded-[3rem] p-10 lg:p-16 border border-[#996666]/20 hover:border-[#9f543e] transition-all duration-500 shadow-2xl overflow-hidden flex flex-col md:flex-row items-center gap-16 text-left">
+                    class="reveal reveal-left max-w-7xl w-full group relative bg-[#1c1414]/80 backdrop-blur-lg rounded-[3rem] p-10 lg:p-16 border border-[#996666]/20 hover:border-[#9f543e] transition-all duration-500 shadow-2xl overflow-hidden flex flex-col md:flex-row items-center gap-16 text-left">
                     <div
                         class="absolute inset-0 bg-gradient-to-r from-[#440150]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700">
                     </div>
@@ -62,7 +76,7 @@
             <!-- Enemic -->
             <section class="min-h-screen w-full flex items-center justify-center py-10 px-4 relative">
                 <div
-                    class="max-w-7xl w-full group relative bg-[#1c1414]/80 backdrop-blur-lg rounded-[3rem] p-10 lg:p-16 border border-[#996666]/20 hover:border-[#9f543e] transition-all duration-500 shadow-2xl overflow-hidden flex flex-col md:flex-row items-center gap-16 text-left">
+                    class="reveal reveal-right max-w-7xl w-full group relative bg-[#1c1414]/80 backdrop-blur-lg rounded-[3rem] p-10 lg:p-16 border border-[#996666]/20 hover:border-[#9f543e] transition-all duration-500 shadow-2xl overflow-hidden flex flex-col md:flex-row items-center gap-16 text-left">
                     <div
                         class="absolute inset-0 bg-gradient-to-l from-[#440150]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700">
                     </div>
@@ -92,7 +106,7 @@
             <!-- Enemic del tutorial -->
             <section class="min-h-screen w-full flex items-center justify-center py-10 px-4 relative">
                 <div
-                    class="max-w-7xl w-full group relative bg-[#1c1414]/80 backdrop-blur-lg rounded-[3rem] p-10 lg:p-16 border border-[#996666]/20 hover:border-[#9f543e] transition-all duration-500 shadow-2xl overflow-hidden flex flex-col md:flex-row items-center gap-16 text-left">
+                    class="reveal reveal-left max-w-7xl w-full group relative bg-[#1c1414]/80 backdrop-blur-lg rounded-[3rem] p-10 lg:p-16 border border-[#996666]/20 hover:border-[#9f543e] transition-all duration-500 shadow-2xl overflow-hidden flex flex-col md:flex-row items-center gap-16 text-left">
                     <div
                         class="absolute inset-0 bg-gradient-to-r from-[#440150]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700">
                     </div>
@@ -122,7 +136,7 @@
             <!-- Trampes -->
             <section class="min-h-screen w-full flex items-center justify-center py-10 px-4 relative">
                 <div
-                    class="max-w-7xl w-full group relative bg-[#1c1414]/80 backdrop-blur-lg rounded-[3rem] p-10 lg:p-16 border border-[#996666]/20 hover:border-[#9f543e] transition-all duration-500 shadow-2xl overflow-hidden flex flex-col md:flex-row items-center gap-16 text-left">
+                    class="reveal reveal-scale max-w-7xl w-full group relative bg-[#1c1414]/80 backdrop-blur-lg rounded-[3rem] p-10 lg:p-16 border border-[#996666]/20 hover:border-[#9f543e] transition-all duration-500 shadow-2xl overflow-hidden flex flex-col md:flex-row items-center gap-16 text-left">
                     <div
                         class="absolute inset-0 bg-gradient-to-l from-[#440150]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700">
                     </div>
@@ -180,15 +194,14 @@
                     alt="Instagram de Fran"></a>
             <a href="https://www.instagram.com/manelmj_06?igsh=ZjRsZWNncDE3cTFo&utm_source=qr">Manel <img
                     src="Imatges/instagram.png" alt="Instagram de Manel"></a>
-            <a href="https://www.instagram.com/sergi" target="_blank">Viçens <img src="Imatges/instagram.png"
-                    alt="Instagram de Viçens"></a>
+            <a href="https://www.instagram.com/llamadmev" target="_blank">Drago <img src="Imatges/instagram.png"
+                    alt="Instagram de Drago"></a>
         </div>
     </div>
     <p>&copy; 2026 Escamas de Cautiverio. Todos los derechos reservados.</p>
 
 </footer>
+    <script src="js/inici.js"></script>
 </body>
-
-<script src="js/inici.js"></script>
 
 </html>
