@@ -240,12 +240,12 @@ header{
     font-size: 2rem;
     line-height: 3.2rem;
     padding: 0 0.5rem;
-    transition: color 0.3s, letter-spacing 0.3s;
+    transition: all 0.3s ease;
 }
 
 .nav-list li a:hover {
-    letter-spacing: 0.14em;
     color: var(--text-color-title);
+    text-shadow: 0 0 10px rgba(153, 102, 102, 0.4);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -473,12 +473,12 @@ footer {
     color: var(--text-color-principal);
     text-decoration: none;
     font-size: 1.2rem;
-    transition: color 0.3s, letter-spacing 0.3s;
+    transition: all 0.3s ease;
 }
 
 .fnav-list li a:hover {
     color: var(--text-color-title);
-    letter-spacing: 0.14em;
+    text-decoration: underline;
 }
 
 footer a {
