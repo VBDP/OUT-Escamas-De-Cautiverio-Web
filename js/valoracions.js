@@ -33,7 +33,7 @@ function dibujarComentarios() {
     listaHtml.innerHTML = "";
 
     if (comentarios.length === 0) {
-        listaHtml.innerHTML = '<p class="no-comments text-center italic opacity-60">Encara no hi ha comentaris.</p>';
+        listaHtml.innerHTML = '<p class="no-comments text-center italic opacity-60">Encara no hi ha valoracions.</p>';
         return;
     }
 
