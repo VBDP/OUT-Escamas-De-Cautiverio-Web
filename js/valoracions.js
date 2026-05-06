@@ -75,12 +75,32 @@ function nuevoComentario(nombre, mensaje) {
 
     // Es posam a n'es principi de sa llista
     lista.unshift(comentarioObj);
+    guardarComentarioServidor(comentarioObj);
     
     // Guardam i tornam a dibuixar
     guardarComentariosLocal(lista);
     dibujarComentarios();
 }
-
+function guardarComentarioServidor(comentarioObj) {
+    var url = URL_BASE + '/api/posts/' + MI_TOKEN;
+    return fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(comentarioObj)
+    })
+        .then(function(respuesta) {
+            return respuesta.json();
+        })
+        .then(function(datos) {
+            if (datos.data) {
+                return datos.data;
+            } else {
+                return datos;
+            }
+        });
+}
 // Deixam borrarComentario disponible a n'es objecte window per a que s'onclick de s'HTML funcioni
 window.borrarComentario = borrarComentario;
 
