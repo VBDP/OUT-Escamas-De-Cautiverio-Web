@@ -643,7 +643,7 @@ footer img {
 a:hover {
     text-decoration: underline;
 }
-
+    }
 footer {
     background: linear-gradient(to top, var(--background-color-principal), rgba(29, 28, 28, 0.8));
     color: var(--text-color-principal);
@@ -837,4 +837,4 @@ footer img {
         text-align: center;
     }
 }
-
+}
