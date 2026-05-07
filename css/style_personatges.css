@@ -137,10 +137,29 @@ footer img {
 }
 
 main img {
-    border-radius: 0.75rem;
-    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-    width: 80%;
+    border-radius: 2rem;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.5);
+    width: 100%;
     object-fit: cover;
+    transition: all 0.5s ease;
+}
+
+.img-flotant {
+    animation: flotar 6s ease-in-out infinite;
+}
+
+@keyframes flotar {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(1deg); }
+}
+
+.reveal {
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.reveal:hover {
+    border-color: var(--text-color-title) !important;
+    box-shadow: 0 0 40px rgba(153, 102, 102, 0.2) !important;
 }
 
 h1 {

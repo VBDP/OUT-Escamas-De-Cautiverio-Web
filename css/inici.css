@@ -212,6 +212,12 @@ header{
     overflow: hidden;
 }
 
+#portada.secundaria {
+    min-height: 60vh;
+    align-items: flex-start;
+    padding-top: 10rem;
+}
+
 #portada > div {
     width: 100%;
 }
