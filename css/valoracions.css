@@ -1,0 +1,78 @@
+#portada {
+    position: relative;
+    overflow: hidden;
+}
+
+#portada a{
+    color: var(--text-color-principal);
+    font-size: 2.5rem;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+#miniHistoria {
+    animation: fadeInSoft 1.8s ease-out forwards, fadeOutSoft 4s ease-out forwards 3s;
+}
+@keyframes fadeOutSoft {
+    0% {
+        opacity: 1;
+        filter: blur(0);
+    }
+    100% {
+        opacity: 0.1;
+        filter: blur(4px);
+    }
+}
+.main a:hover {
+    color: var(--text-color-title);
+    animation: glow 2s infinite;
+    text-align: center;
+}
+.video-background iframe {
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+}
+
+.video-background {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+/* Enllaç sota el vídeo: estil base */
+.link-video {
+    color: #996666;
+    font-size: 1.4rem;
+    font-style: italic;
+    opacity: 0.9;
+    transition: all 0.4s ease;
+    animation: softPulse 3s ease-in-out infinite;
+}
+
+.link-video:hover {
+    color: var(--text-color-title);
+    animation: glow 1.6s infinite;
+    text-shadow:
+        0 0 10px rgba(255, 165, 0, 0.8),
+        0 0 25px rgba(255, 120, 0, 0.6),
+        0 0 40px rgba(255, 100, 0, 0.4);
+}
+
+@keyframes glow {
+    0% {
+        text-shadow:
+            0 0 5px rgba(255, 140, 0, 0.3),
+            0 0 10px rgba(255, 140, 0, 0.2);
+    }
+    50% {
+        text-shadow:
+            0 0 15px rgba(255, 165, 0, 0.9),
+            0 0 30px rgba(255, 120, 0, 0.7),
+            0 0 45px rgba(255, 100, 0, 0.5);
+    }
+}
+@keyframes softPulse {
+    0% { opacity: 0.8; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.03); }
+    100% { opacity: 0.8; transform: scale(1); }
+}

@@ -212,6 +212,12 @@ header{
     overflow: hidden;
 }
 
+#portada.secundaria {
+    min-height: 60vh;
+    align-items: flex-start;
+    padding-top: 10rem;
+}
+
 #portada > div {
     width: 100%;
 }
@@ -643,7 +649,7 @@ footer img {
 a:hover {
     text-decoration: underline;
 }
-
+    }
 footer {
     background: linear-gradient(to top, var(--background-color-principal), rgba(29, 28, 28, 0.8));
     color: var(--text-color-principal);
@@ -837,4 +843,4 @@ footer img {
         text-align: center;
     }
 }
-
+}

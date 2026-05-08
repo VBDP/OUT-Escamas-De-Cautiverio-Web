@@ -8,7 +8,7 @@
     <LINK REL="stylesheet" TYPE="text/css" HREF="css/inici.css">
 </head>
 <body class="bg-[#1D1C1C] text-[#9F543E]">
-    <img class="fixed top-0 left-0 w-full h-screen object-cover -z-10" src="imatges/portada3.png" alt="Fons">
+    <img class="fixed top-0 left-0 w-full h-screen object-cover -z-10" src="Imatges/portada3.png" alt="Fons">
     <header>
         <nav class="navbar">
             <button class="menu-toggle" id="menu-toggle">☰</button>
@@ -20,23 +20,22 @@
                 <li><a href="ranking.html">Ranking</a></li>
                 <li><a href="comentaris.html">Comentaris</a></li>
                 <li><a href="vlog.html">Vlog</a></li>
+                <li><a href="valoracions.html">Valoracions</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="min-h-screen">
-        <!-- Secció de Portada -->
-        <section id="portada" class="reveal relative">
+        <section id="portada" class="secundaria relative flex items-center justify-center py-20 px-4">
             <div class="absolute inset-0 z-0">
-                <img src="Imatges/portada3.png" alt="Fons de la Història" class="w-full h-full object-cover">
-                <div class="absolute inset-0 bg-black/40"></div>
+                <img src="Imatges/portada3.png" alt="Fons de la Història" id="portada-img" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black/50"></div>
             </div>
-            
-            <div class="relative z-10 py-32 px-4">
-                <div class="max-w-4xl mx-auto bg-black/60 backdrop-blur-md rounded-3xl p-10 border border-[#996666]/30 shadow-2xl">
-                    <h1 class="text-6xl md:text-8xl font-bold text-[#996666] mb-6 tracking-tighter text-center">LA LLEGENDA</h1>
-                    <p class="text-2xl md:text-3xl text-center italic opacity-80">"En la foscor més profunda, les escates brillen amb el passat que no pot ser oblidat."</p>
-                </div>
+            <div id="miniHistoria" class="reveal relative z-10 max-w-4xl mx-auto bg-gradient-to-b from-[#2a1a1a]/80 to-[#1a1111]/90 backdrop-blur-xl border border-[#996666]/30 rounded-3xl p-10 text-center shadow-[0_0_40px_rgba(0,0,0,0.5)] overflow-hidden">
+                <div class="absolute -top-24 -right-24 w-48 h-48 bg-[#996666]/20 rounded-full blur-3xl"></div>
+                <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-[#440150]/30 rounded-full blur-3xl"></div>
+                <h1 class="text-5xl font-bold text-[#996666] mb-8 relative z-10 tracking-widest uppercase">LA LLEGENDA</h1>
+                <p class="text-[#9F543E] text-2xl leading-relaxed mb-6 relative z-10 italic">"En la foscor més profunda, les escates brillen amb el passat que no pot ser oblidat."</p>
             </div>
         </section>
 
@@ -112,7 +111,8 @@ Tu encarnes un Mestre Explorador de l'Ordre Alquímica. La teva missió era nobl
                     <li><a href="personatges.html">Personatges i Objectes</a></li>
                     <li><a href="objectius.html">Objectius</a></li>
                     <li><a href="ranking.html">Ranking</a></li>
-                    <li><a href="comentaris.html">Comentaris</a></li>
+                    <li><a href="valoracions.html">Valoracions</a></li>
+                    <li><a href="comentaris.html">Contacte</a></li>
                 </ul>
             </div>
             <div class="socials-creadors">
