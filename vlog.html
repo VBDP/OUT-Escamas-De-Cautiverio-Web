@@ -18,30 +18,42 @@
             <button class="menu-toggle" id="menu-toggle">☰</button>
             <ul class="nav-list">
                 <li><a href="inici.html">Inici</a></li>
-                <li><a href="historia.html ">Història</a></li>
+                <li><a href="historia.html">Història</a></li>
                 <li><a href="personatges.html">Personatges i Objectes</a></li>
                 <li><a href="objectius.html">Objectius</a></li>
                 <li><a href="ranking.html">Ranking</a></li>
+                <li><a href="vlog.html">Vlog</a></li>
                 <li><a href="comentaris.html">Comentaris</a></li>
+                <li><a href="valoracions.html">Valoracions</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="portada" class="relative flex items-center justify-center py-20 px-4">
         <div class="absolute inset-0 z-0">
-            <img src="Imatges/portada1.png" alt="Comentaris de Escamas de Cautiverio" id="portada-img" class="w-full h-full object-cover">
+            <img src="Imatges/portada1.png" alt="Vlogs de Escamas de Cautiverio" id="portada-img" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-black/50"></div>
         </div>
         <div id="miniHistoria" class="reveal relative z-10 max-w-4xl mx-auto bg-gradient-to-b from-[#2a1a1a]/80 to-[#1a1111]/90 backdrop-blur-xl border border-[#996666]/30 rounded-3xl p-10 text-center shadow-[0_0_40px_rgba(0,0,0,0.5)] overflow-hidden">
             <div class="absolute -top-24 -right-24 w-48 h-48 bg-[#996666]/20 rounded-full blur-3xl"></div>
             <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-[#440150]/30 rounded-full blur-3xl"></div>
-            <h2 class="text-5xl font-bold text-[#996666] mb-8 relative z-10 tracking-widest uppercase">Comentaris</h2>
-            <p class="text-[#9F543E] text-2xl leading-relaxed mb-6 relative z-10">La teva opinió és vital. Deixa un comentari sobre la teva experiència a OUT.</p>
+            <h2 class="text-5xl font-bold text-[#996666] mb-8 relative z-10 tracking-widest uppercase">Vlog</h2>
+            <p class="text-[#9F543E] text-2xl leading-relaxed mb-6 relative z-10">Aqui podras veure els vlogs del joc, penjats per el nostre dissenyador.</p>
         </div>
     </section>
 
     <main class="py-16 px-4">
+        <div class="body-font relative z-10 mt-16 md:mt-24 pt-16 border-t border-[#996666]/20 bg-transparent">
+            <h2 class="text-4xl md:text-5xl text-center mb-10 text-[#996666] tracking-wider">Llistat de Vlogs</h2>
         
+            <div class="container px-5 py-8 mx-auto bg-black/40 border border-[#996666]/30 rounded-[3rem] shadow-2xl backdrop-blur-md">
+
+                <div id="listaVlogs"></div>
+                
+                <div id="paginacion" class="flex justify-center items-center gap-6 mt-10">
+                </div>
+            </div>
+        </div>
     </main>
     <footer>
         <div class="footer-top">
@@ -54,12 +66,13 @@
             <div>
                 <ul class="fnav-list">
                     <li><a href="inici.html">Inici</a></li>
-                    <li><a href="historia.html ">Història</a></li>
-                    <li><a href="personatges.html">Personatges i Objectes</a></li>
-                    <li><a href="objectius.html">Objectius</a></li>
-                    <li><a href="ranking.html">Ranking</a></li>
-                    <li><a href="comentaris.html">Comentaris</a></li>
-                    <li><a href="vlog.html">Vlog</a></li>
+                <li><a href="historia.html">Història</a></li>
+                <li><a href="personatges.html">Personatges i Objectes</a></li>
+                <li><a href="objectius.html">Objectius</a></li>
+                <li><a href="ranking.html">Ranking</a></li>
+                <li><a href="vlog.html">Vlog</a></li>
+                <li><a href="comentaris.html">Comentaris</a></li>
+                <li><a href="valoracions.html">Valoracions</a></li>
                 </ul>
             </div>
             <div class="socials-creadors">
