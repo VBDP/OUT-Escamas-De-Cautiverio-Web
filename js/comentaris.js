@@ -42,18 +42,17 @@ function dibujarComentarios() {
         var c = comentarios[i];
         
         var div = document.createElement("div");
-        // Classes de Tailwind per a que sembli una targeta premium
-        div.className = "group relative bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#996666]/50 rounded-2xl p-6 transition-all duration-300 shadow-lg";
+        div.className = "comment reveal reveal-left";
         
         div.innerHTML = 
-            '<div class="flex justify-between items-start mb-4">' +
+            '<div class="comment-header">' +
                 '<div>' +
-                    '<strong class="text-2xl text-[#996666] block mb-1">' + c.name + '</strong>' +
-                    '<span class="text-xs text-[#9F543E]/60 bg-black/40 px-3 py-1 rounded-full border border-white/5">' + c.date + '</span>' +
+                    '<strong>' + c.name + '</strong>' +
+                    '<span>' + c.date + '</span>' +
                 '</div>' +
-                '<button onclick="borrarComentario(' + i + ')" class="text-[#996666]/40 hover:text-red-400 transition-colors text-xl p-2">✕</button>' +
+                '<button onclick="borrarComentario(' + i + ')" class="comment-delete">✕</button>' +
             '</div>' +
-            '<p class="text-lg text-[#9F543E] leading-relaxed">' + c.message + '</p>';
+            '<p>' + c.message + '</p>';
         
         listaHtml.appendChild(div);
     }

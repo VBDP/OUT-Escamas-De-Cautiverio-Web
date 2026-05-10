@@ -147,67 +147,66 @@ footer img {
 
 .comment-box {
     display: grid;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    background: rgba(0, 0, 0, 0.35);
-    padding: 1rem;
-    border-radius: 12px;
-    border: 1px solid rgba(153, 102, 102, 0.25);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    border-radius: 2rem;
+    border: 1px solid rgba(153, 102, 102, 0.1);
+    backdrop-blur: 5px;
 }
 
 .comment-box label {
-    font-size: 1.4rem;
-    color: var(--text-color-principal);
-    font-weight: 600;
-    margin-left: 0.1rem;
+    font-size: 1.2rem;
+    color: var(--text-color-title);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: -0.5rem;
 }
 
 .comment-box input,
 .comment-box textarea {
     width: 100%;
-    background: var(--background-color-principal);
-    border: 1px solid rgba(153, 102, 102, 0.8);
-    border-radius: 10px;
-    color: var(--text-color-principal);
-    padding: 0.9rem 0.95rem;
+    background: rgba(29, 28, 28, 0.6);
+    border: 1px solid rgba(153, 102, 102, 0.3);
+    border-radius: 1rem;
+    color: #fff;
+    padding: 1.2rem;
     font-size: 1.1rem;
-    font-family: "EnchantedLand", sans-serif;
-    transition: border-color 0.2s, box-shadow 0.2s;
+    transition: all 0.3s ease;
 }
 
 .comment-box input:focus,
 .comment-box textarea:focus {
     outline: none;
     border-color: var(--text-color-title);
-    box-shadow: 0 0 0 3px rgba(153, 102, 102, 0.2);
-}
-
-.comment-box textarea {
-    min-height: 140px;
-    resize: vertical;
-    line-height: 1.4;
+    background: rgba(29, 28, 28, 0.9);
+    box-shadow: 0 0 20px rgba(153, 102, 102, 0.1);
 }
 
 .comment-btn {
     width: fit-content;
-    background: var(--text-color-title);
-    color: var(--background-color-principal);
-    padding: 0.9rem 1.25rem;
-    border: 1px solid rgba(217, 172, 159, 0.6);
-    border-radius: 10px;
-    font-size: 1.35rem;
-    font-weight: 700;
-    letter-spacing: 0.02em;
+    background: linear-gradient(to r, var(--color-button), #2c0033);
+    color: #fff;
+    padding: 1rem 3rem;
+    border: 1px solid rgba(153, 102, 102, 0.4);
+    border-radius: 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     cursor: pointer;
-    align-self: start;
-    transition: all 0.2s ease;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    justify-self: center; /* Per centrar en el grid */
+    margin-top: 1rem;
 }
 
 .comment-btn:hover {
-    background: var(--color-button);
-    color: var(--text-color-title);
-    transform: translateY(-1px);
+    background: linear-gradient(to r, var(--text-color-title), var(--text-color-principal));
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(153, 102, 102, 0.3);
 }
 
 .comment-status {
@@ -224,11 +223,18 @@ footer img {
 }
 
 .comment {
-    padding: 1rem 1rem;
-    background: rgba(29, 29, 29, 0.7);
-    border: 1px solid rgba(153, 102, 102, 0.3);
-    border-radius: 12px;
-    backdrop-filter: blur(2px);
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(153, 102, 102, 0.15);
+    border-radius: 1.5rem;
+    backdrop-blur: 10px;
+    transition: all 0.3s ease;
+}
+
+.comment:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(153, 102, 102, 0.4);
+    transform: translateX(10px);
 }
 
 .comment-header {
