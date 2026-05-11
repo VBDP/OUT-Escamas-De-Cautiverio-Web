@@ -72,11 +72,11 @@ function actualizarPodio(podio) {
             
             podEl.innerHTML = 
                 '<div class="' + est.bg + ' ' + est.w + ' ' + est.h + ' rounded-t-[20px] flex flex-col items-center justify-center text-white p-2 md:p-3 text-center border-t border-white/40 transform hover:-translate-y-2 transition-transform duration-300">' +
-                  '<span class="text-6xl md:text-7xl font-black opacity-90 drop-shadow-lg">' + est.num + '</span>' +
+                  '<span class="text-7xl md:text-7xl font-black opacity-90 drop-shadow-lg">' + est.num + '</span>' +
                 '</div>' +
                 '<div class="mt-5 text-center flex flex-col items-center">' +
-                  '<span class="text-xl md:text-3xl font-extrabold truncate w-24 md:w-36 text-white drop-shadow-md mb-2">' + (player.name || 'Anònim') + '</span>' +
-                  '<span class="text-sm md:text-lg font-bold bg-[#9F543E]/20 text-[#9F543E] px-4 py-1.5 rounded-full border border-[#9F543E]/40 whitespace-nowrap mb-2">' + (player.puntuacion || 0) + ' pts</span>' +
+                  '<span class="text-2xl md:text-3xl font-extrabold truncate w-24 md:w-36 text-white drop-shadow-md mb-2">' + (player.name || 'Anònim') + '</span>' +
+                  '<span class="text-lg md:text-xl font-bold bg-[#9F543E]/20 text-[#9F543E] px-5 py-2 rounded-full border border-[#9F543E]/40 whitespace-nowrap mb-2">' + (player.puntuacion || 0) + ' pts</span>' +
                 '</div>';
             
             contenedorPodio.appendChild(podEl);
@@ -121,10 +121,10 @@ function dibujarLista(pagina) {
               '<span class="text-3xl md:text-4xl font-black text-[#996666]">' + posicion + '</span>' +
             '</div>' +
             '<div class="flex-grow flex justify-between items-center text-left">' +
-              '<h2 class="text-2xl md:text-3xl font-bold text-white pr-4 truncate w-1/2">' + (p.name || 'Anònim') + '</h2>' +
+              '<h2 class="text-3xl md:text-4xl font-bold text-white pr-4 truncate w-1/2">' + (p.name || 'Anònim') + '</h2>' +
               '<div class="inline-flex items-center space-x-2 bg-[#9F543E]/20 px-4 py-2 rounded-full border border-[#9F543E]/30 whitespace-nowrap">' +
-                  '<span class="text-xl md:text-2xl font-bold text-[#9F543E]">' + (p.puntuacion || 0) + '</span>' +
-                  '<span class="text-xs md:text-sm text-[#9F543E]/80 uppercase tracking-widest hidden sm:inline">pts</span>' +
+                  '<span class="text-2xl md:text-3xl font-bold text-[#9F543E]">' + (p.puntuacion || 0) + '</span>' +
+                  '<span class="text-sm md:text-base text-[#9F543E]/80 uppercase tracking-widest hidden sm:inline">pts</span>' +
               '</div>' +
             '</div>';
         
