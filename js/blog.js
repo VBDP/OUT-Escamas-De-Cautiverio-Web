@@ -1,30 +1,30 @@
-var restoVlogs = [];
+var restoBlogs = [];
 var paginaActual = 1;
-var vlogsPorPagina = 5;
+var blogsPorPagina = 5;
 
 document.addEventListener('DOMContentLoaded', function() {
-    var contenedorRanking = document.getElementById('listaVlogs');
+    var contenedorRanking = document.getElementById('listaBlogs');
     if (contenedorRanking == null) {
         return;
     }
 
     // Cridam a sa funció que està a api.js
     if (typeof obtenerPosts === 'function') {
-        obtenerPosts().then(function(vlogs) {
+        obtenerPosts().then(function(blogs) {
             
-            if (vlogs == null || vlogs.length === 0) {
-                contenedorRanking.innerHTML = '<p class="text-center text-xl text-white">No hi ha vlogs encara.</p>';
+            if (blogs == null || blogs.length === 0) {
+                contenedorRanking.innerHTML = '<p class="text-center text-xl text-white">No hi ha blogs encara.</p>';
                 return;
             }
 
             // guardar blogs per a sa pàgina
-            restoVlogs = vlogs.slice();
+            restoBlogs = blogs.slice();
 
             // Dibuixam sa primera pàgina de sa llista
             dibujarLista(1);
 
         }).catch(function(error) {
-            console.log("Error en carregar els vlogs", error);
+            console.log("Error en carregar els blogs", error);
             contenedorRanking.innerHTML = '<p class="text-center text-xl text-red-500">Error al carregar les dades.</p>';
         });
     }
@@ -34,31 +34,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Funció per dibuixar una pàgina específica de sa llista
 function dibujarLista(pagina) {
-    var contenedor = document.getElementById('listaVlogs');
+    var contenedor = document.getElementById('listaBlogs');
     if (contenedor == null) return;
     
     contenedor.innerHTML = '';
     paginaActual = pagina;
 
-    if (restoVlogs.length === 0) {
-        contenedor.innerHTML = '<p class="text-center text-white py-10">No hi ha més vlogs.</p>';
+    if (restoBlogs.length === 0) {
+        contenedor.innerHTML = '<p class="text-center text-white py-10">No hi ha més blogs.</p>';
         return;
     }
 
-    // Calculam es rang de vlogs a mostrar
-    var inicio = (pagina - 1) * vlogsPorPagina;
-    var fin = inicio + vlogsPorPagina;
+    // Calculam es rang de blogs a mostrar
+    var inicio = (pagina - 1) * blogsPorPagina;
+    var fin = inicio + blogsPorPagina;
     
     // Agafam només es d'aquesta pàgina
-    var vlogsPagina = [];
+    var blogsPagina = [];
     for (var i = inicio; i < fin; i++) {
-        if (restoVlogs[i]) {
-            vlogsPagina.push(restoVlogs[i]);
+        if (restoBlogs[i]) {
+            blogsPagina.push(restoBlogs[i]);
         }
     }
 
-    for (var i = 0; i < vlogsPagina.length; i++) {
-        var p = vlogsPagina[i];
+    for (var i = 0; i < blogsPagina.length; i++) {
+        var p = blogsPagina[i];
         var posicion = inicio + i + 1;
 
         var card = document.createElement('div');
@@ -89,7 +89,7 @@ function dibujarBotonesPaginacion() {
 
     contenedorBotones.innerHTML = '';
 
-    var totalPaginas = Math.ceil(restoVlogs.length / vlogsPorPagina);
+    var totalPaginas = Math.ceil(restoBlogs.length / blogsPorPagina);
     
     // Si només hi ha una pàgina, no fan falta botons
     if (totalPaginas <= 1) return;
