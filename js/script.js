@@ -3,6 +3,10 @@ var yaEntrado = false;
 
 // Funció per a que els ulls parpellegin de tant en tant
 function hacerParpadeo() {
+    if (yaEntrado == true) {
+        return; // Si ja hem entrat, no feim res
+    }
+    
     var ojos = document.querySelectorAll(".eye-wrap");
     
     // Afegim la classe de parpelleig a tots els ulls
@@ -12,12 +16,13 @@ function hacerParpadeo() {
     
     // Treim la classe després d'un moment
     setTimeout(function() {
-        for (var i = 0; i < ojos.length; i++) {
-            ojos[i].classList.remove("blinking");
+        if (yaEntrado == false) {
+            for (var i = 0; i < ojos.length; i++) {
+                ojos[i].classList.remove("blinking");
+            }
         }
-        
-        // Esperam un temps aleatori per al següent parpelleig. Parpelleig ràpid si està carregant.
-        var tiempo = yaEntrado ? (Math.random() * 500 + 300) : (Math.random() * 4000 + 2000);
+        // Esperam un temps aleatori per al següent parpelleig
+        var tiempo = Math.random() * 4000 + 2000;
         setTimeout(hacerParpadeo, tiempo);
     }, 250);
 }
@@ -26,7 +31,7 @@ function hacerParpadeo() {
 setTimeout(hacerParpadeo, 1000);
 
 // Funció que s'executa en entrar (es "ritual")
-function entrarAlJuego(lang) {
+function entrarAlJuego() {
     if (yaEntrado == true) {
         return;
     }
@@ -35,25 +40,22 @@ function entrarAlJuego(lang) {
     var pantallaCarga = document.getElementById("loader");
     var texto = document.getElementById("text-hint");
     var ojos = document.querySelectorAll(".eye-wrap");
-    
-    // Amagam la selección de idioma
-    document.getElementById("lang-selection").style.display = "none";
 
     // Efecte de sacsejada
     pantallaCarga.classList.add("shake");
     pantallaCarga.classList.add("revealed");
 
-    // Traducimos el texto de bienvenida según la bandera elegida
-    if(lang === 'es') {
-        texto.textContent = "BIENVENIDO";
-    } else if(lang === 'en') {
-        texto.textContent = "WELCOME";
-    } else {
-        texto.textContent = "BENVINGUT";
+    // Tancam els ulls
+    for (var i = 0; i < ojos.length; i++) {
+        ojos[i].classList.remove("blinking");
+        ojos[i].classList.add("closed");
+        ojos[i].style.filter = "brightness(0.2)";
+        ojos[i].style.boxShadow = "none";
     }
-    
+
+    // Canviam es text
+    texto.textContent = "BENVINGUT";
     texto.style.color = "#ff0000";
-    texto.style.opacity = "1";
 
     sessionStorage.setItem("animacionVista", "si");
 
@@ -63,7 +65,22 @@ function entrarAlJuego(lang) {
     }, 2200);
 }
 
-function selectLang(lang) {
-    localStorage.setItem('idioma', lang);
-    entrarAlJuego(lang);
-}
+// Detectar clics o scroll per entrar
+window.addEventListener("mousedown", entrarAlJuego);
+window.addEventListener("wheel", function(evento) {
+    if (Math.abs(evento.deltaY) > 5) {
+        entrarAlJuego();
+    }
+});
+
+// Per a mòbils també
+var inicioToque = 0;
+window.addEventListener("touchstart", function(evento) {
+    inicioToque = evento.touches[0].clientY;
+});
+window.addEventListener("touchmove", function(evento) {
+    var finToque = evento.touches[0].clientY;
+    if (Math.abs(inicioToque - finToque) > 20) {
+        entrarAlJuego();
+    }
+});
