@@ -67,6 +67,8 @@ function entrarAlJuego() {
 
 // Detectar clics o scroll per entrar
 window.addEventListener("mousedown", entrarAlJuego);
+window.addEventListener("click", entrarAlJuego);
+window.addEventListener("keydown", entrarAlJuego);
 window.addEventListener("wheel", function(evento) {
     if (Math.abs(evento.deltaY) > 5) {
         entrarAlJuego();
@@ -74,13 +76,4 @@ window.addEventListener("wheel", function(evento) {
 });
 
 // Per a mòbils també
-var inicioToque = 0;
-window.addEventListener("touchstart", function(evento) {
-    inicioToque = evento.touches[0].clientY;
-});
-window.addEventListener("touchmove", function(evento) {
-    var finToque = evento.touches[0].clientY;
-    if (Math.abs(inicioToque - finToque) > 20) {
-        entrarAlJuego();
-    }
-});
+window.addEventListener("touchstart", entrarAlJuego);
