@@ -136,7 +136,6 @@ html, body {
     padding: 0;
     background-color: var(--background-color-principal);
     scroll-behavior: smooth;
-    overflow-x: hidden;
 }
 
 * {
@@ -149,8 +148,8 @@ header {
     padding: 0.5rem 1rem;
     background: linear-gradient(to bottom, var(--background-color-principal) 60%, rgba(29, 28, 28, 0));
     backdrop-filter: blur(8px);
-    position: sticky;
-    top: 0;
+    position: sticky !important;
+    top: 0 !important;
     z-index: 1000;
 }
 
