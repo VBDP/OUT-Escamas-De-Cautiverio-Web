@@ -1,0 +1,87 @@
+#portada {
+    position: relative;
+    overflow: hidden;
+}
+
+#portada a{
+    color: var(--text-color-principal);
+    font-size: 2.5rem;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+#miniHistoria {
+    animation: fadeInSoft 1.8s ease-out forwards, fadeOutSoft 4s ease-out forwards 3s;
+}
+@keyframes fadeOutSoft {
+    0% {
+        opacity: 1;
+        filter: blur(0);
+    }
+    100% {
+        opacity: 0.1;
+        filter: blur(4px);
+    }
+}
+.main a:hover {
+    color: var(--text-color-title);
+    animation: glow 2s infinite;
+    text-align: center;
+}
+.video-container {
+    max-width: 900px;
+    width: 100%;
+    aspect-ratio: 16/9;
+    margin: 0 auto;
+    border-radius: 2rem;
+    overflow: hidden;
+    border: 4px solid rgba(153, 102, 102, 0.3);
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+    position: relative;
+    z-index: 10;
+}
+
+.itch-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: #fa5c5c;
+    color: white !important;
+    padding: 1.2rem 3rem;
+    border-radius: 5rem;
+    font-size: 1.8rem !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 30px rgba(250, 92, 92, 0.3);
+    text-decoration: none !important;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.itch-button:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: #ff7070;
+    box-shadow: 0 15px 40px rgba(250, 92, 92, 0.5);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.itch-button img {
+    transition: transform 0.4s ease;
+}
+
+.itch-button:hover img {
+    transform: rotate(10deg) scale(1.2);
+}
+
+@media (max-width: 768px) {
+    .video-container {
+        border-radius: 1rem;
+        border-width: 2px;
+    }
+    .itch-button {
+        font-size: 1.2rem !important;
+        padding: 1rem 2rem;
+        width: 100%;
+        justify-content: center;
+    }
+}

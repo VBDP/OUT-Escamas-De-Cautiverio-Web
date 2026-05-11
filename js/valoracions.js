@@ -33,7 +33,7 @@ function dibujarComentarios() {
     listaHtml.innerHTML = "";
 
     if (comentarios.length === 0) {
-        listaHtml.innerHTML = '<p class="no-comments text-center italic opacity-60">Encara no hi ha comentaris.</p>';
+        listaHtml.innerHTML = '<p class="no-comments text-center italic opacity-60">Encara no hi ha valoracions.</p>';
         return;
     }
 
@@ -42,7 +42,7 @@ function dibujarComentarios() {
         var c = comentarios[i];
         
         var div = document.createElement("div");
-        div.className = "comment reveal reveal-left";
+        div.className = "comment reveal reveal-right";
         
         div.innerHTML = 
             '<div class="comment-header">' +
@@ -74,12 +74,32 @@ function nuevoComentario(nombre, mensaje) {
 
     // Es posam a n'es principi de sa llista
     lista.unshift(comentarioObj);
+    guardarComentarioServidor(comentarioObj);
     
     // Guardam i tornam a dibuixar
     guardarComentariosLocal(lista);
     dibujarComentarios();
 }
-
+function guardarComentarioServidor(comentarioObj) {
+    var url = URL_BASE + '/api/posts/' + MI_TOKEN;
+    return fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(comentarioObj)
+    })
+        .then(function(respuesta) {
+            return respuesta.json();
+        })
+        .then(function(datos) {
+            if (datos.data) {
+                return datos.data;
+            } else {
+                return datos;
+            }
+        });
+}
 // Deixam borrarComentario disponible a n'es objecte window per a que s'onclick de s'HTML funcioni
 window.borrarComentario = borrarComentario;
 
@@ -87,7 +107,6 @@ window.borrarComentario = borrarComentario;
 document.addEventListener("DOMContentLoaded", function() {
     var botonEnviar = document.getElementById("sendComment");
     var inputNombre = document.getElementById("name");
-    var inputEmail = document.getElementById("email");
     var inputMensaje = document.getElementById("comment");
     
     // Missatge d'estat
@@ -98,67 +117,29 @@ document.addEventListener("DOMContentLoaded", function() {
         caja.appendChild(estado);
     }
 
-    var emailValido = false;
-
-    // Funció per validar si es correu és de Gmail
-    function validarGmail() {
-        var correo = inputEmail.value.toLowerCase();
-        
-        if (correo == "") {
-            emailValido = false;
-            estado.textContent = "Introdueix es teu Gmail.";
-            estado.style.color = "#f8d7da";
-            return;
-        }
-
-        // Miram si acaba en @gmail.com
-        if (correo.indexOf("@gmail.com") == -1) {
-            emailValido = false;
-            estado.textContent = "Es correu ha de ser un Gmail vàlid (xxx@gmail.com).";
-            estado.style.color = "#f8d7da";
-        } else {
-            emailValido = true;
-            estado.textContent = "Gmail verificat correctament!";
-            estado.style.color = "#b5f8c3";
-        }
-    }
-
     // Dibuixam es comentaris en començar
     dibujarComentarios();
-
-    // Validar mentre escriu
-    inputEmail.addEventListener("input", validarGmail);
 
     // En fer clic a enviar
     botonEnviar.addEventListener("click", function() {
         var nombre = inputNombre.value;
-        var email = inputEmail.value;
         var mensaje = inputMensaje.value;
 
         // Comprovam camps buits
-        if (nombre == "" || email == "" || mensaje == "") {
+        if (nombre == "" || mensaje == "") {
             estado.textContent = "Omple tots es camps abans d'enviar.";
             estado.style.color = "#f8d7da";
             return;
         }
 
-        // Comprovam s'email
-        if (emailValido == false) {
-            estado.textContent = "Verifica es teu Gmail abans d'enviar.";
-            estado.style.color = "#f8d7da";
-            return;
-        }
-
         // Si tot està bé, l'afegim
-        nuevoComentario(nombre + " (" + email + ")", mensaje);
+        nuevoComentario(nombre + ")", mensaje);
         
         // Netejam es inputs
         inputNombre.value = "";
-        inputEmail.value = "";
         inputMensaje.value = "";
         
         estado.textContent = "Comentari enviat!";
         estado.style.color = "#b5f8c3";
-        emailValido = false;
     });
 });

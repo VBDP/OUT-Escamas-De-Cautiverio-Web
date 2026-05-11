@@ -1,12 +1,9 @@
-// Configuració de sa API
 var URL_BASE = 'https://phpstack-1076337-5399863.cloudwaysapps.com';
 var MI_TOKEN = 'nL3ggwGvsiYZ5vzCqhAL58WnDcZgB9ad7FtDv82oaAAYa36UoJPS35sIbR9F';
 
-// Funció per obtenir es ranking de jugadors
 function obtenerRanking(cuantos) {
     var url = URL_BASE + '/api/classification/' + MI_TOKEN;
     
-    // Si volem un número específic de resultats
     if (cuantos != null) {
         url = url + '/' + cuantos;
     }
@@ -21,13 +18,10 @@ function obtenerRanking(cuantos) {
             }
         })
         .then(function(datos) {
-            // Comprobació per si es ranking ve buit o nul
             if (datos == null) {
-                console.log("Es ranking ve buit");
                 return [];
             }
 
-            // Tornam ses dades (o sa llista dins data si existeix)
             if (datos.data != null) {
                 return datos.data;
             } else {
@@ -35,12 +29,10 @@ function obtenerRanking(cuantos) {
             }
         })
         .catch(function(error) {
-            console.error('El fetch ha petado:', error);
             return [];
         });
 }
 
-// Funció per obtenir es posts (històries)
 function obtenerPosts() {
     var url = URL_BASE + '/api/posts/' + MI_TOKEN;
     
@@ -57,7 +49,6 @@ function obtenerPosts() {
         });
 }
 
-// Funció per obtenir es comentaris de s'API
 function obtenerComentarios() {
     var url = URL_BASE + '/api/comments/' + MI_TOKEN;
     
@@ -74,7 +65,6 @@ function obtenerComentarios() {
         });
 }
 
-// Funció per enviar un comentari a sa API
 function enviarComentario(nombre, contenido) {
     var url = URL_BASE + '/api/comments';
     
@@ -99,7 +89,6 @@ function enviarComentario(nombre, contenido) {
     });
 }
 
-// Funció per enviar un missatge de contacte
 function enviarMensajeContacto(nombre, email, asunto, mensaje) {
     var url = URL_BASE + '/api/contact';
     
@@ -124,7 +113,6 @@ function enviarMensajeContacto(nombre, email, asunto, mensaje) {
     });
 }
 
-// Deixam ses funcions disponibles globalment
 window.obtenerRanking = obtenerRanking;
 window.obtenerPosts = obtenerPosts;
 window.obtenerComentarios = obtenerComentarios;

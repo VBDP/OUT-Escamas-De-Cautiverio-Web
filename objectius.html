@@ -9,7 +9,7 @@
     <LINK REL="stylesheet" TYPE="text/css" HREF="css/objectius.css">
 </head>
 <body class="bg-[#1D1C1C] text-[#9F543E]">
-    <img class="fixed top-0 left-0 w-full h-screen object-cover -z-10" src="imatges/portada3.png" alt="Fons">
+    <img class="fixed top-0 left-0 w-full h-screen object-cover -z-10" src="Imatges/portada3.png" alt="Fons">
 
     <header>
         <nav class="navbar">
@@ -20,24 +20,34 @@
                 <li><a href="personatges.html">Personatges i Objectes</a></li>
                 <li><a href="objectius.html">Objectius</a></li>
                 <li><a href="ranking.html">Ranking</a></li>
+                <li><a href="vlog.html">Vlog</a></li>
                 <li><a href="comentaris.html">Comentaris</a></li>
+                <li><a href="valoracions.html">Valoracions</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="py-16 px-4">
-        <div class="max-w-6xl mx-auto text-center mb-20">
-            <h1 class="text-6xl md:text-8xl font-bold text-[#996666] mb-8 tracking-tighter">MISSIONS PRINCIPALS</h1>
-            <p class="text-2xl md:text-3xl italic opacity-80 max-w-3xl mx-auto">"La teva supervivència depèn de la teva capacitat per adaptar-te i superar els reptes de l'abisme."</p>
+    <section id="portada" class="secundaria relative flex items-center justify-center py-20 px-4">
+        <div class="absolute inset-0 z-0">
+            <img src="Imatges/portada1.png" alt="Objectius de Escamas de Cautiverio" id="portada-img" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/50"></div>
         </div>
-
+        <div id="miniHistoria" class="reveal relative z-10 max-w-4xl mx-auto bg-gradient-to-b from-[#2a1a1a]/80 to-[#1a1111]/90 backdrop-blur-xl border border-[#996666]/30 rounded-3xl p-10 text-center shadow-[0_0_40px_rgba(0,0,0,0.5)] overflow-hidden">
+            <div class="absolute -top-24 -right-24 w-48 h-48 bg-[#996666]/20 rounded-full blur-3xl"></div>
+            <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-[#440150]/30 rounded-full blur-3xl"></div>
+            <h2 class="text-5xl font-bold text-[#996666] mb-8 relative z-10 tracking-widest uppercase">Missions Principals</h2>
+            <p class="text-[#9F543E] text-2xl leading-relaxed mb-6 relative z-10">"La teva supervivència depèn de la teva capacitat per adaptar-te i superar els reptes de l'abisme."</p>
+        </div>
+    </section>
+    
+    <main class="py-16 px-4">
         <div class="slider-container relative max-w-7xl mx-auto">
-            <div class="slider">
+            <div class="slider reveal reveal-scale">
                 <ul>
                     <li class="active">
                         <div class="objective-card group">
                             <div class="objective-image">
-                                <img src="imatges/imatge_enemic.png" alt="Trampes">
+                                <img src="Imatges/imatge_enemic.png" alt="Trampes">
                                 <div class="image-overlay"></div>
                             </div>
                             <article class="objective-info">
@@ -101,17 +111,20 @@
         <div class="footer-top">
             <div class="socials-joc">
                 <p>Xarxes socials del joc:</p>
-               <a href="https://www.instagram.com/llamadmev/" target="_blank">Instagram <img src="Imatges/instagram.png" alt="Instagram del Joc"></a>
-            <a href="https://www.youtube.com/@VDrago" target="_blank">YouTube <img src="Imatges/yt.png" alt="YouTube del Joc"></a>
+                <a href="https://www.instagram.com/llamadmev/" target="_blank">Instagram <img src="Imatges/instagram.png" alt="Instagram del Joc"></a>
+                <a href="https://www.youtube.com/@VDrago" target="_blank">YouTube <img src="Imatges/yt.png" alt="YouTube del Joc"></a>
+                <a href="https://jaumepericasoliver.github.io/paujam_25_26/" target="_blank"> Pagina web PauJam </a>
             </div>
             <div>
                 <ul class="fnav-list">
                     <li><a href="inici.html">Inici</a></li>
-                    <li><a href="historia.html">Història</a></li>
-                    <li><a href="personatges.html">Personatges i Objectes</a></li>
-                    <li><a href="objectius.html">Objectius</a></li>
-                    <li><a href="ranking.html">Ranking</a></li>
-                    <li><a href="comentaris.html">Comentaris</a></li>
+                <li><a href="historia.html">Història</a></li>
+                <li><a href="personatges.html">Personatges i Objectes</a></li>
+                <li><a href="objectius.html">Objectius</a></li>
+                <li><a href="ranking.html">Ranking</a></li>
+                <li><a href="vlog.html">Vlog</a></li>
+                <li><a href="comentaris.html">Comentaris</a></li>
+                <li><a href="valoracions.html">Valoracions</a></li>
                 </ul>
             </div>
             <div class="socials-creadors">

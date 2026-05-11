@@ -9,87 +9,107 @@
     
     
 </head>
-<body>
+<body class="bg-[#1D1C1C] text-[#9F543E]">
+<img class="fixed top-0 left-0 w-full h-screen object-cover -z-10" src="Imatges/portada3.png" alt="Fons">
 <header>
-  <nav class="navbar">
-      <button class="menu-toggle" id="menu-toggle">☰</button>
-      <ul class="nav-list">
-          <li><a href="inici.html">Inici</a></li>
-          <li><a href="historia.html ">Història</a></li>
-          <li><a href="personatges.html">Personatges i Objectes</a></li>
-          <li><a href="objectius.html">Objectius</a></li>
-          <li><a href="ranking.html">Ranking</a></li>
-          <li><a href="comentaris.html">Comentaris</a></li>
-      </ul>
-  </nav>
+    <nav class="navbar">
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <ul class="nav-list">
+            <li><a href="inici.html">Inici</a></li>
+                <li><a href="historia.html">Història</a></li>
+                <li><a href="personatges.html">Personatges i Objectes</a></li>
+                <li><a href="objectius.html">Objectius</a></li>
+                <li><a href="ranking.html">Ranking</a></li>
+                <li><a href="vlog.html">Vlog</a></li>
+                <li><a href="comentaris.html">Comentaris</a></li>
+                <li><a href="valoracions.html">Valoracions</a></li>
+        </ul>
+    </nav>
 </header>
-    <div class="px-4 py-8 max-w-7xl mx-auto my-10">
-        <div class="bg-gradient-to-b from-[#2a1a1a]/80 to-[#1a1111]/90 backdrop-blur-xl border border-[#996666]/30 rounded-[3rem] p-6 md:p-16 shadow-[0_0_50px_rgba(0,0,0,0.6)] relative overflow-hidden">
-            
-            <div class="absolute -top-32 -left-32 w-96 h-96 bg-[#996666]/20 rounded-full blur-[100px] pointer-events-none"></div>
-            <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-[#440150]/20 rounded-full blur-[100px] pointer-events-none"></div>
-            
-            <!-- podio -->
-            <h2 class="text-5xl md:text-7xl font-bold text-center text-[#996666] mb-12 relative z-10 tracking-widest uppercase pb-10 border-b border-[#996666]/20">Saló de la Fama</h2>
-            <div class="w-full flex justify-center mt-20 relative z-10">
-                <div class="flex items-end space-x-2 md:space-x-8">
-            
-                <!-- 2n lloc - PLATA -->
-                <div class="flex flex-col items-center">
-                    <div class="bg-gray-400 w-24 h-40 rounded-t-lg flex items-center justify-center text-3xl text-white font-bold">
-                    2
-                    </div>
-                    <p class="mt-2 text-lg font-semibold text-[#9F543E]">Segon lloc</p>
+
+<section id="portada" class="secundaria relative flex items-center justify-center py-20 px-4">
+    <div class="absolute inset-0 z-0">
+        <img src="Imatges/portada3.png" alt="Ranking de Escamas de Cautiverio" id="portada-img" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/50"></div>
+    </div>
+    <div id="miniHistoria" class="reveal relative z-10 max-w-4xl mx-auto bg-gradient-to-b from-[#2a1a1a]/80 to-[#1a1111]/90 backdrop-blur-xl border border-[#996666]/30 rounded-3xl p-10 text-center shadow-[0_0_40px_rgba(0,0,0,0.5)] overflow-hidden">
+        <div class="absolute -top-24 -right-24 w-48 h-48 bg-[#996666]/20 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-[#440150]/30 rounded-full blur-3xl"></div>
+        <h2 class="text-5xl font-bold text-[#996666] mb-8 relative z-10 tracking-widest uppercase">Saló de la Fama</h2>
+        <p class="text-[#9F543E] text-2xl leading-relaxed mb-6 relative z-10">Els guerrers més valents que han aconseguit sobreviure a la captivitat.</p>
+    </div>
+</section>
+
+<main class="px-4 py-8 max-w-7xl mx-auto my-10">
+    <div class="reveal reveal-scale bg-gradient-to-b from-[#2a1a1a]/80 to-[#1a1111]/90 backdrop-blur-xl border border-[#996666]/30 rounded-[3rem] p-6 md:p-16 shadow-[0_0_50px_rgba(0,0,0,0.6)] relative overflow-hidden">
+        
+        <div class="absolute -top-32 -left-32 w-96 h-96 bg-[#996666]/20 rounded-full blur-[100px] pointer-events-none"></div>
+        <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-[#440150]/20 rounded-full blur-[100px] pointer-events-none"></div>
+        
+        <!-- podio -->
+        <h2 class="text-5xl md:text-7xl font-bold text-center text-[#996666] mb-12 relative z-10 tracking-widest uppercase pb-10 border-b border-[#996666]/20">Classificació</h2>
+        <div class="w-full flex justify-center mt-20 relative z-10">
+            <div class="flex items-end space-x-2 md:space-x-8">
+        
+            <!-- 2n lloc - PLATA -->
+            <div class="flex flex-col items-center">
+                <div class="bg-gray-400 w-24 h-40 rounded-t-lg flex items-center justify-center text-3xl text-white font-bold">
+                2
                 </div>
-            
-                <!-- 1r lloc - OR -->
-                <div class="flex flex-col items-center">
-                    <div class="bg-yellow-400 w-28 h-56 rounded-t-lg flex items-center justify-center text-3xl text-white font-bold">
-                    1
-                    </div>
-                    <p class="mt-2 text-lg font-semibold text-[#9F543E]">Primer lloc</p>
-                </div>
-            
-                <!-- 3r lloc - BRONZE -->
-                <div class="flex flex-col items-center">
-                    <div class="bg-orange-600 w-24 h-32 rounded-t-lg flex items-center justify-center text-3xl text-white font-bold">
-                    3
-                    </div>
-                    <p class="mt-2 text-lg font-semibold text-[#9F543E]">Tercer lloc</p>
-                </div>
-                </div>
+                <p class="mt-2 text-lg font-semibold text-[#9F543E]">Segon lloc</p>
             </div>
-            
-            <!-- RANKING ABAJO -->
-            <div class="body-font relative z-10 mt-16 md:mt-24 pt-16 border-t border-[#996666]/20 bg-transparent">
-                <h2 class="text-4xl md:text-5xl text-center mb-10 text-[#996666] tracking-wider">Resta de jugadors</h2>
-            
-                <div class="container px-5 py-8 mx-auto bg-black/40 border border-[#996666]/30 rounded-[3rem] shadow-2xl backdrop-blur-md">
-                    <!-- Cards de jugadors s'injectaran aquí -->
-                    <div id="listaJugadores"></div>
-                    
-                    <!-- Botones de paginación -->
-                    <div id="paginacion" class="flex justify-center items-center gap-6 mt-10">
-                    </div>
+        
+            <!-- 1r lloc - OR -->
+            <div class="flex flex-col items-center">
+                <div class="bg-yellow-400 w-28 h-56 rounded-t-lg flex items-center justify-center text-3xl text-white font-bold">
+                1
+                </div>
+                <p class="mt-2 text-lg font-semibold text-[#9F543E]">Primer lloc</p>
+            </div>
+        
+            <!-- 3r lloc - BRONZE -->
+            <div class="flex flex-col items-center">
+                <div class="bg-orange-600 w-24 h-32 rounded-t-lg flex items-center justify-center text-3xl text-white font-bold">
+                3
+                </div>
+                <p class="mt-2 text-lg font-semibold text-[#9F543E]">Tercer lloc</p>
+            </div>
+            </div>
+        </div>
+        
+        <!-- RANKING ABAJO -->
+        <div class="body-font relative z-10 mt-16 md:mt-24 pt-16 border-t border-[#996666]/20 bg-transparent">
+            <h2 class="text-4xl md:text-5xl text-center mb-10 text-[#996666] tracking-wider">Resta de jugadors</h2>
+        
+            <div class="container px-5 py-8 mx-auto bg-black/40 border border-[#996666]/30 rounded-[3rem] shadow-2xl backdrop-blur-md">
+                <!-- Els jugadors s'injectaran aquí -->
+                <div id="listaJugadores"></div>
+                
+                <!-- Botones de paginación -->
+                <div id="paginacion" class="flex justify-center items-center gap-6 mt-10">
                 </div>
             </div>
         </div>
     </div>
+</main>
     <footer>
     <div class="footer-top">
         <div class="socials-joc">
             <p>Xarxes socials del joc:</p>
             <a href="https://www.instagram.com/llamadmev/" target="_blank">Instagram <img src="Imatges/instagram.png" alt="Instagram del Joc"></a>
             <a href="https://www.youtube.com/@VDrago" target="_blank">YouTube <img src="Imatges/yt.png" alt="YouTube del Joc"></a>
+            <a href="https://jaumepericasoliver.github.io/paujam_25_26/" target="_blank">Pàgina web PauJam</a>
         </div>
         <div>
             <ul class="fnav-list">
                 <li><a href="inici.html">Inici</a></li>
-                <li><a href="historia.html ">Història</a></li>
+                <li><a href="historia.html">Història</a></li>
                 <li><a href="personatges.html">Personatges i Objectes</a></li>
                 <li><a href="objectius.html">Objectius</a></li>
                 <li><a href="ranking.html">Ranking</a></li>
+                <li><a href="vlog.html">Vlog</a></li>
                 <li><a href="comentaris.html">Comentaris</a></li>
+                <li><a href="valoracions.html">Valoracions</a></li>
             </ul>
         </div>
         <div class="socials-creadors">

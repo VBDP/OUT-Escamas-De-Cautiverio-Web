@@ -6,33 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personatges i objectes | Escamas de Cautiverio</title>
     <link rel="stylesheet" href="css/tailwind.css">
+    <LINK REL="stylesheet" TYPE="text/css" HREF="css/inici.css">
     <link rel="stylesheet" type="text/css" href="css/style_personatges.css">
 </head>
 
-<body class="bg-[#1D1C1C] text-white">
+<body class="bg-[#1D1C1C] text-[#9F543E]">
 
-    <img class="fixed top-0 left-0 w-full h-screen object-cover -z-10" src="imatges/portada3.png" alt="Fons">
+    <img class="fixed top-0 left-0 w-full h-screen object-cover -z-10" src="Imatges/portada3.png" alt="Fons">
 
     <header>
         <nav class="navbar">
             <button class="menu-toggle" id="menu-toggle">☰</button>
             <ul class="nav-list">
                 <li><a href="inici.html">Inici</a></li>
-                <li><a href="historia.html ">Història</a></li>
+                <li><a href="historia.html">Història</a></li>
                 <li><a href="personatges.html">Personatges i Objectes</a></li>
                 <li><a href="objectius.html">Objectius</a></li>
                 <li><a href="ranking.html">Ranking</a></li>
+                <li><a href="vlog.html">Vlog</a></li>
                 <li><a href="comentaris.html">Comentaris</a></li>
+                <li><a href="valoracions.html">Valoracions</a></li>
             </ul>
         </nav>
     </header>
+
+    <section id="portada" class="secundaria relative flex items-center justify-center py-20 px-4">
+        <div class="absolute inset-0 z-0">
+            <img src="Imatges/portada2.png" alt="Personatges de Escamas de Cautiverio" id="portada-img" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/50"></div>
+        </div>
+        <div id="miniHistoria" class="reveal relative z-10 max-w-4xl mx-auto bg-gradient-to-b from-[#2a1a1a]/80 to-[#1a1111]/90 backdrop-blur-xl border border-[#996666]/30 rounded-3xl p-10 text-center shadow-[0_0_40px_rgba(0,0,0,0.5)] overflow-hidden">
+            <div class="absolute -top-24 -right-24 w-48 h-48 bg-[#996666]/20 rounded-full blur-3xl"></div>
+            <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-[#440150]/30 rounded-full blur-3xl"></div>
+            <h2 class="text-5xl font-bold text-[#996666] mb-8 relative z-10 tracking-widest uppercase">Personatges i Objectes</h2>
+            <p class="text-[#9F543E] text-2xl leading-relaxed mb-6 relative z-10">Descobreix els herois, els enemics i els secrets que s'amaguen a les profunditats de la masmorra.</p>
+        </div>
+    </section>
 
     <main>
         <div class="flex flex-col w-full pb-20">
             <!-- Protagonista -->
             <section class="min-h-screen w-full flex items-center justify-center py-10 px-4 relative">
                 <div
-                    class="max-w-7xl w-full group relative bg-[#1c1414]/80 backdrop-blur-lg rounded-[3rem] p-10 lg:p-16 border border-[#996666]/20 hover:border-[#9f543e] transition-all duration-500 shadow-2xl overflow-hidden flex flex-col md:flex-row items-center gap-16 text-left">
+                    class="reveal reveal-left max-w-7xl w-full group relative bg-[#1c1414]/80 backdrop-blur-lg rounded-[3rem] p-10 lg:p-16 border border-[#996666]/20 hover:border-[#9f543e] transition-all duration-500 shadow-2xl overflow-hidden flex flex-col md:flex-row items-center gap-16 text-left">
                     <div
                         class="absolute inset-0 bg-gradient-to-r from-[#440150]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700">
                     </div>
@@ -53,7 +69,7 @@
 
                     <div class="w-full md:w-1/2 z-10 order-2">
                         <img src="Imatges/imatge_personatge.png" alt="Protagonista"
-                            class="w-full h-auto min-h-[500px] object-cover rounded-[2rem] shadow-[0_0_30px_rgba(0,0,0,0.8)] border border-black/50 group-hover:scale-105 transition-transform duration-700"
+                            class="img-flotant w-full h-auto min-h-[500px] object-cover rounded-[2rem] shadow-[0_0_30px_rgba(0,0,0,0.8)] border border-black/50 group-hover:scale-105 transition-transform duration-700"
                             onerror="this.src='https://placehold.co/800x1000/1D1C1C/996666?text=Protagonista'">
                     </div>
                 </div>
@@ -62,14 +78,14 @@
             <!-- Enemic -->
             <section class="min-h-screen w-full flex items-center justify-center py-10 px-4 relative">
                 <div
-                    class="max-w-7xl w-full group relative bg-[#1c1414]/80 backdrop-blur-lg rounded-[3rem] p-10 lg:p-16 border border-[#996666]/20 hover:border-[#9f543e] transition-all duration-500 shadow-2xl overflow-hidden flex flex-col md:flex-row items-center gap-16 text-left">
+                    class="reveal reveal-right max-w-7xl w-full group relative bg-[#1c1414]/80 backdrop-blur-lg rounded-[3rem] p-10 lg:p-16 border border-[#996666]/20 hover:border-[#9f543e] transition-all duration-500 shadow-2xl overflow-hidden flex flex-col md:flex-row items-center gap-16 text-left">
                     <div
                         class="absolute inset-0 bg-gradient-to-l from-[#440150]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700">
                     </div>
 
                     <div class="w-full md:w-1/2 z-10 order-2 md:order-1">
                         <img src="Imatges/imatge_enemic.png" alt="Enemic"
-                            class="w-full h-auto min-h-[500px] object-cover rounded-[2rem] shadow-[0_0_30px_rgba(0,0,0,0.8)] border border-black/50 group-hover:scale-105 transition-transform duration-700"
+                            class="img-flotant w-full h-auto min-h-[500px] object-cover rounded-[2rem] shadow-[0_0_30px_rgba(0,0,0,0.8)] border border-black/50 group-hover:scale-105 transition-transform duration-700"
                             onerror="this.src='https://placehold.co/800x1000/1D1C1C/996666?text=Enemic'">
                     </div>
 
@@ -92,7 +108,7 @@
             <!-- Enemic del tutorial -->
             <section class="min-h-screen w-full flex items-center justify-center py-10 px-4 relative">
                 <div
-                    class="max-w-7xl w-full group relative bg-[#1c1414]/80 backdrop-blur-lg rounded-[3rem] p-10 lg:p-16 border border-[#996666]/20 hover:border-[#9f543e] transition-all duration-500 shadow-2xl overflow-hidden flex flex-col md:flex-row items-center gap-16 text-left">
+                    class="reveal reveal-left max-w-7xl w-full group relative bg-[#1c1414]/80 backdrop-blur-lg rounded-[3rem] p-10 lg:p-16 border border-[#996666]/20 hover:border-[#9f543e] transition-all duration-500 shadow-2xl overflow-hidden flex flex-col md:flex-row items-center gap-16 text-left">
                     <div
                         class="absolute inset-0 bg-gradient-to-r from-[#440150]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700">
                     </div>
@@ -113,7 +129,7 @@
 
                     <div class="w-full md:w-1/2 z-10 order-2">
                         <img src="Imatges/imatge_enemic2.jpg" alt="Guàrdia del tutorial"
-                            class="w-full h-auto min-h-[500px] object-cover rounded-[2rem] shadow-[0_0_30px_rgba(0,0,0,0.8)] border border-black/50 group-hover:scale-105 transition-transform duration-700"
+                            class="img-flotant w-full h-auto min-h-[500px] object-cover rounded-[2rem] shadow-[0_0_30px_rgba(0,0,0,0.8)] border border-black/50 group-hover:scale-105 transition-transform duration-700"
                             onerror="this.src='https://placehold.co/800x1000/1D1C1C/996666?text=Tutorial'">
                     </div>
                 </div>
@@ -122,17 +138,17 @@
             <!-- Trampes -->
             <section class="min-h-screen w-full flex items-center justify-center py-10 px-4 relative">
                 <div
-                    class="max-w-7xl w-full group relative bg-[#1c1414]/80 backdrop-blur-lg rounded-[3rem] p-10 lg:p-16 border border-[#996666]/20 hover:border-[#9f543e] transition-all duration-500 shadow-2xl overflow-hidden flex flex-col md:flex-row items-center gap-16 text-left">
+                    class="reveal reveal-scale max-w-7xl w-full group relative bg-[#1c1414]/80 backdrop-blur-lg rounded-[3rem] p-10 lg:p-16 border border-[#996666]/20 hover:border-[#9f543e] transition-all duration-500 shadow-2xl overflow-hidden flex flex-col md:flex-row items-center gap-16 text-left">
                     <div
                         class="absolute inset-0 bg-gradient-to-l from-[#440150]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700">
                     </div>
 
                     <div class="w-full md:w-1/2 z-10 order-2 md:order-1 flex justify-center items-center gap-4">
                         <img src="Imatges/imatge_trampa1.png" alt="Trampa 1"
-                            class="w-1/2 aspect-square object-cover rounded-[1.5rem] shadow-[0_0_20px_rgba(0,0,0,0.8)] border border-black/50 group-hover:scale-105 transition-transform duration-700"
+                            class="img-flotant w-1/2 aspect-square object-cover rounded-[1.5rem] shadow-[0_0_20px_rgba(0,0,0,0.8)] border border-black/50 group-hover:scale-105 transition-transform duration-700"
                             onerror="this.src='https://placehold.co/400x400/1D1C1C/996666?text=Trampa+1'">
                         <img src="Imatges/imatge_trampa2.png" alt="Trampa 2"
-                            class="w-1/2 aspect-square object-cover rounded-[1.5rem] shadow-[0_0_20px_rgba(0,0,0,0.8)] border border-black/50 group-hover:scale-105 transition-transform duration-700"
+                            class="img-flotant w-1/2 aspect-square object-cover rounded-[1.5rem] shadow-[0_0_20px_rgba(0,0,0,0.8)] border border-black/50 group-hover:scale-105 transition-transform duration-700"
                             onerror="this.src='https://placehold.co/400x400/1D1C1C/996666?text=Trampa+2'">
                     </div>
 
@@ -161,15 +177,18 @@
             <p>Xarxes socials del joc:</p>
             <a href="https://www.instagram.com/llamadmev/" target="_blank">Instagram <img src="Imatges/instagram.png" alt="Instagram del Joc"></a>
             <a href="https://www.youtube.com/@VDrago" target="_blank">YouTube <img src="Imatges/yt.png" alt="YouTube del Joc"></a>
+            <a href="https://jaumepericasoliver.github.io/paujam_25_26/" target="_blank">Pàgina web PauJam</a>
         </div>
         <div>
             <ul class="fnav-list">
                 <li><a href="inici.html">Inici</a></li>
-                <li><a href="historia.html ">Història</a></li>
+                <li><a href="historia.html">Història</a></li>
                 <li><a href="personatges.html">Personatges i Objectes</a></li>
                 <li><a href="objectius.html">Objectius</a></li>
                 <li><a href="ranking.html">Ranking</a></li>
+                <li><a href="vlog.html">Vlog</a></li>
                 <li><a href="comentaris.html">Comentaris</a></li>
+                <li><a href="valoracions.html">Valoracions</a></li>
             </ul>
         </div>
         <div class="socials-creadors">
@@ -188,7 +207,6 @@
 
 </footer>
     <script src="js/inici.js"></script>
-    <script src="js/lang.js"></script>
-    <script src="js/translate.js"></script>
 </body>
+
 </html>
