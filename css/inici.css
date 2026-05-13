@@ -166,6 +166,10 @@ header {
     display: none;
 }
 
+.header-title-mobile {
+    display: none;
+}
+
 .nav-list {
     list-style: none;
     display: flex;
@@ -426,7 +430,17 @@ footer img {
     }
 
     .navbar {
-        justify-content: flex-end !important;
+        justify-content: space-between !important;
+    }
+
+    .header-title-mobile {
+        display: block;
+        color: #9F543E;
+        font-family: "EnchantedLand", sans-serif;
+        font-size: 1.6rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
     }
 
     .menu-toggle {
@@ -535,7 +549,6 @@ footer img {
         font-size: 0 !important;
     }
 
-    /* L'enllaç de PauJam a sota */
     .socials-joc a:last-child {
         width: 100% !important;
         text-align: center !important;
