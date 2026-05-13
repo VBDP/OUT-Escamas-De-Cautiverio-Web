@@ -60,14 +60,7 @@ p {
     color: var(--text-color-principal);
 }
 
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: var(--text-color-title);
-    font-size: 2.5rem;
-    cursor: pointer;
-}
+
 
 @media (max-width: 768px) {
     img {
