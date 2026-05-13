@@ -466,6 +466,8 @@ footer img {
         padding: 1rem 0;
         border-top: 1px solid var(--text-color-title);
         z-index: 1000;
+        max-height: 80vh;
+        overflow-y: auto;
     }
 
     .nav-list.open, .nav-list.show {
@@ -482,9 +484,9 @@ footer img {
     }
 
     .nav-list li a {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         display: block;
-        padding: 1rem;
+        padding: 0.8rem;
     }
 
     #portada {
